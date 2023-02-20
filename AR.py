@@ -3,12 +3,8 @@ from statsmodels.tsa.ar_model import AutoReg
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
-wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv')
+wnv_data_NJ = pd.read_csv('wnv_data_NJ.csv')
 
-wnv_data_NJ = wnv_data[wnv_data['state'] == 'NJ']
-
-wnv_data_NJ.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(wnv_data_NJ.year, wnv_data_NJ.month)]) #276 x 5
-wnv_data_NJ.index = pd.DatetimeIndex(wnv_data_NJ.index).to_period('M') #276 x 5
 
 wnv_data_NJ_train = wnv_data_NJ.head(len(wnv_data_NJ) - 50)
 wnv_data_NJ_test = wnv_data_NJ.tail(50)
@@ -36,7 +32,6 @@ print("best lag:" + str(best_lag))
 '''
 #best lag is 12
 
-'''
 model = AutoReg(wnv_data_NJ_train['count'], lags = 2)
 model_fit = model.fit()
 predictions = model_fit.predict(start = len(wnv_data_NJ_train), end = len(wnv_data_NJ)-1, dynamic=False)
@@ -50,9 +45,8 @@ compare_df.predicted.plot(ax=axes, label="predicted")
 plt.suptitle("WNV Predicted Cases vs. Actual Cases")
 plt.legend()
 plt.show()
-plt.savefig('AR(2).png')
+#plt.savefig('AR(2).png')
 
 print(mean_squared_error(compare_df['actual'], compare_df['predicted'], squared=False))
 print(mean_absolute_error(compare_df['actual'], compare_df['predicted']))
 print(r2_score(compare_df['actual'], compare_df['predicted']))
-'''

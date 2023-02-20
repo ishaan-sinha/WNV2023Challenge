@@ -7,4 +7,6 @@ wnv_data_NJ = wnv_data[wnv_data['state'] == 'NJ']
 
 wnv_data_NJ.plot(kind='line', y='count', figsize=(15, 5))
 
-plt.show()
+#plt.show()
+
+print(sorted(set(wnv_data['fips'])))
