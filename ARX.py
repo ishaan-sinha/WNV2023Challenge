@@ -24,7 +24,8 @@ compare_df.predicted.plot(ax=axes, label="predicted")
 
 plt.suptitle("Dengue Predicted Cases vs. Actual Cases")
 plt.legend()
-# plt.savefig('ARX('+ str(best_lag) +')[last_year_cases, reanalysis_specific_humidity_g_per_kg, reanalysis_dew_point_temp_k, station_avg_temp_c, station_min_temp_c].png')
+plt.savefig('ARX(2)[temperature].png')
+plt.show()
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
 compare_df.dropna(inplace=True)
