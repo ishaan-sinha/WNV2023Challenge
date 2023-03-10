@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/California/CAPrecipitation.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/California/CATemperature.csv">
           <value>
             <Attribute>
@@ -17,7 +24,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/California/hello.csv">
+        <entry key="/California/wnv_data_CA.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -32,6 +39,13 @@
           </value>
         </entry>
         <entry key="/TXTemperature.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/2000-2022.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
