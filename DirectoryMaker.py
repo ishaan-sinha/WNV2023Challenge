@@ -1,0 +1,9 @@
+import os
+import pandas as pd
+
+wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
+
+
+for i in set(wnv_data['state']):
+    os.mkdir(i)
+
