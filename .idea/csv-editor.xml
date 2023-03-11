@@ -17,34 +17,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/California/CAPalmerZIndex.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/California/CAPrecipitation.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/California/CATemperature.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/California/wnv_data_CA.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="/IA/wnv_data_IA.csv">
           <value>
             <Attribute>
