@@ -19,7 +19,7 @@ for state in set(wnv_data['state']):
         'B01001_022E', 'B01001_023E', 'B01001_024E', 'B01001_025E','B01001_027E','B01001_028E','B01001_029E','B01001_030E','B01001_031E',
         'B01001_032E', 'B01001_033E', 'B01001_034E', 'B01001_035E', 'B01001_036E', 'B01001_037E', 'B01001_038E', 'B01001_039E',
         'B01001_040E', 'B01001_041E', 'B01001_042E', 'B01001_043E', 'B01001_044E', 'B01001_045E', 'B01001_046E', 'B01001_047E',
-        'B01001_048E', 'B01001_049E', 'B02001_002E', 'B02001_003E', 'B02001_004E', 'B02001_005E', 'B02001_006E'), state_fips= eval("states."+state+".fips"), year=year)
+        'B01001_048E', 'B01001_049E', 'B02001_002E', 'B02001_003E', 'B02001_004E', 'B02001_005E', 'B02001_006E', 'B19001_001E'), state_fips= eval("states."+state+".fips"), year=year)
         # B01003_001E = total population
         # B01001_002E = total male
         # B01001_026E = total female
@@ -75,6 +75,7 @@ for state in set(wnv_data['state']):
         # B02001_004E	Estimate!!Total:!!American Indian and Alaska Native alone
         # B02001_005E	Estimate!!Total:!!Asian alone
         # B02001_006E	Estimate!!Total:!!Native Hawaiian and Other Pacific Islander alone
+        # B19001_001E   Household Income in the past 12 months
         ca_df = pd.DataFrame(ca_census)
         ca_df['male_under_17'] = ca_df['B01001_003E']+ca_df['B01001_004E']+ca_df['B01001_005E']+ca_df['B01001_006E']
         ca_df['male_18_to_40'] = ca_df['B01001_007E'] + ca_df['B01001_008E'] + ca_df['B01001_009E'] + ca_df['B01001_010E'] + ca_df['B01001_011E'] + ca_df['B01001_012E'] + ca_df['B01001_013E']
@@ -92,6 +93,7 @@ for state in set(wnv_data['state']):
         ca_df['native_american_population'] = ca_df['B02001_004E']
         ca_df['asian_population'] = ca_df['B02001_005E']
         ca_df['pacific_islander_population'] = ca_df['B02001_006E']
+        ca_df['household_income'] = ca_df['B19001_001E']
         ca_df['state'] = state
         ca_df['year'] = year
 
@@ -102,9 +104,9 @@ for state in set(wnv_data['state']):
         'B01001_022E', 'B01001_023E', 'B01001_024E', 'B01001_025E','B01001_027E','B01001_028E','B01001_029E','B01001_030E','B01001_031E',
         'B01001_032E', 'B01001_033E', 'B01001_034E', 'B01001_035E', 'B01001_036E', 'B01001_037E', 'B01001_038E', 'B01001_039E',
         'B01001_040E', 'B01001_041E', 'B01001_042E', 'B01001_043E', 'B01001_044E', 'B01001_045E', 'B01001_046E', 'B01001_047E',
-        'B01001_048E', 'B01001_049E', 'B02001_002E', 'B02001_003E', 'B02001_004E', 'B02001_005E', 'B02001_006E'], axis=1, inplace=True)
+        'B01001_048E', 'B01001_049E', 'B02001_002E', 'B02001_003E', 'B02001_004E', 'B02001_005E', 'B02001_006E', 'B19001_001E'], axis=1, inplace=True)
         ca_df.set_index('year', inplace=True)
         dataframes.append(ca_df)
     total_df = pd.concat(dataframes, axis=0)
     total_df.sort_index(inplace=True)
-    total_df.to_csv(state + '/census_' + state + '.csv')
+    total_df.to_csv( 'states/' + state + '/census_' + state + '.csv')
