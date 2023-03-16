@@ -45,6 +45,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/states/AL/AL_precipitation_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/AL/AL_zindex_data.csv">
           <value>
             <Attribute>
@@ -53,6 +60,13 @@
           </value>
         </entry>
         <entry key="/states/AL/census_AL.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/AL/wnv_data_AL.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
