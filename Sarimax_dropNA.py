@@ -28,13 +28,37 @@ for state in ['AL']:
     state_data['diff2-3'] = state_data['2m'] - state_data['3m']
     state_data['month_sin'] = np.sin(state_data['month']/(12 * 2 * np.pi))
     state_data['month_cos'] = np.cos(state_data['month']/(12 * 2 * np.pi))
+    state_data.dropna(inplace=True)
 
     cases = state_data['count']
     state_data.drop(['Unnamed: 0', 'state', 'fips', 'count', 'year', 'month'], axis=1, inplace=True)
 
     size = len(state_data)
-    train, test = cases[0:int(size*0.8)], state_data[int(size*0.8):]
-    train_exog, test_exog = state_data[0:int(size*0.8)], state_data[int(size*0.8):]
+    train, test = cases[0:-1], cases[-1:]
+    train_exog, test_exog = state_data[0:-1], state_data[-1:]
+
+    model = SARIMAX(train, order=(2, 0, 2), seasonal_order=(1, 0, 1, 52),
+                    exog=train_exog)
+    model_fitted = model.fit()
+    predictions = model_fitted.predict(start=len(train),
+                                       end=len(train) + len(test) - 1,
+                                       exog=test_exog, dynamic=False)
+    compare_df = pd.concat([test, predictions], axis=1)
+
+    compare_df.to_csv('tempdf1.csv')
+    plt.clf()
+    figs, axes = plt.subplots(nrows=1, ncols=1)
+    compare_df.count.plot(ax=axes, label="actual")
+    compare_df.predicted_mean.plot(ax=axes, label="predicted")
+    plt.suptitle("WNV Cases vs. Actual Cases")
+    plt.legend()
+    plt.savefig('tempfig1')
+
+    from sklearn.metrics import r2_score
+
+    print(mean_squared_error(compare_df['count'], compare_df['predicted_mean'], squared=False))
+    print(mean_absolute_error(compare_df['count'], compare_df['predicted_mean']))
+    print(r2_score(compare_df['count'], compare_df['predicted_mean']))
 
     from sklearn.metrics import mean_squared_error, mean_absolute_error
 
