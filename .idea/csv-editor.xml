@@ -45,6 +45,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/states/AL/AL_maxTemp_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/AL/AL_precipitation_data.csv">
           <value>
             <Attribute>
@@ -66,6 +73,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/states/AL/dropna_final_AL.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/AL/wnv_data_AL.csv">
           <value>
             <Attribute>
@@ -80,6 +94,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/states/AR/AR_maxTemp_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/DE/DE_avgTemp_data.csv">
           <value>
             <Attribute>
@@ -88,6 +109,27 @@
           </value>
         </entry>
         <entry key="/states/GA/census_GA.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/MS/MS_zindex_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/MS/census_MS.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/ND/dropna_final_ND.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
