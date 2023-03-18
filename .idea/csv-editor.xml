@@ -80,6 +80,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/states/AL/extended_final_AL.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/AL/wnv_data_AL.csv">
           <value>
             <Attribute>
@@ -95,6 +102,20 @@
           </value>
         </entry>
         <entry key="/states/AR/AR_maxTemp_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/AR/extended_final_AR.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/CA/extended_final_CA.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
