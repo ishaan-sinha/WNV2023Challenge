@@ -4,6 +4,7 @@ import datetime
 
 from dateutil.relativedelta import relativedelta
 from statsmodels.tsa.ar_model import AutoReg
+from statsmodels.tsa.statespace.sarimax import SARIMAX
 
 wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 upTil = datetime.date(2023, 4, 1)
@@ -25,12 +26,13 @@ for state in [state for state in set(wnv_data['state']) if state != 'DC']:
         currentSeries = state_data[column].dropna()
         currentEnd = datetime.date(currentSeries.index[-1].year, currentSeries.index[-1].month, 1)
         numberToForecast = (upTil.year - currentEnd.year) * 12 + (upTil.month - currentEnd.month)
-        model = AutoReg(currentSeries, lags= 2)
+        model = SARIMAX(currentSeries, order= (2,0,2), seasonal_order=(1, 0, 1, 12),  enforce_stationarity=False)
         model_fitted = model.fit()
         predictions = model_fitted.predict(start=len(currentSeries), end=len(currentSeries) + numberToForecast - 1, dynamic=False)
         predictions.index = pd.date_range(start=currentEnd + relativedelta(months=1), periods=len(predictions), freq='M')
         predictions.index = pd.DatetimeIndex(predictions.index).to_period('M')
         state_data.loc[predictions.index, column] = predictions
     state_data.drop(columns=['year', 'month'], inplace=True)
-    state_data.to_csv('states/' + state.strip() + '/extended_final_' + state.strip() + '.csv')
+    state_data.to_csv('states/' + state.strip() + '/extended_final_sarimax_' + state.strip() + '.csv')
+    print(state)
 
