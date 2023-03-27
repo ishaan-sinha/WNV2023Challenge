@@ -1,16 +1,8 @@
-# This is a sample Python script.
+import os
+import pandas as pd
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+    os.remove('states/' + state.strip() + '/FULLXGBoostonSarimaExtended_data' + state.strip()+'.csv')
+    print(state)

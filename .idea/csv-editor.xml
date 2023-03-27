@@ -87,6 +87,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/states/AL/extended_final_sarimax_AL.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/AL/wnv_data_AL.csv">
           <value>
             <Attribute>
@@ -109,6 +116,13 @@
           </value>
         </entry>
         <entry key="/states/AR/extended_final_AR.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/AR/extended_final_sarimax_AR.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

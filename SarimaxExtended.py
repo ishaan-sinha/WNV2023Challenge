@@ -36,8 +36,10 @@ for state in ['CA']:
 
     pt = PowerTransformer()
     print(state_data.columns)
+    '''
     state_data = state_data[['avgTemp', 'minTemp', 'maxTemp', 'precipitation', 'zindex', 'household_income', '1y', '1m', '2m',
        '3m', '3m_average', 'diff1-2', 'diff2-3', 'month_sin', 'month_cos']]
+       '''
     state_data = pt.fit_transform(state_data)
 
     train, test = cases[0:-12], cases[-12:]
@@ -76,7 +78,7 @@ for state in ['CA']:
     compare_df['predicted_mean'].plot(ax=axes, label="predicted")
     plt.suptitle("WNV Cases CA")
     plt.legend()
-    #plt.savefig('tempfig1')
+    plt.savefig('AllDataCASarimax')
     plt.show()
 
     from sklearn.metrics import r2_score
