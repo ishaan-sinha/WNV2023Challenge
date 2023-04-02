@@ -3,7 +3,7 @@ from statsmodels.tsa.ar_model import AutoReg, ar_select_order
 import matplotlib.pyplot as plt
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
-wnv_data_NJ = pd.read_csv('wnv_data_NJ.csv', index_col=[0]).drop(['fips', 'state', 'year', 'month'], axis=1)
+wnv_data_NJ = pd.read_csv('states/CA/withAllInputs_powerTransformed_CA.csv', index_col=[0])
 wnv_data_NJ.index = pd.DatetimeIndex(wnv_data_NJ.index).to_period('M')
 
 wnv_data_NJ_train = wnv_data_NJ.head(len(wnv_data_NJ) - 50)
