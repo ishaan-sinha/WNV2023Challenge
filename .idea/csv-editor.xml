@@ -164,6 +164,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/states/CA/withAllInputs_CA.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/CA/wnv_data_CA.csv">
           <value>
             <Attribute>
