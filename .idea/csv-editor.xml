@@ -94,6 +94,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/states/AL/withAllInputs_AL.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/AL/withAllInputs_powerTransformed_AL.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/AL/wnv_data_AL.csv">
           <value>
             <Attribute>
@@ -129,7 +143,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/states/AR/wnv_data_AR.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/CA/extended_final_CA.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/CA/extended_final_sarimax_CA.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/CA/wnv_data_CA.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -144,6 +179,13 @@
           </value>
         </entry>
         <entry key="/states/GA/census_GA.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/ID/XGBoostonSarimaExtended_dataID.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
