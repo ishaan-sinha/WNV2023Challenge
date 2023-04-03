@@ -9,7 +9,8 @@ import numpy as np
 wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
 
-for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+for state in ['CA']:
     print(state)
     state_data = pd.read_csv('states/' + state.strip() + '/extended_final_sarimax_' + state.strip() + '.csv', index_col=[0])
     state_data.dropna(inplace=True)
@@ -42,8 +43,10 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     #print(state_data)
     #state_data = pt.fit_transform(state_data)
 
-    train, test = cases[0:-12], cases[-12:]
-    train_exog, test_exog = state_data[0:-12], state_data[-12:]
+    s = 30
+
+    train, test = cases[0:-s], cases[-s:]
+    train_exog, test_exog = state_data[0:-s], state_data[-s:]
 
     reg = xgb.XGBRegressor(n_estimators=1000, early_stopping_rounds=50)
     reg.fit(train_exog, train, eval_set=[(train_exog, train), (test_exog, test)], verbose=False)
@@ -60,7 +63,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     #print(compare_df)
     #print(total_compare)
     #compare_df.to_csv('states/' + state.strip() + '/XGBoostonSarimaExtended_data' + state.strip()+'.csv')
-    '''
+
     plt.clf()
     figs, axes = plt.subplots(nrows=1, ncols=1)
     compare_df['count'].plot(ax=axes, label="actual")
@@ -78,6 +81,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     plt.legend()
     plt.savefig('states/' + state.strip() + '/FULLXGBoostonSarimaExtended_' + state.strip())
     plt.show()
+    '''
 
 
 
@@ -92,4 +96,5 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     print(mean_absolute_error(total_compare['count'], total_compare['predicted_mean']))
     print(r2_score(total_compare['count'], total_compare['predicted_mean']))
     '''
+    break
 

@@ -9,6 +9,7 @@ wnv_data_NJ.index = pd.DatetimeIndex(wnv_data_NJ.index).to_period('M')
 wnv_data_NJ_train = wnv_data_NJ.head(len(wnv_data_NJ) - 50)
 wnv_data_NJ_test = wnv_data_NJ.tail(50)
 
+
 aic_values={}
 '''
 for p in range(1, 4):

@@ -9,35 +9,27 @@ from statsmodels.tsa.ar_model import AutoReg
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
 wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
+currentResults = pd.read_csv('currentResultsMAE.csv', index_col=0)
+currentResults['SARIMAX_CensusScaled'] = 0
 
-#for state in [state for state in set(wnv_data['state']) if state != 'DC']:
-for state in ['AL']:
-    state_data = pd.read_csv('states/'+ state.strip() + '/dropna_final_' + state.strip() +'.csv')
-    state_data.dropna(inplace=True)
-    state_data.set_index(pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data['year'], state_data['month'])]), inplace=True)
+
+for state in [state for state in set(wnv_data['state']) if state != 'DC']:
+    state_data = pd.read_csv('states/' + state.strip() + '/withAgeInputs_powerTransformed_' + state.strip() + '.csv', index_col=[0])
+    state_data2 = pd.read_csv('states/' + state.strip() + '/withRaceInputs_powerTransformed_' + state.strip() + '.csv', index_col=[0])
+    state_data = pd.concat([state_data, state_data2], axis=1)
+
     state_data.index = pd.DatetimeIndex(state_data.index)
     state_data.index = pd.DatetimeIndex(state_data.index).to_period('M')
-    state_data.sort_index(inplace = True)
 
-    state_data['1y'] = state_data['count'].shift(12, axis = 0)
-    state_data['1m'] = state_data['count'].shift(1, axis = 0)
-    state_data['2m'] = state_data['count'].shift(2, axis = 0)
-    state_data['3m'] = state_data['count'].shift(3, axis = 0)
-    state_data['3m_average'] = state_data[['1m', '2m', '3m']].mean(axis=1)
-    state_data['diff1-2'] = state_data['1m'] - state_data['2m']
-    state_data['diff2-3'] = state_data['2m'] - state_data['3m']
-    state_data['month_sin'] = np.sin(state_data['month']/(12 * 2 * np.pi))
-    state_data['month_cos'] = np.cos(state_data['month']/(12 * 2 * np.pi))
-    state_data.dropna(inplace=True)
-
-    cases = state_data['count']
-    state_data.drop(['Unnamed: 0', 'state', 'fips', 'count', 'year', 'month'], axis=1, inplace=True)
+    all_data = pd.read_csv('states/' + state.strip() + '/withAllInputs_' + state.strip() + '.csv', index_col=[0])
+    cases = all_data['count']
 
     size = len(state_data)
-    train, test = cases[0:-1], cases[-1:]
-    train_exog, test_exog = state_data[0:-1], state_data[-1:]
+    testSize = 24
+    train, test = cases[0:-testSize], cases[-testSize:]
+    train_exog, test_exog = state_data[0:-testSize], state_data[-testSize:]
 
-    model = SARIMAX(train, order=(2, 0, 2), seasonal_order=(1, 0, 1, 52),
+    model = SARIMAX(train, order=(1, 0, 1), seasonal_order=(1, 0, 1, 12),
                     exog=train_exog)
     model_fitted = model.fit()
     predictions = model_fitted.predict(start=len(train),
@@ -45,21 +37,17 @@ for state in ['AL']:
                                        exog=test_exog, dynamic=False)
     compare_df = pd.concat([test, predictions], axis=1)
 
-    compare_df.to_csv('tempdf1.csv')
     plt.clf()
     figs, axes = plt.subplots(nrows=1, ncols=1)
-    compare_df.count.plot(ax=axes, label="actual")
-    compare_df.predicted_mean.plot(ax=axes, label="predicted")
-    plt.suptitle("WNV Cases vs. Actual Cases")
+    compare_df['count'].plot(ax=axes, label="actual")
+    compare_df['predicted_mean'].plot(ax=axes, label="predicted")
+    plt.suptitle("WNV Cases vs. Actual Cases" + state)
     plt.legend()
-    plt.savefig('tempfig1')
+    plt.show()
 
-    from sklearn.metrics import r2_score
+    from sklearn.metrics import r2_score, mean_absolute_error
 
-    print(mean_squared_error(compare_df['count'], compare_df['predicted_mean'], squared=False))
-    print(mean_absolute_error(compare_df['count'], compare_df['predicted_mean']))
-    print(r2_score(compare_df['count'], compare_df['predicted_mean']))
-
-    from sklearn.metrics import mean_squared_error, mean_absolute_error
-
-
+    MAE = mean_absolute_error(compare_df['count'], compare_df['predicted_mean'])
+    currentResults['SARIMAX_CensusScaled'][state] = MAE
+    break
+#currentResults.to_csv('currentResultsMAE.csv')

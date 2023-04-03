@@ -38,6 +38,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/currentResultsMAE.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/AL/AL_avgTemp_data.csv">
           <value>
             <Attribute>
@@ -102,6 +109,13 @@
           </value>
         </entry>
         <entry key="/states/AL/withAllInputs_powerTransformed_AL.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/AL/withRaceInputs_AL.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
