@@ -7,43 +7,23 @@ import numpy as np
 
 
 wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
-
+currentResults = pd.read_csv('currentResultsMAE.csv', index_col=0)
+currentResults['XGBoost_all_scaled'] = 0
 
 #for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 for state in ['CA']:
     print(state)
-    state_data = pd.read_csv('states/' + state.strip() + '/extended_final_sarimax_' + state.strip() + '.csv', index_col=[0])
+    state_data = pd.read_csv('states/' + state.strip() + '/withAllInputs_powerTransformed_' + state.strip() + '.csv', index_col=[0])
     state_data.dropna(inplace=True)
     state_data.index = pd.DatetimeIndex(state_data.index)
     state_data.index = pd.DatetimeIndex(state_data.index).to_period('M')
-
-    state_data['1y'] = state_data['count'].shift(12, axis=0)
-    state_data['1m'] = state_data['count'].shift(1, axis=0)
-    state_data['2m'] = state_data['count'].shift(2, axis=0)
-    state_data['3m'] = state_data['count'].shift(3, axis=0)
-    state_data['3m_average'] = state_data[['1m', '2m', '3m']].mean(axis=1)
-    state_data['diff1-2'] = state_data['1m'] - state_data['2m']
-    state_data['diff2-3'] = state_data['2m'] - state_data['3m']
-    state_data['month_sin'] = np.sin((state_data.index.month / 12) * 2 * np.pi)
-    state_data['month_cos'] = np.cos((state_data.index.month / 12) * 2 * np.pi)
-    state_data.dropna(inplace=True)
 
     cases = state_data['count']
     state_data.drop(['count'], axis=1, inplace=True)
 
     size = len(state_data)
 
-    pt = PowerTransformer()
-    #print(state_data.columns)
-    '''
-    state_data = state_data[
-        ['avgTemp', 'minTemp', 'maxTemp', 'precipitation', 'zindex', 'household_income', '1y', '1m', '2m',
-         '3m', '3m_average', 'diff1-2', 'diff2-3', 'month_sin', 'month_cos']]
-         '''
-    #print(state_data)
-    #state_data = pt.fit_transform(state_data)
-
-    s = 30
+    s = 24
 
     train, test = cases[0:-s], cases[-s:]
     train_exog, test_exog = state_data[0:-s], state_data[-s:]
@@ -70,7 +50,7 @@ for state in ['CA']:
     compare_df['predicted_mean'].plot(ax=axes, label="predicted")
     plt.suptitle("WNV Cases CA")
     plt.legend()
-    plt.savefig('states/' + state.strip() + '/XGBoostonSarimaExtended_' + state.strip())
+    #plt.savefig('states/' + state.strip() + '/XGBoostonSarimaExtended_' + state.strip())
     plt.show()
     '''
     figs, axes = plt.subplots(nrows=1, ncols=1)
@@ -96,5 +76,8 @@ for state in ['CA']:
     print(mean_absolute_error(total_compare['count'], total_compare['predicted_mean']))
     print(r2_score(total_compare['count'], total_compare['predicted_mean']))
     '''
+    MAE = mean_absolute_error(compare_df['count'], compare_df['predicted_mean'])
+
+    currentResults.loc[state, 'XGBoost_all_scaled'] = MAE
     break
 
