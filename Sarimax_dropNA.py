@@ -9,11 +9,13 @@ from statsmodels.tsa.ar_model import AutoReg
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
 wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
-currentResults = pd.read_csv('currentResultsMAE.csv', index_col=0)
-currentResults['SARIMAX_CensusScaled'] = 0
 
 
-for state in [state for state in set(wnv_data['state']) if state != 'DC']:
+#for state in [state for state in set(wnv_data['state']) if state != 'DC']:
+for state in ['CA']:
+    currentResults = pd.read_csv('states/'+state.strip()+'/scaledPredictions'+state.strip()+'.csv', index_col=0)
+    currentResults['XGBoost_census'] = 0
+
     state_data = pd.read_csv('states/' + state.strip() + '/withAgeInputs_powerTransformed_' + state.strip() + '.csv', index_col=[0])
     state_data2 = pd.read_csv('states/' + state.strip() + '/withRaceInputs_powerTransformed_' + state.strip() + '.csv', index_col=[0])
     state_data = pd.concat([state_data, state_data2], axis=1)
@@ -23,6 +25,8 @@ for state in [state for state in set(wnv_data['state']) if state != 'DC']:
 
     all_data = pd.read_csv('states/' + state.strip() + '/withAllInputs_' + state.strip() + '.csv', index_col=[0])
     cases = all_data['count']
+    cases.index = pd.DatetimeIndex(cases.index)
+    cases.index = pd.DatetimeIndex(cases.index).to_period('M')
 
     size = len(state_data)
     testSize = 24
@@ -48,6 +52,9 @@ for state in [state for state in set(wnv_data['state']) if state != 'DC']:
     from sklearn.metrics import r2_score, mean_absolute_error
 
     MAE = mean_absolute_error(compare_df['count'], compare_df['predicted_mean'])
-    currentResults['SARIMAX_CensusScaled'][state] = MAE
+    currentResults['count'] = cases
+    currentResults['XGBoost_census'] = predictions
+    print(state)
+    currentResults.to_csv('states/'+state.strip()+'/scaledPredictions'+state.strip()+'.csv')
     break
 #currentResults.to_csv('currentResultsMAE.csv')

@@ -7,33 +7,31 @@ import numpy as np
 
 
 wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
+currentResults = pd.read_csv('currentResultsMAE.csv', index_col=0)
+currentResults['XGBoost_weather'] = 0
 
-
-#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-for state in ['CA']:
+for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+#for state in ['CA']:
     print(state)
-    state_data = pd.read_csv('states/' + state.strip() + '/withAllInputs_powerTransformed_' + state.strip() + '.csv', index_col=[0])
-    state_data.dropna(inplace=True)
+
+    state_data = pd.read_csv('states/' + state.strip() + '/withWeatherInputs_powerTransformed_' + state.strip() + '.csv',
+                             index_col=[0])
+
     state_data.index = pd.DatetimeIndex(state_data.index)
     state_data.index = pd.DatetimeIndex(state_data.index).to_period('M')
 
-    cases = state_data['count']
-    state_data.drop(['count'], axis=1, inplace=True)
+    all_data = pd.read_csv('states/' + state.strip() + '/withAllInputs_' + state.strip() + '.csv', index_col=[0])
+    cases = all_data['count']
+    cases.index = pd.DatetimeIndex(cases.index)
+    cases.index = pd.DatetimeIndex(cases.index).to_period('M')
+
 
     size = len(state_data)
 
-    pt = PowerTransformer()
-    #print(state_data.columns)
-    '''
-    state_data = state_data[
-        ['avgTemp', 'minTemp', 'maxTemp', 'precipitation', 'zindex', 'household_income', '1y', '1m', '2m',
-         '3m', '3m_average', 'diff1-2', 'diff2-3', 'month_sin', 'month_cos']]
-         '''
-    #print(state_data)
-    #state_data = pt.fit_transform(state_data)
+    s = 24
 
-    train, test = cases[0:-12], cases[-12:]
-    train_exog, test_exog = state_data[0:-12], state_data[-12:]
+    train, test = cases[0:-s], cases[-s:]
+    train_exog, test_exog = state_data[0:-s], state_data[-s:]
 
     reg = xgb.XGBRegressor(n_estimators=1000, early_stopping_rounds=50)
     reg.fit(train_exog, train, eval_set=[(train_exog, train), (test_exog, test)], verbose=False)
@@ -57,8 +55,8 @@ for state in ['CA']:
     compare_df['predicted_mean'].plot(ax=axes, label="predicted")
     plt.suptitle("WNV Cases CA")
     plt.legend()
-    plt.savefig('states/' + state.strip() + '/XGBoostonSarimaExtended_' + state.strip())
-    plt.show()
+    #plt.savefig('states/' + state.strip() + '/XGBoostonSarimaExtended_' + state.strip())
+    #plt.show()
     '''
     figs, axes = plt.subplots(nrows=1, ncols=1)
     total_compare['count'].plot(ax=axes, label="actual")
@@ -66,9 +64,10 @@ for state in ['CA']:
     plt.axvline(x=total_compare.index[-12], color='r', linestyle='--')
     plt.suptitle("WNV Cases CA")
     plt.legend()
-    #plt.savefig('states/' + state.strip() + '/FULLXGBoostonSarimaExtended_' + state.strip())
+    plt.savefig('states/' + state.strip() + '/FULLXGBoostonSarimaExtended_' + state.strip())
     plt.show()
-'''
+    '''
+
 
 
     from sklearn.metrics import r2_score
@@ -82,5 +81,8 @@ for state in ['CA']:
     print(mean_absolute_error(total_compare['count'], total_compare['predicted_mean']))
     print(r2_score(total_compare['count'], total_compare['predicted_mean']))
     '''
-    break
+    MAE = mean_absolute_error(compare_df['count'], compare_df['predicted_mean'])
+    currentResults['XGBoost_weather'][state] = MAE
+    print(state)
 
+currentResults.to_csv('currentResultsMAE.csv')

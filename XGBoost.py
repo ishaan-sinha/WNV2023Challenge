@@ -7,19 +7,24 @@ import numpy as np
 
 
 wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
-currentResults = pd.read_csv('currentResultsMAE.csv', index_col=0)
-currentResults['XGBoost_all_scaled'] = 0
 
-#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-for state in ['CA']:
+for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+#for state in ['CA']:
     print(state)
-    state_data = pd.read_csv('states/' + state.strip() + '/withAllInputs_powerTransformed_' + state.strip() + '.csv', index_col=[0])
-    state_data.dropna(inplace=True)
+    currentResults = pd.read_csv('states/' + state.strip() + '/scaledPredictions' + state.strip() + '.csv', index_col=0)
+    currentResults['XGBoost_temporal'] = 0
+
+    state_data = pd.read_csv('states/' + state.strip() + '/withTemporalInputs_powerTransformed_' + state.strip() + '.csv',
+                             index_col=[0])
+
     state_data.index = pd.DatetimeIndex(state_data.index)
     state_data.index = pd.DatetimeIndex(state_data.index).to_period('M')
 
-    cases = state_data['count']
-    state_data.drop(['count'], axis=1, inplace=True)
+    all_data = pd.read_csv('states/' + state.strip() + '/withAllInputs_' + state.strip() + '.csv', index_col=[0])
+    cases = all_data['count']
+    cases.index = pd.DatetimeIndex(cases.index)
+    cases.index = pd.DatetimeIndex(cases.index).to_period('M')
+
 
     size = len(state_data)
 
@@ -51,7 +56,7 @@ for state in ['CA']:
     plt.suptitle("WNV Cases CA")
     plt.legend()
     #plt.savefig('states/' + state.strip() + '/XGBoostonSarimaExtended_' + state.strip())
-    plt.show()
+    #plt.show()
     '''
     figs, axes = plt.subplots(nrows=1, ncols=1)
     total_compare['count'].plot(ax=axes, label="actual")
@@ -77,7 +82,8 @@ for state in ['CA']:
     print(r2_score(total_compare['count'], total_compare['predicted_mean']))
     '''
     MAE = mean_absolute_error(compare_df['count'], compare_df['predicted_mean'])
-
-    currentResults.loc[state, 'XGBoost_all_scaled'] = MAE
-    break
+    currentResults['XGBoost_temporal'] = predictions.values
+    print(currentResults)
+    currentResults.to_csv('states/' + state.strip() + '/scaledPredictions' + state.strip() + '.csv')
+    print(state)
 

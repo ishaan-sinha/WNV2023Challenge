@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/QuarterlyXGBoostWeatherMAE.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/TXTemperature.csv">
           <value>
             <Attribute>
@@ -157,6 +164,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/states/AR/scaledPredictionsAR.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/AR/wnv_data_AR.csv">
           <value>
             <Attribute>
@@ -178,7 +192,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/states/CA/scaledPredictionsCA.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/CA/withAllInputs_CA.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/CA/withTemporalInputs_CA.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -207,6 +235,13 @@
           </value>
         </entry>
         <entry key="/states/ID/XGBoostonSarimaExtended_dataID.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/KY/scaledPredictionsKY.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
