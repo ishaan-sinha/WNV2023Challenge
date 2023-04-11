@@ -8,14 +8,15 @@ import numpy as np
 
 wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 currentResults = pd.read_csv('currentResultsMAE.csv', index_col=0)
-currentResults['XGBoost_weather'] = 0
+currentResults['XGBoost_weather+temporal'] = 0
 
 for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-#for state in ['CA']:
-    print(state)
+#for state in ['NJ']:
 
     state_data = pd.read_csv('states/' + state.strip() + '/withWeatherInputs_powerTransformed_' + state.strip() + '.csv',
                              index_col=[0])
+    state_data2 = pd.read_csv('states/' + state.strip() + '/withTemporalInputs_' + state.strip() + '.csv',index_col=[0])
+    state_data = pd.concat([state_data, state_data2], axis=1)
 
     state_data.index = pd.DatetimeIndex(state_data.index)
     state_data.index = pd.DatetimeIndex(state_data.index).to_period('M')
@@ -53,9 +54,9 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     figs, axes = plt.subplots(nrows=1, ncols=1)
     compare_df['count'].plot(ax=axes, label="actual")
     compare_df['predicted_mean'].plot(ax=axes, label="predicted")
-    plt.suptitle("WNV Cases CA")
+    plt.suptitle("WNV Cases" +' ' + state)
     plt.legend()
-    #plt.savefig('states/' + state.strip() + '/XGBoostonSarimaExtended_' + state.strip())
+    plt.savefig('states/' + state.strip() + '/XGBoostScaled_weather+temporal_' + state.strip())
     #plt.show()
     '''
     figs, axes = plt.subplots(nrows=1, ncols=1)
@@ -82,7 +83,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     print(r2_score(total_compare['count'], total_compare['predicted_mean']))
     '''
     MAE = mean_absolute_error(compare_df['count'], compare_df['predicted_mean'])
-    currentResults['XGBoost_weather'][state] = MAE
+    currentResults['XGBoost_weather+temporal'][state] = MAE
     print(state)
 
 currentResults.to_csv('currentResultsMAE.csv')

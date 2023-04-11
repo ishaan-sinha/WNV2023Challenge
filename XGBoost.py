@@ -12,10 +12,10 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 #for state in ['CA']:
     print(state)
     currentResults = pd.read_csv('states/' + state.strip() + '/scaledPredictions' + state.strip() + '.csv', index_col=0)
-    currentResults['XGBoost_temporal'] = 0
 
     state_data = pd.read_csv('states/' + state.strip() + '/withTemporalInputs_powerTransformed_' + state.strip() + '.csv',
                              index_col=[0])
+
 
     state_data.index = pd.DatetimeIndex(state_data.index)
     state_data.index = pd.DatetimeIndex(state_data.index).to_period('M')
@@ -36,11 +36,15 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     reg = xgb.XGBRegressor(n_estimators=1000, early_stopping_rounds=50)
     reg.fit(train_exog, train, eval_set=[(train_exog, train), (test_exog, test)], verbose=False)
     train_pred = pd.Series(reg.predict(train_exog))
-    predictions = pd.Series(reg.predict(test_exog))
-    total = pd.concat([train_pred, predictions])
+    test_predictions = pd.Series(reg.predict(test_exog))
+    total = pd.concat([train_pred, test_predictions])
     total.index = cases.index
     total_compare = pd.concat([cases, total], axis=1)
     total_compare.columns = ['count', 'predicted_mean']
+
+    currentResults['XGBoost_temporal'] = total_compare['predicted_mean'].values
+    currentResults.to_csv('states/' + state.strip() + '/scaledPredictions' + state.strip() + '.csv')
+    '''
     test = test.reset_index(drop=True)
     predictions = predictions.reset_index(drop=True)
     compare_df = pd.concat([test, predictions], axis=1)
@@ -56,34 +60,6 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     plt.suptitle("WNV Cases CA")
     plt.legend()
     #plt.savefig('states/' + state.strip() + '/XGBoostonSarimaExtended_' + state.strip())
-    #plt.show()
     '''
-    figs, axes = plt.subplots(nrows=1, ncols=1)
-    total_compare['count'].plot(ax=axes, label="actual")
-    total_compare['predicted_mean'].plot(ax=axes, label="predicted")
-    plt.axvline(x=total_compare.index[-12], color='r', linestyle='--')
-    plt.suptitle("WNV Cases CA")
-    plt.legend()
-    plt.savefig('states/' + state.strip() + '/FULLXGBoostonSarimaExtended_' + state.strip())
-    plt.show()
-    '''
-
-
-
-    from sklearn.metrics import r2_score
-    from sklearn.metrics import mean_squared_error, mean_absolute_error
-
-    #print(mean_squared_error(compare_df['count'], compare_df['predicted_mean'], squared=False))
-    #print(mean_absolute_error(compare_df['count'], compare_df['predicted_mean']))
-    #print(r2_score(compare_df['count'], compare_df['predicted_mean']))
-    '''
-    print(mean_squared_error(total_compare['count'], total_compare['predicted_mean'], squared=False))
-    print(mean_absolute_error(total_compare['count'], total_compare['predicted_mean']))
-    print(r2_score(total_compare['count'], total_compare['predicted_mean']))
-    '''
-    MAE = mean_absolute_error(compare_df['count'], compare_df['predicted_mean'])
-    currentResults['XGBoost_temporal'] = predictions.values
-    print(currentResults)
-    currentResults.to_csv('states/' + state.strip() + '/scaledPredictions' + state.strip() + '.csv')
     print(state)
 

@@ -108,6 +108,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/states/AL/scaledPredictionsAL.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/AL/withAllInputs_AL.csv">
           <value>
             <Attribute>
@@ -172,6 +179,27 @@
           </value>
         </entry>
         <entry key="/states/AR/wnv_data_AR.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/AZ/extended_final_sarimax_AZ.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/AZ/scaledPredictionsAZ.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/AZ/wnv_data_AZ.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
