@@ -10,6 +10,34 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/MAPS/MAPS_Analysis_SUITABILITY_station_and_year.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/MAPS/MAPS_Calculated_NET-HOURS.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/MAPS/MAPS_Compiled_SPECIES_STATUS_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/MAPS/MAPS_STATION_location_and_operations.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/NJTemperature.csv">
           <value>
             <Attribute>
@@ -32,6 +60,20 @@
           </value>
         </entry>
         <entry key="$USER_HOME$/Downloads/1990-2022.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/MAPS_explorer_results_2023-04-12 10-02-08/IBP-MAPS-data-exploration-results.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/MAPS_explorer_results_2023-04-12 10-02-08/IBP-MAPS-data-exploration-temporal_results.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
