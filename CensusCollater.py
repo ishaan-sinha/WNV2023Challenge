@@ -5,7 +5,7 @@ from census import Census
 from us import states
 import os
 
-wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
+wnv_data = pd.read_csv('WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 c = Census("052c44076be6adb33959d3ee9e8b1c5db81760a6")
 
 for state in set(wnv_data['state']):

@@ -6,7 +6,7 @@ from dateutil.relativedelta import relativedelta
 from statsmodels.tsa.ar_model import AutoReg
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
-wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
+wnv_data = pd.read_csv('WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 upTil = datetime.date(2023, 4, 1)
 
 for state in [state for state in set(wnv_data['state']) if state != 'DC']:

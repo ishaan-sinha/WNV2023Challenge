@@ -10,28 +10,28 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/MAPS/MAPS_Analysis_SUITABILITY_station_and_year.csv">
+        <entry key="/MAPS/IBP-MAPS-data-exploration-temporal_results.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/MAPS/MAPS_Calculated_NET-HOURS.csv">
+        <entry key="/MAPS/MAPS_data.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/MAPS/MAPS_Compiled_SPECIES_STATUS_data.csv">
+        <entry key="/MosquitoData/abundanceData.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/MAPS/MAPS_STATION_location_and_operations.csv">
+        <entry key="/MosquitoData/infectionData.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -60,20 +60,6 @@
           </value>
         </entry>
         <entry key="$USER_HOME$/Downloads/1990-2022.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Downloads/MAPS_explorer_results_2023-04-12 10-02-08/IBP-MAPS-data-exploration-results.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Downloads/MAPS_explorer_results_2023-04-12 10-02-08/IBP-MAPS-data-exploration-temporal_results.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -333,6 +319,13 @@
           </value>
         </entry>
         <entry key="/states/ND/dropna_final_ND.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/NJ/scaledPredictionsNJ.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

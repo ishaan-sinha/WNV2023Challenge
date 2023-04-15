@@ -11,7 +11,7 @@ from sklearn.preprocessing import PowerTransformer, MinMaxScaler
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 import seaborn as sns
 
-wnv_data = pd.read_csv('WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
+wnv_data = pd.read_csv('WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
 for state in [state for state in set(wnv_data['state']) if state != 'DC']:
     state_data = pd.read_csv('states/' + state.strip() + '/extended_final_' + state.strip() + '.csv', index_col=[0])

@@ -1,5 +1,5 @@
-"BCR","Year","CommonName","ScientificName","SPEC","N_individuals","Nsta_CJS","No_yrunique_adults","No_yrunique_young","Nsta_ce","phi.med","phi.sd","phi.05","phi.95","pi.med","pi.sd","pi.05","pi.95","ri.med","ri.sd","ri.05","ri.95","ahy.med","ahy.sd","ahy.05","ahy.95","hy.med","hy.sd","hy.05","hy.95"
-24,1992,"Acadian Flycatcher","Empidonax virescens","ACFL",1,1,17,0,3,0.507,0.047,0.434,0.582,0.457,0.087,0.322,0.608,0.041,0.015,0.021,0.067,3.668,0.87,2.551,5.346,0.115,0.06,0.05,0.23
+"BCR","Year",CommonName,"ScientificName","SPEC","N_individuals","Nsta_CJS","No_yrunique_adults","No_yrunique_young","Nsta_ce","phi.med","phi.sd","phi.05","phi.95","pi.med","pi.sd","pi.05","pi.95","ri.med","ri.sd","ri.05","ri.95","ahy.med","ahy.sd","ahy.05","ahy.95","hy.med","hy.sd","hy.05","hy.95"
+24,1992,Acadian Flycatcher,"Empidonax virescens","ACFL",1,1,17,0,3,0.507,0.047,0.434,0.582,0.457,0.087,0.322,0.608,0.041,0.015,0.021,0.067,3.668,0.87,2.551,5.346,0.115,0.06,0.05,0.23
 24,1993,"Acadian Flycatcher","Empidonax virescens","ACFL",26,8,37,2,10,0.51,0.045,0.44,0.584,0.467,0.077,0.351,0.602,0.043,0.015,0.025,0.072,3.346,0.706,2.373,4.666,0.129,0.063,0.065,0.254
 24,1994,"Acadian Flycatcher","Empidonax virescens","ACFL",145,25,150,6,28,0.519,0.041,0.46,0.59,0.48,0.057,0.394,0.58,0.042,0.012,0.027,0.065,3.572,0.696,2.617,4.869,0.126,0.046,0.07,0.216
 24,1995,"Acadian Flycatcher","Empidonax virescens","ACFL",131,25,125,10,28,0.516,0.037,0.458,0.576,0.448,0.058,0.356,0.544,0.049,0.016,0.032,0.082,3.18,0.619,2.323,4.346,0.157,0.061,0.091,0.283
