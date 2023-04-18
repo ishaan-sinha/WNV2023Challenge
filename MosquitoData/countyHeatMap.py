@@ -14,5 +14,5 @@ values = [5 for i in range(len(fips))]
 fig = ff.create_choropleth(fips=fips, values=values)
 
 fig.layout.template = None
-#fig.show()
+fig.show()
 print(set(abundanceData['state']))
