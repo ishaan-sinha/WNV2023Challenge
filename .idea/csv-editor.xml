@@ -66,7 +66,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/WNV_forecasting_challenge_state-month_cases.csv">
+        <entry key="/WNVData/WNV_forecasting_challenge_state-month_cases.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -445,27 +445,6 @@
           </value>
         </entry>
         <entry key="/test.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/wnv_data_AZ.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/wnv_data_NJ.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/wnv_data_TX.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
