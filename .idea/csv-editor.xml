@@ -31,6 +31,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/MosquitoData/infection.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/MosquitoData/infectionData.csv">
           <value>
             <Attribute>
@@ -60,6 +67,20 @@
           </value>
         </entry>
         <entry key="$USER_HOME$/Downloads/1990-2022.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/abundance.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/infection.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -143,6 +164,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/states/AL/withAgeInputs_AL.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/states/AL/withAllInputs_AL.csv">
           <value>
             <Attribute>
@@ -158,6 +186,27 @@
           </value>
         </entry>
         <entry key="/states/AL/withRaceInputs_AL.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/AL/withTemporalInputs_AL.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/AL/withTemporalInputs_powerTransformed_AL.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/states/AL/withWeatherInputs_AL.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
