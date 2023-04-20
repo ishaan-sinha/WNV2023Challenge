@@ -1,5 +1,6 @@
 import pandas as pd
-import plotly.figure_factory as ff
+import numpy as np
+
 
 abundanceData = pd.read_csv('abundanceData.csv')
 
