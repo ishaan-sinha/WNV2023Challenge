@@ -486,6 +486,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesNormal/AL/noaa+temporal.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesNormal/AL/temporalData.csv">
           <value>
             <Attribute>
@@ -501,6 +508,13 @@
           </value>
         </entry>
         <entry key="/tempdf1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/temporalFusionTransformer/random.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
