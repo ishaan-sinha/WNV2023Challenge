@@ -479,6 +479,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesNormal/AL/NOAA_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesNormal/ME/NOAA_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/tempdf1.csv">
           <value>
             <Attribute>
