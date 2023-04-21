@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+import pickle
 
 EPOCHS = 300
 INLEN = 32
@@ -52,15 +52,20 @@ pd.options.display.float_format = '{:,.2f}'.format
 wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
 
-#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-for state in ['CA']:
-    state_data = pd.read_csv('../statesNormal/'+state+'/noaa+temporal.csv', index_col=[0])
-    state_data.index = pd.DatetimeIndex(state_data.index)
-    state_data['1yearAhead'] = state_data['count'].shift(-12)
-    state_data = state_data.dropna()
-    toPredict = state_data['1yearAhead']
-    state_data = state_data.drop(['1yearAhead'], axis=1)
+for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+    state_data = pd.read_csv('../statesNormal/'+state+'/NOAA_data.csv')
+    state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
+    temporalData = pd.read_csv('../statesNormal/'+state+'/temporalData.csv', index_col=[0])
+    temporalData.index = pd.to_datetime(temporalData.index)
+    state_data['count'] = temporalData['count']
 
+    state_data['month_cos'] = np.cos(state_data.index.month * 2 * np.pi / 12)
+    state_data['month_sin'] = np.sin(state_data.index.month * 2 * np.pi / 12)
+
+    state_data['8monthsAhead'] = state_data['count'].shift(-8)
+    state_data.dropna(inplace=True)
+    toPredict = state_data['8monthsAhead']
+    state_data.drop(['8monthsAhead', 'count'], axis=1, inplace=True)
     cases = TimeSeries.from_series(toPredict)
 
     cases_train = cases[:-8]
@@ -127,21 +132,21 @@ for state in ['CA']:
 
         # testing: call helper function: plot predictions
 
-    plt.clf()
     cases_pred = transformer.inverse_transform(cases_tpred)
     plot_predict(cases, cases_test, cases_pred)
-    plt.show()
+    #plt.show()
+    plt.savefig('../statesNormal/' + state + '/8monthsAhead-OnlyWeatherData-Trained including August 2021-300epochs.png')
     plt.clf()
-
 
     # testing: call helper function: plot predictions, focus on test set
     cases_pred = transformer.inverse_transform(cases_tpred)
     ts_actual = cases[ cases_tpred.start_time(): cases_tpred.end_time() ]  # actual values in forecast horizon
     plot_predict(ts_actual, cases_test, cases_pred)
-    plt.show()
+    #plt.show()
+    plt.savefig('../statesNormal/' + state + '/8monthsAhead-OnlyWeatherData-Trained including August 2021-300epochs+train.png')
 
     plt.clf()
     import os
 
-    model.save_model('1yearAhead')
-
+    pickle.dump(model, open('../statesNormal/' + state + '/8monthsAhead-OnlyWeatherData-Trained including August 2021-300epochs+train.sav', 'wb'))
+    print(state)
