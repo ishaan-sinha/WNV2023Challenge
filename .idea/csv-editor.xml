@@ -486,6 +486,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesNormal/AL/temporalData.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesNormal/ME/NOAA_data.csv">
           <value>
             <Attribute>
