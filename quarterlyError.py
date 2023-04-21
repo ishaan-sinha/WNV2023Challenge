@@ -17,13 +17,13 @@ currentResults['Q4'] = 0
 
 for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 
-    state_data = pd.read_csv('states/' + state.strip() + '/withWeatherInputs_powerTransformed_' + state.strip() + '.csv',
+    state_data = pd.read_csv('statesExtended/' + state.strip() + '/withWeatherInputs_powerTransformed_' + state.strip() + '.csv',
                              index_col=[0])
 
     state_data.index = pd.DatetimeIndex(state_data.index)
     state_data.index = pd.DatetimeIndex(state_data.index).to_period('M')
 
-    all_data = pd.read_csv('states/' + state.strip() + '/withAllInputs_' + state.strip() + '.csv', index_col=[0])
+    all_data = pd.read_csv('statesExtended/' + state.strip() + '/withAllInputs_' + state.strip() + '.csv', index_col=[0])
     cases = all_data['count']
     cases.index = pd.DatetimeIndex(cases.index)
     cases.index = pd.DatetimeIndex(cases.index).to_period('M')
@@ -51,7 +51,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     compare_df.index = cases.index[-s:]
     print(compare_df)
     #print(total_compare)
-    #compare_df.to_csv('states/' + state.strip() + '/XGBoostonSarimaExtended_data' + state.strip()+'.csv')
+    #compare_df.to_csv('statesExtended/' + state.strip() + '/XGBoostonSarimaExtended_data' + state.strip()+'.csv')
 
     plt.clf()
     figs, axes = plt.subplots(nrows=1, ncols=1)

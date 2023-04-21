@@ -9,7 +9,7 @@ wnv_data = pd.read_csv('WNVData/WNV_forecasting_challenge_state-month_cases.csv'
 
 for state in [state for state in set(wnv_data['state']) if state != 'DC']:
 #for state in ['CA']:
-    state_data = pd.read_csv('states/' + state.strip() + '/withAllInputs_' + state.strip() + '.csv', index_col=[0])
+    state_data = pd.read_csv('statesExtended/' + state.strip() + '/withAllInputs_' + state.strip() + '.csv', index_col=[0])
     state_data = state_data[['count','male_under_17', 'male_18_to_40', 'male_40_to_64', 'male_over_65',
        'female_under_17', 'female_18_to_40', 'female_40_to_64',
        'female_over_65', 'total_population', 'male_population',
@@ -24,7 +24,7 @@ for state in [state for state in set(wnv_data['state']) if state != 'DC']:
     plt.title('Correlation Heatmap for ' + state)
 
     heatMap.figure.tight_layout()
-    plt.savefig('states/' + state.strip() + '/heatmapYearData_' + state.strip() + '.png')
+    plt.savefig('statesExtended/' + state.strip() + '/heatmapYearData_' + state.strip() + '.png')
     plt.show()
     plt.clf()
     print(state)

@@ -19,7 +19,7 @@ for state in set(wnv_data['state']):
         'B01001_022E', 'B01001_023E', 'B01001_024E', 'B01001_025E','B01001_027E','B01001_028E','B01001_029E','B01001_030E','B01001_031E',
         'B01001_032E', 'B01001_033E', 'B01001_034E', 'B01001_035E', 'B01001_036E', 'B01001_037E', 'B01001_038E', 'B01001_039E',
         'B01001_040E', 'B01001_041E', 'B01001_042E', 'B01001_043E', 'B01001_044E', 'B01001_045E', 'B01001_046E', 'B01001_047E',
-        'B01001_048E', 'B01001_049E', 'B02001_002E', 'B02001_003E', 'B02001_004E', 'B02001_005E', 'B02001_006E', 'B19001_001E'), state_fips= eval("states."+state+".fips"), year=year)
+        'B01001_048E', 'B01001_049E', 'B02001_002E', 'B02001_003E', 'B02001_004E', 'B02001_005E', 'B02001_006E', 'B19001_001E'), state_fips= eval("statesExtended."+state+".fips"), year=year)
         # B01003_001E = total population
         # B01001_002E = total male
         # B01001_026E = total female
@@ -109,4 +109,4 @@ for state in set(wnv_data['state']):
         dataframes.append(ca_df)
     total_df = pd.concat(dataframes, axis=0)
     total_df.sort_index(inplace=True)
-    total_df.to_csv( 'states/' + state + '/census_' + state + '.csv')
+    total_df.to_csv( 'statesExtended/' + state + '/census_' + state + '.csv')

@@ -13,17 +13,17 @@ wnv_data = pd.read_csv('WNVData/WNV_forecasting_challenge_state-month_cases.csv'
 
 #for state in [state for state in set(wnv_data['state']) if state != 'DC']:
 for state in ['CA']:
-    currentResults = pd.read_csv('states/'+state.strip()+'/scaledPredictions'+state.strip()+'.csv', index_col=0)
+    currentResults = pd.read_csv('statesExtended/'+state.strip()+'/scaledPredictions'+state.strip()+'.csv', index_col=0)
     currentResults['XGBoost_census'] = 0
 
-    state_data = pd.read_csv('states/' + state.strip() + '/withAgeInputs_powerTransformed_' + state.strip() + '.csv', index_col=[0])
-    state_data2 = pd.read_csv('states/' + state.strip() + '/withRaceInputs_powerTransformed_' + state.strip() + '.csv', index_col=[0])
+    state_data = pd.read_csv('statesExtended/' + state.strip() + '/withAgeInputs_powerTransformed_' + state.strip() + '.csv', index_col=[0])
+    state_data2 = pd.read_csv('statesExtended/' + state.strip() + '/withRaceInputs_powerTransformed_' + state.strip() + '.csv', index_col=[0])
     state_data = pd.concat([state_data, state_data2], axis=1)
 
     state_data.index = pd.DatetimeIndex(state_data.index)
     state_data.index = pd.DatetimeIndex(state_data.index).to_period('M')
 
-    all_data = pd.read_csv('states/' + state.strip() + '/withAllInputs_' + state.strip() + '.csv', index_col=[0])
+    all_data = pd.read_csv('statesExtended/' + state.strip() + '/withAllInputs_' + state.strip() + '.csv', index_col=[0])
     cases = all_data['count']
     cases.index = pd.DatetimeIndex(cases.index)
     cases.index = pd.DatetimeIndex(cases.index).to_period('M')
@@ -55,6 +55,6 @@ for state in ['CA']:
     currentResults['count'] = cases
     currentResults['XGBoost_census'] = predictions
     print(state)
-    currentResults.to_csv('states/'+state.strip()+'/scaledPredictions'+state.strip()+'.csv')
+    currentResults.to_csv('statesExtended/'+state.strip()+'/scaledPredictions'+state.strip()+'.csv')
     break
 #currentResults.to_csv('currentResultsMAE.csv')

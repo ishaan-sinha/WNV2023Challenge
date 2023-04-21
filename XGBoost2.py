@@ -13,15 +13,15 @@ currentResults['XGBoost_weather+temporal'] = 0
 for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 #for state in ['NJ']:
 
-    state_data = pd.read_csv('states/' + state.strip() + '/withWeatherInputs_powerTransformed_' + state.strip() + '.csv',
+    state_data = pd.read_csv('statesExtended/' + state.strip() + '/withWeatherInputs_powerTransformed_' + state.strip() + '.csv',
                              index_col=[0])
-    state_data2 = pd.read_csv('states/' + state.strip() + '/withTemporalInputs_' + state.strip() + '.csv',index_col=[0])
+    state_data2 = pd.read_csv('statesExtended/' + state.strip() + '/withTemporalInputs_' + state.strip() + '.csv',index_col=[0])
     state_data = pd.concat([state_data, state_data2], axis=1)
 
     state_data.index = pd.DatetimeIndex(state_data.index)
     state_data.index = pd.DatetimeIndex(state_data.index).to_period('M')
 
-    all_data = pd.read_csv('states/' + state.strip() + '/withAllInputs_' + state.strip() + '.csv', index_col=[0])
+    all_data = pd.read_csv('statesExtended/' + state.strip() + '/withAllInputs_' + state.strip() + '.csv', index_col=[0])
     cases = all_data['count']
     cases.index = pd.DatetimeIndex(cases.index)
     cases.index = pd.DatetimeIndex(cases.index).to_period('M')
@@ -48,7 +48,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     compare_df.columns = ['count', 'predicted_mean']
     #print(compare_df)
     #print(total_compare)
-    #compare_df.to_csv('states/' + state.strip() + '/XGBoostonSarimaExtended_data' + state.strip()+'.csv')
+    #compare_df.to_csv('statesExtended/' + state.strip() + '/XGBoostonSarimaExtended_data' + state.strip()+'.csv')
 
     plt.clf()
     figs, axes = plt.subplots(nrows=1, ncols=1)
@@ -56,7 +56,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     compare_df['predicted_mean'].plot(ax=axes, label="predicted")
     plt.suptitle("WNV Cases" +' ' + state)
     plt.legend()
-    plt.savefig('states/' + state.strip() + '/XGBoostScaled_weather+temporal_' + state.strip())
+    plt.savefig('statesExtended/' + state.strip() + '/XGBoostScaled_weather+temporal_' + state.strip())
     #plt.show()
     '''
     figs, axes = plt.subplots(nrows=1, ncols=1)
@@ -65,7 +65,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     plt.axvline(x=total_compare.index[-12], color='r', linestyle='--')
     plt.suptitle("WNV Cases CA")
     plt.legend()
-    plt.savefig('states/' + state.strip() + '/FULLXGBoostonSarimaExtended_' + state.strip())
+    plt.savefig('statesExtended/' + state.strip() + '/FULLXGBoostonSarimaExtended_' + state.strip())
     plt.show()
     '''
 

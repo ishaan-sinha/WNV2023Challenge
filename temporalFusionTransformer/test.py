@@ -58,11 +58,11 @@ wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.c
 
 #for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 for state in ['CA']:
-    all_data = pd.read_csv('../states/'+ state +'/withAllInputs_powerTransformed_' + state +'.csv', index_col=[0])
+    all_data = pd.read_csv('../statesExtended/'+ state +'/withAllInputs_powerTransformed_' + state +'.csv', index_col=[0])
     cases = all_data['count']
     cases.index = pd.DatetimeIndex(cases.index)
 
-    #state_data = pd.read_csv('../states/'+state+'/withWeatherInputs_'+state +'.csv', index_col=[0])
+    #state_data = pd.read_csv('../statesExtended/'+state+'/withWeatherInputs_'+state +'.csv', index_col=[0])
     state_data = all_data.drop(['count'], axis=1)
     state_data.index = pd.DatetimeIndex(state_data.index)
 
@@ -109,7 +109,9 @@ for state in ['CA']:
               future_covariates=tcov,
               verbose=True)
 
-    # testing: generate predictions
+
+
+    # testing: predictions
     cases_tpred = model.predict(n=len(cases_test),
                              num_samples=N_SAMPLES,
                              n_jobs=N_JOBS)

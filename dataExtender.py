@@ -10,7 +10,7 @@ wnv_data = pd.read_csv('WNVData/WNV_forecasting_challenge_state-month_cases.csv'
 upTil = datetime.date(2023, 4, 1)
 
 for state in [state for state in set(wnv_data['state']) if state != 'DC']:
-    state_data = pd.read_csv('states/' + state.strip() + '/dropna_final_' + state.strip() + '.csv')
+    state_data = pd.read_csv('statesExtended/' + state.strip() + '/dropna_final_' + state.strip() + '.csv')
     state_data.set_index(pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data['year'], state_data['month'])]), inplace=True)
     state_data.index = pd.DatetimeIndex(state_data.index)
     last_date = state_data.index[-1]
@@ -33,6 +33,6 @@ for state in [state for state in set(wnv_data['state']) if state != 'DC']:
         predictions.index = pd.DatetimeIndex(predictions.index).to_period('M')
         state_data.loc[predictions.index, column] = predictions
     state_data.drop(columns=['year', 'month'], inplace=True)
-    state_data.to_csv('states/' + state.strip() + '/extended_final_sarimax_' + state.strip() + '.csv')
+    state_data.to_csv('statesExtended/' + state.strip() + '/extended_final_sarimax_' + state.strip() + '.csv')
     print(state)
 

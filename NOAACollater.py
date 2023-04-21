@@ -42,5 +42,5 @@ for i in range(3, 4):
     noaa_data.drop(noaa_data.columns[0], axis=1, inplace=True)
     noaa_data.set_index(['year', 'month'], inplace=True)
 
-    noaa_data.to_csv('states/' + state+'/' + state + '_maxTemp_data.csv')
+    noaa_data.to_csv('statesExtended/' + state+'/' + state + '_maxTemp_data.csv')
     os.remove('/Users/ishaan/PycharmProjects/WNV2023Challenge/fieuwhfwueih.csv')

@@ -13,7 +13,7 @@ wnv_data = pd.read_csv('WNVData/WNV_forecasting_challenge_state-month_cases.csv'
 
 #for state in [state for state in set(wnv_data['state']) if state != 'DC']:
 for state in ['CA']:
-    state_data = pd.read_csv('states/'+ state.strip() + '/extended_final_' + state.strip() +'.csv', index_col=[0])
+    state_data = pd.read_csv('statesExtended/'+ state.strip() + '/extended_final_' + state.strip() +'.csv', index_col=[0])
     state_data.dropna(inplace=True)
     state_data.index = pd.DatetimeIndex(state_data.index)
     state_data.index = pd.DatetimeIndex(state_data.index).to_period('M')
