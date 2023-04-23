@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pickle
 
-EPOCHS = 30
+EPOCHS = 300
 INLEN = 32
 HIDDEN = 64
 LSTMLAYERS = 2
@@ -61,21 +61,22 @@ def getData(state):
     state_data['month_sin'] = np.sin(state_data.index.month * 2 * np.pi / 12)
 
     state_data['9monthsAhead'] = state_data['count'].shift(-9)
+    state_data['3monthsAgo/1yearbeforePred'] = state_data['count'].shift(3)
     state_data.drop(['count'], axis=1, inplace=True)
 
     return state_data
 
 
-#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-for state in ['CA']:
+for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+#for state in ['CA']:
     state_data = getData(state)
-    #We will make 11 forecasts, as we have 9 months ahead for the rest of the data
+    state_data = state_data[3:]
+    #We will make 12 forecasts, as we have 9 months ahead for the rest of the data
     ts = TimeSeries.from_series(state_data['9monthsAhead'])
     state_data.drop(['9monthsAhead'], axis=1, inplace=True)
     testStateData = state_data[-8:]
     ts_train = ts[:-12]
     ts_test = ts[-12:]
-
 
     transformer = Scaler()
     ts_ttrain = transformer.fit_transform(ts_train)
@@ -132,8 +133,7 @@ for state in ['CA']:
     _ = [predQ(ts_tpred, q) for q in quantiles]
 
     dfY.index = dfY.index+pd.DateOffset(months=9)
-    #dfY.to_csv('../statesNormal/'+state+'/firstPred.csv')
-    print(dfY)
+    dfY.to_csv('../statesNormal/'+state+'/secondPred.csv')
     print(state)
 
 
