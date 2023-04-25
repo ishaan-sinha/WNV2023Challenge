@@ -1,4 +1,3 @@
-import pandas
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -50,27 +49,25 @@ pd.set_option("display.precision",2)
 np.set_printoptions(precision=2, suppress=True)
 pd.options.display.float_format = '{:,.2f}'.format
 
-wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
+#wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
-df_results_mae = pandas.DataFrame(columns=['state', 'firstPred'])
 def getData(state):
-    state_data = pd.read_csv('../statesNormal/'+state+'/NOAA_data.csv')
-    state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
-    temporalData = pd.read_csv('../statesNormal/' + state + '/temporalData.csv', index_col=[0])
-    temporalData.index = pd.to_datetime(temporalData.index)
-    state_data['count'] = temporalData['count']
+    #state_data = pd.read_csv('../statesNormal/'+state+'/wnv_data.csv', index_col=[0])
+    state_data = pd.read_csv('wnv_data.csv', index_col=[0])
+    state_data.index = pd.to_datetime(state_data.index)
     state_data['month_cos'] = np.cos(state_data.index.month * 2 * np.pi / 12)
     state_data['month_sin'] = np.sin(state_data.index.month * 2 * np.pi / 12)
 
     state_data['9monthsAhead'] = state_data['count'].shift(-9)
-    #state_data['3monthsAgo/1yearbeforePred'] = state_data['count'].shift(3)
+    state_data['3monthsAgo/1yearbeforePred'] = state_data['count'].shift(3)
     state_data.drop(['count'], axis=1, inplace=True)
+    state_data.drop(['year', 'month', 'state', 'fips'], axis=1, inplace=True)
 
     return state_data
 
 
-for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-#for state in ['CA']:
+#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+for state in ['DC']:
     state_data = getData(state)
     state_data = state_data.dropna()
     #We will make 12 forecasts, as we have 9 months ahead for the rest of the data
@@ -139,15 +136,14 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
         plt.legend();
     plt.clf()
     plot_predict(ts, ts_test, ts_pred)
-    df_results_mae = df_results_mae.append({'state': state, 'firstPred': mae(ts_test, ts_pred)}, ignore_index=True)
-    #plt.show()
-    plt.savefig('../statesNormal/'+state+'/train+testfirstPred.png')
+    plt.show()
+    plt.savefig('../statesNormal/'+state+'/train+testsecondPred.png')
     plt.clf()
     ts_pred = transformer.inverse_transform(ts_tpred)
     ts_actual = ts[ts_tpred.start_time(): ts_tpred.end_time()]  # actual values in forecast horizon
     plot_predict(ts_actual, ts_test, ts_pred)
-    #plt.show()
-    plt.savefig('../statesNormal/'+state+'/testfirstPred.png')
+    plt.show()
+    plt.savefig('../statesNormal/'+state+'/testsecondPred.png')
         # helper method: calculate percentiles of predictions
     def predQ(ts_tpred, q):
         ts = ts_pred.quantile_timeseries(q)  # percentile of predictions

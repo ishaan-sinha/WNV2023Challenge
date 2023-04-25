@@ -1,16 +1,79 @@
 import pandas as pd
 import numpy as np
 
-wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
+us_state_to_abbrev = {
+    "Alabama": "AL",
+    "Alaska": "AK",
+    "Arizona": "AZ",
+    "Arkansas": "AR",
+    "California": "CA",
+    "Colorado": "CO",
+    "Connecticut": "CT",
+    "Delaware": "DE",
+    "Florida": "FL",
+    "Georgia": "GA",
+    "Hawaii": "HI",
+    "Idaho": "ID",
+    "Illinois": "IL",
+    "Indiana": "IN",
+    "Iowa": "IA",
+    "Kansas": "KS",
+    "Kentucky": "KY",
+    "Louisiana": "LA",
+    "Maine": "ME",
+    "Maryland": "MD",
+    "Massachusetts": "MA",
+    "Michigan": "MI",
+    "Minnesota": "MN",
+    "Mississippi": "MS",
+    "Missouri": "MO",
+    "Montana": "MT",
+    "Nebraska": "NE",
+    "Nevada": "NV",
+    "New Hampshire": "NH",
+    "New Jersey": "NJ",
+    "New Mexico": "NM",
+    "New York": "NY",
+    "North Carolina": "NC",
+    "North Dakota": "ND",
+    "Ohio": "OH",
+    "Oklahoma": "OK",
+    "Oregon": "OR",
+    "Pennsylvania": "PA",
+    "Rhode Island": "RI",
+    "South Carolina": "SC",
+    "South Dakota": "SD",
+    "Tennessee": "TN",
+    "Texas": "TX",
+    "Utah": "UT",
+    "Vermont": "VT",
+    "Virginia": "VA",
+    "Washington": "WA",
+    "West Virginia": "WV",
+    "Wisconsin": "WI",
+    "Wyoming": "WY",
+    "District of Columbia": "DC",
+    "American Samoa": "AS",
+    "Guam": "GU",
+    "Northern Mariana Islands": "MP",
+    "Puerto Rico": "PR",
+    "United States Minor Outlying Islands": "UM",
+    "U.S. Virgin Islands": "VI",
+}
+
+# invert the dictionary
+abbrev_to_us_state = dict(map(reversed, us_state_to_abbrev.items()))
+
+wnv_data = pd.read_csv('WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
 finalSubmission = pd.DataFrame(columns=['location', 'forecast_date', 'target_end_date', 'target', 'type', 'quantile', 'value'])
-#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-for state in ['CA']:
-    state_pred = pd.read_csv('statesNormal/'+ state + '/firstPred.csv', index_col=[0])
+for state in [i for i in wnv_data['state'].unique()]:
+    state_pred = pd.read_csv('statesNormal/'+ state + '/secondPred.csv', index_col=[0])
     state_pred.index = pd.to_datetime(state_pred.index)
     import calendar
     from datetime import datetime
     for ind in state_pred.index:
         for col in state_pred.columns:
-            finalSubmission.append({'location': state, 'forecast_date': '2023-04-30', 'target_end_date': (str(ind.year) + '-' + f"{a:02}" + '-' + calendar.monthrange(ind.year, ind.month)[1]), 'target': calendar.month_name[ind.month] + " WNV neuroinvasive disease cases" , 'type': 'quantile', 'quantile': col/100, 'value': state_pred.loc[ind, col]}, ignore_index=True)
-finalSubmission.to_csv('submissions/finalSubmission1.csv')
+            toConcat = pd.DataFrame({'location': abbrev_to_us_state.get(state), 'forecast_date': '2023-04-30', 'target_end_date': str(ind.year) + '-' + f"{ind.month:02}" + '-' + str(calendar.monthrange(ind.year, ind.month)[1]), 'target': calendar.month_name[ind.month] + " WNV neuroinvasive disease cases" , 'type': 'quantile', 'quantile': int(col)/1000, 'value': state_pred.loc[ind, col]}, index=[0])
+            finalSubmission = pd.concat([finalSubmission, toConcat], ignore_index=True)
+finalSubmission.to_csv('submissions/finalSubmission2.csv')

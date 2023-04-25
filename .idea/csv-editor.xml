@@ -136,6 +136,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesNormal/DC/secondPred.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesNormal/DC/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesNormal/ME/NOAA_data.csv">
           <value>
             <Attribute>
@@ -158,6 +172,13 @@
           </value>
         </entry>
         <entry key="/statesNormal/WY/secondPred.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/submissions/finalSubmission2.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
