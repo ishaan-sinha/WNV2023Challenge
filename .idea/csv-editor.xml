@@ -94,6 +94,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/firstPred.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesNormal/AL/NOAA_data.csv">
           <value>
             <Attribute>
