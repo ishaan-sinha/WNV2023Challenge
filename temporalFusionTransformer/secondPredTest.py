@@ -50,6 +50,7 @@ np.set_printoptions(precision=2, suppress=True)
 pd.options.display.float_format = '{:,.2f}'.format
 
 wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
+df_results_mae = pd.DataFrame(columns=['state', 'secondPred'])
 
 def getData(state):
     state_data = pd.read_csv('../statesNormal/'+state+'/NOAA_data.csv')
@@ -137,7 +138,9 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
         plt.legend();
     plt.clf()
     plot_predict(ts, ts_test, ts_pred)
-    #plt.show()
+    df_results_mae = df_results_mae.append({'state': state, 'secondPred': mae(ts_test, ts_pred)}, ignore_index=True)
+
+#plt.show()
     plt.savefig('../statesNormal/'+state+'/train+testsecondPred.png')
     plt.clf()
     ts_pred = transformer.inverse_transform(ts_tpred)
@@ -161,5 +164,6 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     #dfY.to_csv('../statesNormal/'+state+'/secondPred.csv')
     print(state)
 
+df_results_mae.to_csv('../modelResults/secondPred.csv')
 
 
