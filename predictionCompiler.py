@@ -67,13 +67,38 @@ abbrev_to_us_state = dict(map(reversed, us_state_to_abbrev.items()))
 wnv_data = pd.read_csv('WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
 finalSubmission = pd.DataFrame(columns=['location', 'forecast_date', 'target_end_date', 'target', 'type', 'quantile', 'value'])
-for state in [i for i in wnv_data['state'].unique()]:
-    state_pred = pd.read_csv('statesNormal/'+ state + '/secondPred.csv', index_col=[0])
-    state_pred.index = pd.to_datetime(state_pred.index)
+first_mae = pd.read_csv('modelResults/firstPred.csv', index_col=[1])
+second_mae = pd.read_csv('modelResults/secondPred.csv', index_col=[1])
+
+for state in [i for i in wnv_data['state'].unique() if i != 'DC']:
+    first_pred = pd.read_csv('statesNormal/'+ state + '/firstPred.csv', index_col=[0])
+    second_pred = pd.read_csv('statesNormal/'+ state + '/secondPred.csv', index_col=[0])
+
+    first_pred.index = pd.to_datetime(first_pred.index)
+    second_pred.index = pd.to_datetime(second_pred.index)
+
     import calendar
     from datetime import datetime
-    for ind in state_pred.index:
-        for col in state_pred.columns:
-            toConcat = pd.DataFrame({'location': abbrev_to_us_state.get(state), 'forecast_date': '2023-04-30', 'target_end_date': str(ind.year) + '-' + f"{ind.month:02}" + '-' + str(calendar.monthrange(ind.year, ind.month)[1]), 'target': calendar.month_name[ind.month] + " WNV neuroinvasive disease cases" , 'type': 'quantile', 'quantile': int(col)/1000, 'value': state_pred.loc[ind, col]}, index=[0])
+    for ind in first_pred.index:
+        for col in first_pred.columns:
+            firstMAE = first_mae.loc[state, 'firstPred']
+            secondMAE = second_mae.loc[state, 'secondPred']
+            if(firstMAE < secondMAE):
+                value = first_pred.loc[ind, col]
+            elif(secondMAE < firstMAE):
+                value = second_pred.loc[ind, col]
+            value = max(0, value)
+            toConcat = pd.DataFrame({'location': abbrev_to_us_state.get(state), 'forecast_date': '2023-04-30', 'target_end_date': str(ind.year) + '-' + f"{ind.month:02}" + '-' + str(calendar.monthrange(ind.year, ind.month)[1]), 'target': calendar.month_name[ind.month] + " WNV neuroinvasive disease cases" , 'type': 'quantile', 'quantile': int(col)/1000, 'value': value}, index=[0])
             finalSubmission = pd.concat([finalSubmission, toConcat], ignore_index=True)
-finalSubmission.to_csv('submissions/finalSubmission2.csv')
+for state in ['DC']:
+    second_pred = pd.read_csv('statesNormal/'+ state + '/secondPred.csv', index_col=[0])
+    second_pred.index = pd.to_datetime(second_pred.index)
+    for ind in second_pred.index:
+        for col in second_pred.columns:
+            correctDate = ind + pd.DateOffset(months=3)
+            value = second_pred.loc[ind, col]
+            value = max(0, value)
+            toConcat = pd.DataFrame({'location': abbrev_to_us_state.get(state), 'forecast_date': '2023-04-30', 'target_end_date': str(correctDate.year) + '-' + f"{correctDate.month:02}" + '-' + str(calendar.monthrange(correctDate.year, correctDate.month)[1]), 'target': calendar.month_name[correctDate.month] + " WNV neuroinvasive disease cases" , 'type': 'quantile', 'quantile': int(col)/1000, 'value': value}, index=[0])
+            finalSubmission = pd.concat([finalSubmission, toConcat], ignore_index=True)
+
+finalSubmission.to_csv('submissions/finalSubmissionCombined2.csv')
