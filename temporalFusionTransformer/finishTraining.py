@@ -53,9 +53,9 @@ wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.c
 
 
 for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-    state_data = pd.read_csv('../statesNormal/'+state+'/NOAA_data.csv')
+    state_data = pd.read_csv('../statesMaySubmission/'+state+'/NOAA_data.csv')
     state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
-    temporalData = pd.read_csv('../statesNormal/'+state+'/temporalData.csv', index_col=[0])
+    temporalData = pd.read_csv('../statesMaySubmission/'+state+'/temporalData.csv', index_col=[0])
     temporalData.index = pd.to_datetime(temporalData.index)
     state_data['count'] = temporalData['count']
 
@@ -127,7 +127,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 
     import os
 
-    pickle.dump(model, open('../statesNormal/' + state + '/8monthsAhead-OnlyWeatherData-Trained including August 2021-300epochs+train.sav', 'wb'))
+    pickle.dump(model, open('../statesMaySubmission/' + state + '/8monthsAhead-OnlyWeatherData-Trained including August 2021-300epochs+train.sav', 'wb'))
     print(state)
     break
 

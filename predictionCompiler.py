@@ -71,8 +71,8 @@ first_mae = pd.read_csv('modelResults/firstPred.csv', index_col=[1])
 second_mae = pd.read_csv('modelResults/secondPred.csv', index_col=[1])
 
 for state in [i for i in wnv_data['state'].unique() if i != 'DC']:
-    first_pred = pd.read_csv('statesNormal/'+ state + '/firstPred.csv', index_col=[0])
-    second_pred = pd.read_csv('statesNormal/'+ state + '/secondPred.csv', index_col=[0])
+    first_pred = pd.read_csv('statesMaySubmission/'+ state + '/firstPred.csv', index_col=[0])
+    second_pred = pd.read_csv('statesMaySubmission/'+ state + '/secondPred.csv', index_col=[0])
 
     first_pred.index = pd.to_datetime(first_pred.index)
     second_pred.index = pd.to_datetime(second_pred.index)
@@ -91,7 +91,7 @@ for state in [i for i in wnv_data['state'].unique() if i != 'DC']:
             toConcat = pd.DataFrame({'location': abbrev_to_us_state.get(state), 'forecast_date': '2023-04-30', 'target_end_date': str(ind.year) + '-' + f"{ind.month:02}" + '-' + str(calendar.monthrange(ind.year, ind.month)[1]), 'target': calendar.month_name[ind.month] + " WNV neuroinvasive disease cases" , 'type': 'quantile', 'quantile': int(col)/1000, 'value': value}, index=[0])
             finalSubmission = pd.concat([finalSubmission, toConcat], ignore_index=True)
 for state in ['DC']:
-    second_pred = pd.read_csv('statesNormal/'+ state + '/secondPred.csv', index_col=[0])
+    second_pred = pd.read_csv('statesMaySubmission/'+ state + '/secondPred.csv', index_col=[0])
     second_pred.index = pd.to_datetime(second_pred.index)
     for ind in second_pred.index:
         for col in second_pred.columns:

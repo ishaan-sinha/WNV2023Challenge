@@ -336,9 +336,13 @@ Arizona,04,Maricopa,013,2023,2,CO2,Culex tarsalis,219,290,290,452,230
 Arizona,04,Maricopa,013,2023,3,BGS,Culex quinquefasciatus,3,3,3,4,3
 Arizona,04,Maricopa,013,2023,3,CO2,Culex quinquefasciatus,434,837,837,906,451
 Arizona,04,Maricopa,013,2023,3,CO2,Culex tarsalis,434,837,837,1729,580
-Arizona,04,Maricopa,013,2023,4,BGS,Culex quinquefasciatus,2,2,2,1,1
-Arizona,04,Maricopa,013,2023,4,CO2,Culex quinquefasciatus,188,188,188,174,90
-Arizona,04,Maricopa,013,2023,4,CO2,Culex tarsalis,188,188,188,439,131
+Arizona,04,Maricopa,013,2023,4,BGS,Culex quinquefasciatus,7,16,16,40,11
+Arizona,04,Maricopa,013,2023,4,BGS,Culex tarsalis,7,16,16,4,3
+Arizona,04,Maricopa,013,2023,4,CO2,Culex quinquefasciatus,568,1207,1207,2377,730
+Arizona,04,Maricopa,013,2023,4,CO2,Culex tarsalis,568,1207,1207,22854,837
+Arizona,04,Maricopa,013,2023,5,BGS,Culex quinquefasciatus,5,7,7,55,7
+Arizona,04,Maricopa,013,2023,5,CO2,Culex quinquefasciatus,436,603,603,1110,431
+Arizona,04,Maricopa,013,2023,5,CO2,Culex tarsalis,436,603,603,9565,327
 Arizona,04,Pima,019,2005,5,CO2,No Detection,1,1,1,0,0
 Arizona,04,Pima,019,2020,5,CO2,Culex quinquefasciatus,38,50,54,6,4
 Arizona,04,Pima,019,2020,5,CO2,Culex tarsalis,38,50,54,2,2
@@ -366,6 +370,7 @@ Arizona,04,Pima,019,2022,2,CO2,No Detection,4,4,4,0,0
 Arizona,04,Pima,019,2022,5,BGS,Culex tarsalis,3,4,4,2,2
 Arizona,04,Pima,019,2022,5,CO2,Culex tarsalis,31,33,33,11,4
 Arizona,04,Pima,019,2022,7,CO2,Culex quinquefasciatus,29,29,29,1,1
+Arizona,04,Pima,019,2023,5,CO2,No Detection,6,6,6,0,0
 Arizona,04,Pinal,021,2020,4,CO2,Culex quinquefasciatus,55,72,72,55,15
 Arizona,04,Pinal,021,2020,4,CO2,Culex tarsalis,55,72,72,192,26
 Arizona,04,Pinal,021,2020,5,CO2,Culex quinquefasciatus,56,96,96,164,37
@@ -439,6 +444,10 @@ Arizona,04,Yuma,027,2022,9,CO2,Culex pipiens/quinquefasciatus,17,18,18,4,2
 Arizona,04,Yuma,027,2022,9,CO2,Culex tarsalis,17,18,18,17,7
 Arizona,04,Yuma,027,2022,10,CO2,Culex pipiens/quinquefasciatus,21,34,34,74,3
 Arizona,04,Yuma,027,2022,10,CO2,Culex tarsalis,21,34,34,1758,29
+Arizona,04,Yuma,027,2023,4,CO2,Culex pipiens/quinquefasciatus,19,42,42,45,9
+Arizona,04,Yuma,027,2023,4,CO2,Culex tarsalis,19,42,42,781,28
+Arizona,04,Yuma,027,2023,5,CO2,Culex pipiens/quinquefasciatus,15,21,21,72,3
+Arizona,04,Yuma,027,2023,5,CO2,Culex tarsalis,15,21,21,2453,18
 California,06,Alameda,001,2003,1,NJLT,Culex pipiens,12,55,374,5,5
 California,06,Alameda,001,2003,1,NJLT,Culex tarsalis,12,55,374,70,24
 California,06,Alameda,001,2006,4,CO2,Culex pipiens,8,11,11,58,5
@@ -1095,8 +1104,10 @@ California,06,Alameda,001,2023,2,CO2,Culex pipiens,65,106,125,2,2
 California,06,Alameda,001,2023,2,CO2,Culex tarsalis,65,106,125,387,50
 California,06,Alameda,001,2023,3,CO2,Culex pipiens,55,108,109,4,2
 California,06,Alameda,001,2023,3,CO2,Culex tarsalis,55,108,109,571,56
-California,06,Alameda,001,2023,4,CO2,Culex pipiens,89,108,108,13,6
-California,06,Alameda,001,2023,4,CO2,Culex tarsalis,89,108,108,514,54
+California,06,Alameda,001,2023,4,CO2,Culex pipiens,100,163,163,19,10
+California,06,Alameda,001,2023,4,CO2,Culex tarsalis,100,163,163,2120,99
+California,06,Alameda,001,2023,5,CO2,Culex pipiens,60,67,74,41,11
+California,06,Alameda,001,2023,5,CO2,Culex tarsalis,60,67,74,2621,35
 California,06,Butte,007,2003,4,NJLT,Culex pipiens,24,93,651,25,15
 California,06,Butte,007,2003,4,NJLT,Culex stigmatosoma,24,93,651,3,3
 California,06,Butte,007,2003,4,NJLT,Culex tarsalis,24,93,651,143,48
@@ -1849,6 +1860,12 @@ California,06,Butte,007,2022,11,GRAV,Culex pipiens,24,24,168,30,11
 California,06,Butte,007,2022,11,GRAV,Culex tarsalis,24,24,168,1,1
 California,06,Butte,007,2022,11,NJLT,Culex pipiens,24,44,308,2,1
 California,06,Butte,007,2022,11,NJLT,Culex tarsalis,24,44,308,31,9
+California,06,Butte,007,2023,4,GRAV,Culex pipiens,24,48,336,129,25
+California,06,Butte,007,2023,4,NJLT,Culex pipiens,24,48,336,11,8
+California,06,Butte,007,2023,4,NJLT,Culex tarsalis,24,48,336,36,21
+California,06,Butte,007,2023,5,GRAV,Culex pipiens,24,24,168,218,18
+California,06,Butte,007,2023,5,NJLT,Culex pipiens,23,23,161,1,1
+California,06,Butte,007,2023,5,NJLT,Culex tarsalis,23,23,161,13,7
 California,06,Colusa,011,2006,4,NJLT,Culex tarsalis,4,4,28,4,1
 California,06,Colusa,011,2006,5,NJLT,Culex pipiens,5,14,98,32,3
 California,06,Colusa,011,2006,5,NJLT,Culex tarsalis,5,14,98,161,8
@@ -2083,6 +2100,10 @@ California,06,Colusa,011,2022,11,BGS,Culex pipiens,4,4,28,18,2
 California,06,Colusa,011,2022,11,BGS,Culex tarsalis,4,4,28,10,2
 California,06,Colusa,011,2022,11,NJLT,Culex pipiens,2,2,14,6,2
 California,06,Colusa,011,2022,11,NJLT,Culex tarsalis,2,2,14,2,1
+California,06,Colusa,011,2023,5,BGS,Culex pipiens,4,8,56,9,5
+California,06,Colusa,011,2023,5,BGS,Culex tarsalis,4,8,56,10,2
+California,06,Colusa,011,2023,5,NJLT,Culex tarsalis,3,6,42,6,1
+California,06,Colusa,011,2023,5,OTHER,Culex pipiens,4,8,56,1,1
 California,06,Contra Costa,013,2006,3,CO2,Culex pipiens,25,25,25,4,2
 California,06,Contra Costa,013,2006,3,CO2,Culex tarsalis,25,25,25,61,5
 California,06,Contra Costa,013,2007,3,CO2,Culex pipiens,17,40,40,26,13
@@ -2707,9 +2728,15 @@ California,06,Contra Costa,013,2023,1,NJLT,Culex tarsalis,21,81,580,19,9
 California,06,Contra Costa,013,2023,2,NJLT,Culex tarsalis,22,84,595,17,11
 California,06,Contra Costa,013,2023,3,NJLT,Culex pipiens,22,102,749,1,1
 California,06,Contra Costa,013,2023,3,NJLT,Culex tarsalis,22,102,749,13,8
-California,06,Contra Costa,013,2023,4,BGS,Culex pipiens,14,14,14,15,7
-California,06,Contra Costa,013,2023,4,BGS,Culex tarsalis,14,14,14,5,4
-California,06,Contra Costa,013,2023,4,NJLT,Culex tarsalis,22,43,308,2,2
+California,06,Contra Costa,013,2023,4,BGS,Culex pipiens,16,41,41,22,14
+California,06,Contra Costa,013,2023,4,BGS,Culex tarsalis,16,41,41,12,10
+California,06,Contra Costa,013,2023,4,NJLT,Culex tarsalis,22,85,616,11,6
+California,06,Contra Costa,013,2023,5,BGS,Culex pipiens,8,8,8,11,6
+California,06,Contra Costa,013,2023,5,BGS,Culex tarsalis,8,8,8,7,6
+California,06,Contra Costa,013,2023,5,CO2,Culex pipiens,25,25,25,29,11
+California,06,Contra Costa,013,2023,5,CO2,Culex tarsalis,25,25,25,216,15
+California,06,Contra Costa,013,2023,5,NJLT,Culex pipiens,22,44,308,1,1
+California,06,Contra Costa,013,2023,5,NJLT,Culex tarsalis,22,44,308,16,6
 California,06,Fresno,019,2006,3,NJLT,Culex quinquefasciatus,14,54,378,12,6
 California,06,Fresno,019,2006,3,NJLT,Culex tarsalis,14,54,378,37,18
 California,06,Fresno,019,2006,4,NJLT,Culex quinquefasciatus,15,56,390,9,7
@@ -4228,11 +4255,30 @@ California,06,Fresno,019,2022,11,GRAV,Culex quinquefasciatus,16,16,16,14,4
 California,06,Fresno,019,2022,11,GRAV,Culex tarsalis,16,16,16,1,1
 California,06,Fresno,019,2023,3,BGS,Culex quinquefasciatus,8,16,16,25,8
 California,06,Fresno,019,2023,3,BGS,Culex tarsalis,8,16,16,2,1
-California,06,Fresno,019,2023,4,BGS,Culex quinquefasciatus,17,17,17,69,8
-California,06,Fresno,019,2023,4,BGS,Culex tarsalis,17,17,17,64,7
-California,06,Fresno,019,2023,4,CO2,Culex quinquefasciatus,27,46,46,3,2
-California,06,Fresno,019,2023,4,CO2,Culex tarsalis,27,46,46,21,10
-California,06,Fresno,019,2023,4,GRAV,Culex quinquefasciatus,23,39,39,7,2
+California,06,Fresno,019,2023,4,BGS,Culex quinquefasciatus,42,53,53,1035,42
+California,06,Fresno,019,2023,4,BGS,Culex restuans,42,53,53,7,1
+California,06,Fresno,019,2023,4,BGS,Culex stigmatosoma,42,53,53,97,8
+California,06,Fresno,019,2023,4,BGS,Culex tarsalis,42,53,53,2545,37
+California,06,Fresno,019,2023,4,CO2,Culex quinquefasciatus,68,134,134,126,30
+California,06,Fresno,019,2023,4,CO2,Culex restuans,68,134,134,1,1
+California,06,Fresno,019,2023,4,CO2,Culex stigmatosoma,68,134,134,71,11
+California,06,Fresno,019,2023,4,CO2,Culex tarsalis,68,134,134,1577,63
+California,06,Fresno,019,2023,4,GRAV,Culex quinquefasciatus,72,123,123,255,43
+California,06,Fresno,019,2023,4,GRAV,Culex restuans,72,123,123,2,1
+California,06,Fresno,019,2023,4,GRAV,Culex stigmatosoma,72,123,123,132,18
+California,06,Fresno,019,2023,4,GRAV,Culex tarsalis,72,123,123,28,14
+California,06,Fresno,019,2023,5,BGS,Culex quinquefasciatus,49,57,57,1057,51
+California,06,Fresno,019,2023,5,BGS,Culex restuans,49,57,57,29,4
+California,06,Fresno,019,2023,5,BGS,Culex stigmatosoma,49,57,57,60,19
+California,06,Fresno,019,2023,5,BGS,Culex tarsalis,49,57,57,991,50
+California,06,Fresno,019,2023,5,CO2,Culex quinquefasciatus,134,161,161,367,72
+California,06,Fresno,019,2023,5,CO2,Culex restuans,134,161,161,20,5
+California,06,Fresno,019,2023,5,CO2,Culex stigmatosoma,134,161,161,112,25
+California,06,Fresno,019,2023,5,CO2,Culex tarsalis,134,161,161,1982,108
+California,06,Fresno,019,2023,5,GRAV,Culex quinquefasciatus,165,196,196,1395,127
+California,06,Fresno,019,2023,5,GRAV,Culex restuans,165,196,196,23,5
+California,06,Fresno,019,2023,5,GRAV,Culex stigmatosoma,165,196,196,124,44
+California,06,Fresno,019,2023,5,GRAV,Culex tarsalis,165,196,196,42,31
 California,06,Glenn,021,2007,4,NJLT,Culex stigmatosoma,3,8,56,4,1
 California,06,Glenn,021,2007,4,NJLT,Culex tarsalis,3,8,56,39,7
 California,06,Glenn,021,2007,5,NJLT,Culex pipiens,3,13,91,66,5
@@ -4498,6 +4544,8 @@ California,06,Glenn,021,2022,8,GRAV,Culex tarsalis,1,3,21,1,1
 California,06,Glenn,021,2022,9,GRAV,Culex pipiens,1,3,21,24,3
 California,06,Glenn,021,2022,10,GRAV,Culex pipiens,1,5,35,68,5
 California,06,Glenn,021,2022,11,GRAV,No Detection,1,1,7,0,0
+California,06,Glenn,021,2023,4,GRAV,Culex pipiens,1,2,14,1,1
+California,06,Glenn,021,2023,5,GRAV,No Detection,1,1,7,0,0
 California,06,Kern,029,2003,4,NJLT,Culex pipiens,20,91,611,66,25
 California,06,Kern,029,2003,4,NJLT,Culex stigmatosoma,20,91,611,1,1
 California,06,Kern,029,2003,4,NJLT,Culex tarsalis,20,91,611,307,69
@@ -5555,6 +5603,20 @@ California,06,Kern,029,2022,10,GRAV,Culex quinquefasciatus,41,99,99,1354,156
 California,06,Kern,029,2022,10,GRAV,Culex tarsalis,41,99,99,28,21
 California,06,Kern,029,2022,10,OTHER,Culex quinquefasciatus,46,72,504,40,22
 California,06,Kern,029,2022,10,OTHER,Culex tarsalis,46,72,504,7,5
+California,06,Kern,029,2023,4,BGS,Culex quinquefasciatus,28,54,54,1228,47
+California,06,Kern,029,2023,4,BGS,Culex tarsalis,28,54,54,863,49
+California,06,Kern,029,2023,4,CO2,Culex quinquefasciatus,76,125,125,547,61
+California,06,Kern,029,2023,4,CO2,Culex tarsalis,76,125,125,12484,92
+California,06,Kern,029,2023,4,GRAV,Culex quinquefasciatus,41,75,75,629,96
+California,06,Kern,029,2023,4,GRAV,Culex tarsalis,41,75,75,45,25
+California,06,Kern,029,2023,5,BGS,Culex quinquefasciatus,29,57,57,1105,55
+California,06,Kern,029,2023,5,BGS,Culex tarsalis,29,57,57,3420,57
+California,06,Kern,029,2023,5,CO2,Culex quinquefasciatus,77,150,150,1468,90
+California,06,Kern,029,2023,5,CO2,Culex stigmatosoma,77,150,150,1,1
+California,06,Kern,029,2023,5,CO2,Culex tarsalis,77,150,150,26774,137
+California,06,Kern,029,2023,5,GRAV,Culex quinquefasciatus,41,81,81,1575,97
+California,06,Kern,029,2023,5,GRAV,Culex stigmatosoma,41,81,81,2,2
+California,06,Kern,029,2023,5,GRAV,Culex tarsalis,41,81,81,56,34
 California,06,Kings,031,2006,6,CO2,Culex quinquefasciatus,4,4,4,11,2
 California,06,Kings,031,2006,6,CO2,Culex tarsalis,4,4,4,19,4
 California,06,Kings,031,2006,6,NJLT,Culex quinquefasciatus,1,1,7,2,1
@@ -5973,6 +6035,16 @@ California,06,Kings,031,2022,10,CO2,Culex stigmatosoma,3,3,3,3,3
 California,06,Kings,031,2022,10,CO2,Culex tarsalis,3,3,3,3,2
 California,06,Kings,031,2022,10,GRAV,Culex quinquefasciatus,3,3,3,13,3
 California,06,Kings,031,2022,10,GRAV,Culex stigmatosoma,3,3,3,3,2
+California,06,Kings,031,2023,4,CO2,Culex quinquefasciatus,3,3,3,2,2
+California,06,Kings,031,2023,4,CO2,Culex stigmatosoma,3,3,3,1,1
+California,06,Kings,031,2023,4,CO2,Culex tarsalis,3,3,3,14,3
+California,06,Kings,031,2023,4,GRAV,Culex quinquefasciatus,3,3,3,1,1
+California,06,Kings,031,2023,4,GRAV,Culex stigmatosoma,3,3,3,2,1
+California,06,Kings,031,2023,4,GRAV,Culex tarsalis,3,3,3,1,1
+California,06,Kings,031,2023,5,CO2,Culex quinquefasciatus,2,2,2,17,2
+California,06,Kings,031,2023,5,CO2,Culex tarsalis,2,2,2,10,2
+California,06,Kings,031,2023,5,GRAV,Culex quinquefasciatus,2,2,2,1,1
+California,06,Kings,031,2023,5,GRAV,Culex stigmatosoma,2,2,2,1,1
 California,06,Los Angeles,037,2003,3,CO2,Culex quinquefasciatus,9,10,16,47,7
 California,06,Los Angeles,037,2003,4,CO2,Culex quinquefasciatus,47,60,85,1785,53
 California,06,Los Angeles,037,2003,4,CO2,Culex stigmatosoma,47,60,85,96,16
@@ -7848,15 +7920,26 @@ California,06,Los Angeles,037,2023,2,GRAV,Culex tarsalis,64,134,134,1,1
 California,06,Los Angeles,037,2023,3,BGS,Culex quinquefasciatus,109,122,122,41,22
 California,06,Los Angeles,037,2023,3,CO2,No Detection,5,5,5,0,0
 California,06,Los Angeles,037,2023,3,GRAV,Culex quinquefasciatus,130,153,153,206,96
-California,06,Los Angeles,037,2023,4,BGS,Culex quinquefasciatus,156,164,165,438,82
-California,06,Los Angeles,037,2023,4,BGS,Culex stigmatosoma,156,164,165,6,5
-California,06,Los Angeles,037,2023,4,BGS,Culex tarsalis,156,164,165,51,17
-California,06,Los Angeles,037,2023,4,CO2,Culex quinquefasciatus,15,15,15,30,7
-California,06,Los Angeles,037,2023,4,CO2,Culex stigmatosoma,15,15,15,20,4
-California,06,Los Angeles,037,2023,4,CO2,Culex tarsalis,15,15,15,24,5
-California,06,Los Angeles,037,2023,4,GRAV,Culex quinquefasciatus,185,206,206,451,121
-California,06,Los Angeles,037,2023,4,GRAV,Culex stigmatosoma,185,206,206,1,1
-California,06,Los Angeles,037,2023,4,GRAV,Culex tarsalis,185,206,206,1,1
+California,06,Los Angeles,037,2023,4,BGS,Culex quinquefasciatus,188,330,332,1827,223
+California,06,Los Angeles,037,2023,4,BGS,Culex stigmatosoma,188,330,332,32,18
+California,06,Los Angeles,037,2023,4,BGS,Culex tarsalis,188,330,332,274,52
+California,06,Los Angeles,037,2023,4,CO2,Culex quinquefasciatus,20,35,35,102,15
+California,06,Los Angeles,037,2023,4,CO2,Culex stigmatosoma,20,35,35,77,7
+California,06,Los Angeles,037,2023,4,CO2,Culex tarsalis,20,35,35,52,10
+California,06,Los Angeles,037,2023,4,GRAV,Culex quinquefasciatus,219,412,413,2615,359
+California,06,Los Angeles,037,2023,4,GRAV,Culex restuans,219,412,413,1,1
+California,06,Los Angeles,037,2023,4,GRAV,Culex stigmatosoma,219,412,413,15,11
+California,06,Los Angeles,037,2023,4,GRAV,Culex tarsalis,219,412,413,7,6
+California,06,Los Angeles,037,2023,5,BGS,Culex quinquefasciatus,144,151,151,1600,128
+California,06,Los Angeles,037,2023,5,BGS,Culex stigmatosoma,144,151,151,27,18
+California,06,Los Angeles,037,2023,5,BGS,Culex tarsalis,144,151,151,219,47
+California,06,Los Angeles,037,2023,5,CO2,Culex quinquefasciatus,16,16,16,63,9
+California,06,Los Angeles,037,2023,5,CO2,Culex stigmatosoma,16,16,16,42,6
+California,06,Los Angeles,037,2023,5,CO2,Culex tarsalis,16,16,16,66,7
+California,06,Los Angeles,037,2023,5,GRAV,Culex quinquefasciatus,174,197,197,3738,224
+California,06,Los Angeles,037,2023,5,GRAV,Culex restuans,174,197,197,2,1
+California,06,Los Angeles,037,2023,5,GRAV,Culex stigmatosoma,174,197,197,22,12
+California,06,Los Angeles,037,2023,5,GRAV,Culex tarsalis,174,197,197,30,17
 California,06,Madera,039,2006,6,CO2,Culex quinquefasciatus,3,3,3,22,2
 California,06,Madera,039,2006,6,CO2,Culex restuans,3,3,3,1,1
 California,06,Madera,039,2006,6,CO2,Culex stigmatosoma,3,3,3,1,1
@@ -8589,6 +8672,8 @@ California,06,Marin,041,2022,10,CO2,Culex stigmatosoma,18,59,59,1,1
 California,06,Marin,041,2022,10,CO2,Culex tarsalis,18,59,59,6,6
 California,06,Marin,041,2022,10,GRAV,Culex pipiens,2,8,8,4,2
 California,06,Marin,041,2022,10,GRAV,Culex stigmatosoma,2,8,8,5,4
+California,06,Marin,041,2023,4,CO2,Culex tarsalis,11,39,41,5,3
+California,06,Marin,041,2023,5,CO2,Culex tarsalis,11,26,26,24,15
 California,06,Merced,047,2006,6,CO2,Culex tarsalis,1,1,1,136,1
 California,06,Merced,047,2006,7,CO2,Culex tarsalis,1,1,1,351,1
 California,06,Merced,047,2006,8,CO2,Culex tarsalis,1,1,1,3,1
@@ -8600,13 +8685,22 @@ California,06,Merced,047,2007,8,CO2,Culex tarsalis,1,2,2,217,2
 California,06,Merced,047,2007,9,CO2,Culex quinquefasciatus,2,4,4,5,1
 California,06,Merced,047,2007,9,CO2,Culex tarsalis,2,4,4,302,4
 California,06,Merced,047,2008,5,CO2,Culex tarsalis,1,1,1,2,1
+California,06,Merced,047,2008,7,CO2,Culex pipiens,1,1,1,69,1
+California,06,Merced,047,2008,7,CO2,Culex tarsalis,1,1,1,2,1
+California,06,Merced,047,2011,9,CO2,Culex pipiens,1,1,1,26,1
+California,06,Merced,047,2011,9,CO2,Culex tarsalis,1,1,1,8,1
 California,06,Merced,047,2014,7,CO2,Culex quinquefasciatus,1,2,2,11,1
 California,06,Merced,047,2014,7,CO2,Culex tarsalis,1,2,2,331,2
+California,06,Merced,047,2014,9,CO2,Culex pipiens,2,2,2,416,2
+California,06,Merced,047,2014,9,CO2,Culex tarsalis,2,2,2,22,2
+California,06,Merced,047,2015,6,CO2,Culex pipiens,1,1,1,87,1
+California,06,Merced,047,2015,6,CO2,Culex tarsalis,1,1,1,17,1
 California,06,Merced,047,2015,7,CO2,Culex quinquefasciatus,3,4,4,65,2
 California,06,Merced,047,2015,7,CO2,Culex tarsalis,3,4,4,550,2
 California,06,Merced,047,2015,7,GRAV,Culex quinquefasciatus,2,2,2,1,1
-California,06,Merced,047,2015,8,CO2,Culex quinquefasciatus,2,2,2,38,2
-California,06,Merced,047,2015,8,CO2,Culex tarsalis,2,2,2,335,2
+California,06,Merced,047,2015,8,CO2,Culex pipiens,3,3,3,175,1
+California,06,Merced,047,2015,8,CO2,Culex quinquefasciatus,3,3,3,38,2
+California,06,Merced,047,2015,8,CO2,Culex tarsalis,3,3,3,336,3
 California,06,Merced,047,2015,9,CO2,Culex quinquefasciatus,3,4,4,30,3
 California,06,Merced,047,2015,9,CO2,Culex tarsalis,3,4,4,79,3
 California,06,Merced,047,2015,9,GRAV,Culex quinquefasciatus,1,1,1,1,1
@@ -8636,6 +8730,8 @@ California,06,Merced,047,2017,7,CO2,Culex quinquefasciatus,1,1,1,3,1
 California,06,Merced,047,2017,7,CO2,Culex tarsalis,1,1,1,142,1
 California,06,Merced,047,2018,7,CO2,Culex quinquefasciatus,1,1,1,2,1
 California,06,Merced,047,2018,7,CO2,Culex tarsalis,1,1,1,253,1
+California,06,Merced,047,2019,8,CO2,Culex pipiens,1,1,1,172,1
+California,06,Merced,047,2019,8,CO2,Culex tarsalis,1,1,1,26,1
 California,06,Placer,061,2003,5,CO2,Culex pipiens,5,5,5,2,2
 California,06,Placer,061,2003,5,CO2,Culex tarsalis,5,5,5,2,2
 California,06,Placer,061,2003,6,CO2,Culex pipiens,2,2,2,7,1
@@ -9530,8 +9626,16 @@ California,06,Placer,061,2022,12,BGS,Culex stigmatosoma,14,21,21,2,2
 California,06,Placer,061,2022,12,CO2,Culex pipiens,11,22,22,1,1
 California,06,Placer,061,2023,1,BGS,Culex pipiens,14,14,14,2,1
 California,06,Placer,061,2023,3,CO2,Culex pipiens,12,54,54,2,1
-California,06,Placer,061,2023,4,CO2,Culex stigmatosoma,42,83,83,1,1
-California,06,Placer,061,2023,4,CO2,Culex tarsalis,42,83,83,3,3
+California,06,Placer,061,2023,4,BGS,Culex pipiens,3,5,26,20,1
+California,06,Placer,061,2023,4,BGS,Culex tarsalis,3,5,26,14,5
+California,06,Placer,061,2023,4,CO2,Culex pipiens,42,165,165,3,2
+California,06,Placer,061,2023,4,CO2,Culex stigmatosoma,42,165,165,2,2
+California,06,Placer,061,2023,4,CO2,Culex tarsalis,42,165,165,11,8
+California,06,Placer,061,2023,5,BGS,Culex pipiens,19,25,25,38,15
+California,06,Placer,061,2023,5,BGS,Culex stigmatosoma,19,25,25,3,2
+California,06,Placer,061,2023,5,BGS,Culex tarsalis,19,25,25,1,1
+California,06,Placer,061,2023,5,CO2,Culex pipiens,53,96,96,9,3
+California,06,Placer,061,2023,5,CO2,Culex tarsalis,53,96,96,4,4
 California,06,Riverside,065,2003,1,GRAV,Culex quinquefasciatus,4,4,4,29,8
 California,06,Riverside,065,2003,1,NJLT,Culex pipiens,1,12,84,4,2
 California,06,Riverside,065,2003,1,NJLT,Culex stigmatosoma,1,12,84,1,1
@@ -11028,9 +11132,9 @@ California,06,Riverside,065,2022,8,CO2,Culex tarsalis,128,288,291,12612,222
 California,06,Riverside,065,2022,8,GRAV,Culex quinquefasciatus,54,244,244,1749,385
 California,06,Riverside,065,2022,8,GRAV,Culex stigmatosoma,54,244,244,3,2
 California,06,Riverside,065,2022,8,GRAV,Culex tarsalis,54,244,244,32,23
-California,06,Riverside,065,2022,9,BGS,Culex quinquefasciatus,104,454,454,4673,391
-California,06,Riverside,065,2022,9,BGS,Culex stigmatosoma,104,454,454,10,4
-California,06,Riverside,065,2022,9,BGS,Culex tarsalis,104,454,454,356,33
+California,06,Riverside,065,2022,9,BGS,Culex quinquefasciatus,103,454,454,4673,391
+California,06,Riverside,065,2022,9,BGS,Culex stigmatosoma,103,454,454,10,4
+California,06,Riverside,065,2022,9,BGS,Culex tarsalis,103,454,454,356,33
 California,06,Riverside,065,2022,9,CO2,Culex quinquefasciatus,123,231,231,6583,138
 California,06,Riverside,065,2022,9,CO2,Culex tarsalis,123,231,231,49591,201
 California,06,Riverside,065,2022,9,GRAV,Culex quinquefasciatus,59,237,237,2448,373
@@ -11075,12 +11179,19 @@ California,06,Riverside,065,2023,3,CO2,Culex quinquefasciatus,58,119,119,180,22
 California,06,Riverside,065,2023,3,CO2,Culex tarsalis,58,119,119,29171,110
 California,06,Riverside,065,2023,3,GRAV,Culex quinquefasciatus,53,200,200,1411,210
 California,06,Riverside,065,2023,3,GRAV,Culex tarsalis,53,200,200,7,7
-California,06,Riverside,065,2023,4,BGS,Culex quinquefasciatus,95,174,174,2858,179
-California,06,Riverside,065,2023,4,BGS,Culex tarsalis,95,174,174,138,33
-California,06,Riverside,065,2023,4,CO2,Culex quinquefasciatus,58,59,59,177,20
-California,06,Riverside,065,2023,4,CO2,Culex tarsalis,58,59,59,33381,50
-California,06,Riverside,065,2023,4,GRAV,Culex quinquefasciatus,53,103,103,2030,132
-California,06,Riverside,065,2023,4,GRAV,Culex tarsalis,53,103,103,11,9
+California,06,Riverside,065,2023,4,BGS,Culex quinquefasciatus,96,360,360,7512,389
+California,06,Riverside,065,2023,4,BGS,Culex tarsalis,96,360,360,489,80
+California,06,Riverside,065,2023,4,CO2,Culex quinquefasciatus,74,135,135,718,62
+California,06,Riverside,065,2023,4,CO2,Culex tarsalis,74,135,135,56620,120
+California,06,Riverside,065,2023,4,GRAV,Culex quinquefasciatus,54,206,206,5480,299
+California,06,Riverside,065,2023,4,GRAV,Culex tarsalis,54,206,206,35,25
+California,06,Riverside,065,2023,5,BGS,Culex quinquefasciatus,95,184,184,2909,178
+California,06,Riverside,065,2023,5,BGS,Culex stigmatosoma,95,184,184,1,1
+California,06,Riverside,065,2023,5,BGS,Culex tarsalis,95,184,184,176,32
+California,06,Riverside,065,2023,5,CO2,Culex quinquefasciatus,96,98,98,468,42
+California,06,Riverside,065,2023,5,CO2,Culex tarsalis,96,98,98,14847,74
+California,06,Riverside,065,2023,5,GRAV,Culex quinquefasciatus,53,106,106,3018,167
+California,06,Riverside,065,2023,5,GRAV,Culex tarsalis,53,106,106,18,11
 California,06,Sacramento,067,2003,1,NJLT,Culex pipiens,27,98,687,152,47
 California,06,Sacramento,067,2003,1,NJLT,Culex stigmatosoma,27,98,687,3,3
 California,06,Sacramento,067,2003,1,NJLT,Culex tarsalis,27,98,687,72,34
@@ -13518,10 +13629,19 @@ California,06,Sacramento,067,2023,3,BGS,No Detection,6,6,6,0,0
 California,06,Sacramento,067,2023,3,GRAV,Culex pipiens,15,70,466,49,22
 California,06,Sacramento,067,2023,3,OTHER,Culex pipiens,15,69,454,212,22
 California,06,Sacramento,067,2023,3,OTHER,Culex tarsalis,15,69,454,10,9
-California,06,Sacramento,067,2023,4,BGS,Culex pipiens,4,4,4,5,3
-California,06,Sacramento,067,2023,4,GRAV,Culex pipiens,14,28,196,22,6
-California,06,Sacramento,067,2023,4,OTHER,Culex pipiens,14,28,196,76,8
-California,06,Sacramento,067,2023,4,OTHER,Culex tarsalis,14,28,196,1,1
+California,06,Sacramento,067,2023,4,BGS,Culex pipiens,15,15,15,68,12
+California,06,Sacramento,067,2023,4,BGS,Culex tarsalis,15,15,15,37,6
+California,06,Sacramento,067,2023,4,GRAV,Culex pipiens,14,56,393,54,20
+California,06,Sacramento,067,2023,4,OTHER,Culex pipiens,14,56,392,539,20
+California,06,Sacramento,067,2023,4,OTHER,Culex tarsalis,14,56,392,25,8
+California,06,Sacramento,067,2023,5,BGS,Culex pipiens,29,29,29,208,27
+California,06,Sacramento,067,2023,5,BGS,Culex stigmatosoma,29,29,29,4,2
+California,06,Sacramento,067,2023,5,BGS,Culex tarsalis,29,29,29,74,22
+California,06,Sacramento,067,2023,5,GRAV,Culex pipiens,15,29,214,109,18
+California,06,Sacramento,067,2023,5,GRAV,Culex stigmatosoma,15,29,214,1,1
+California,06,Sacramento,067,2023,5,GRAV,Culex tarsalis,15,29,214,5,5
+California,06,Sacramento,067,2023,5,OTHER,Culex pipiens,15,28,208,431,22
+California,06,Sacramento,067,2023,5,OTHER,Culex tarsalis,15,28,208,113,14
 California,06,San Bernardino,071,2006,1,CO2,Culex quinquefasciatus,28,59,59,14,6
 California,06,San Bernardino,071,2006,1,CO2,Culex stigmatosoma,28,59,59,1,1
 California,06,San Bernardino,071,2006,1,GRAV,Culex quinquefasciatus,15,31,31,199,12
@@ -14800,12 +14920,24 @@ California,06,San Bernardino,071,2023,3,CO2,Culex quinquefasciatus,24,67,67,2,2
 California,06,San Bernardino,071,2023,3,CO2,Culex stigmatosoma,24,67,67,6,4
 California,06,San Bernardino,071,2023,3,CO2,Culex tarsalis,24,67,67,56,17
 California,06,San Bernardino,071,2023,3,GRAV,Culex quinquefasciatus,27,52,52,3,3
-California,06,San Bernardino,071,2023,4,BGS,Culex quinquefasciatus,8,8,8,1,1
-California,06,San Bernardino,071,2023,4,CO2,Culex quinquefasciatus,24,48,48,27,9
-California,06,San Bernardino,071,2023,4,CO2,Culex stigmatosoma,24,48,48,25,7
-California,06,San Bernardino,071,2023,4,CO2,Culex tarsalis,24,48,48,113,18
-California,06,San Bernardino,071,2023,4,GRAV,Culex quinquefasciatus,27,54,54,13,10
-California,06,San Bernardino,071,2023,4,GRAV,Culex tarsalis,27,54,54,3,2
+California,06,San Bernardino,071,2023,4,BGS,Culex quinquefasciatus,66,90,90,286,51
+California,06,San Bernardino,071,2023,4,BGS,Culex stigmatosoma,66,90,90,17,10
+California,06,San Bernardino,071,2023,4,BGS,Culex tarsalis,66,90,90,33,22
+California,06,San Bernardino,071,2023,4,CO2,Culex quinquefasciatus,24,96,96,61,22
+California,06,San Bernardino,071,2023,4,CO2,Culex stigmatosoma,24,96,96,41,18
+California,06,San Bernardino,071,2023,4,CO2,Culex tarsalis,24,96,96,276,37
+California,06,San Bernardino,071,2023,4,GRAV,Culex quinquefasciatus,27,108,108,193,44
+California,06,San Bernardino,071,2023,4,GRAV,Culex stigmatosoma,27,108,108,4,4
+California,06,San Bernardino,071,2023,4,GRAV,Culex tarsalis,27,108,108,5,3
+California,06,San Bernardino,071,2023,5,BGS,Culex quinquefasciatus,59,71,71,202,41
+California,06,San Bernardino,071,2023,5,BGS,Culex stigmatosoma,59,71,71,10,5
+California,06,San Bernardino,071,2023,5,BGS,Culex tarsalis,59,71,71,60,20
+California,06,San Bernardino,071,2023,5,CO2,Culex quinquefasciatus,24,48,48,114,27
+California,06,San Bernardino,071,2023,5,CO2,Culex stigmatosoma,24,48,48,30,9
+California,06,San Bernardino,071,2023,5,CO2,Culex tarsalis,24,48,48,532,28
+California,06,San Bernardino,071,2023,5,GRAV,Culex quinquefasciatus,27,54,54,160,25
+California,06,San Bernardino,071,2023,5,GRAV,Culex stigmatosoma,27,54,54,5,2
+California,06,San Bernardino,071,2023,5,GRAV,Culex tarsalis,27,54,54,7,5
 California,06,San Francisco,075,2007,7,CO2,Culex tarsalis,1,1,1,2,1
 California,06,San Francisco,075,2011,4,CO2,Culex pipiens,1,10,39,4,2
 California,06,San Francisco,075,2011,4,CO2,Culex tarsalis,1,10,39,2,2
@@ -14876,6 +15008,7 @@ California,06,San Joaquin,077,2009,7,NJLT,Culex pipiens,1,3,21,1,1
 California,06,San Joaquin,077,2009,7,NJLT,Culex tarsalis,1,3,21,23,3
 California,06,San Mateo,081,2022,9,CO2,Culex pipiens,1,1,1,1,1
 California,06,San Mateo,081,2022,10,CO2,Culex pipiens,1,1,1,7,1
+California,06,San Mateo,081,2023,5,CO2,No Detection,1,1,1,0,0
 California,06,Santa Barbara,083,2008,8,CO2,Culex quinquefasciatus,1,2,2,11,1
 California,06,Santa Barbara,083,2008,9,CO2,Culex quinquefasciatus,2,4,37,195,3
 California,06,Santa Barbara,083,2008,9,CO2,Culex stigmatosoma,2,4,37,28,2
@@ -15259,8 +15392,9 @@ California,06,Santa Barbara,083,2022,10,GRAV,Culex tarsalis,10,10,31,11,5
 California,06,Santa Barbara,083,2022,11,BGS,Culex quinquefasciatus,2,2,20,2,1
 California,06,Santa Barbara,083,2022,11,GRAV,Culex quinquefasciatus,2,2,10,45,2
 California,06,Santa Barbara,083,2022,11,GRAV,Culex tarsalis,2,2,10,2,1
-California,06,Santa Barbara,083,2023,4,CO2,Culex tarsalis,3,3,26,62,1
-California,06,Santa Barbara,083,2023,4,GRAV,Culex quinquefasciatus,1,1,3,4,1
+California,06,Santa Barbara,083,2023,4,CO2,Culex tarsalis,6,8,61,435,5
+California,06,Santa Barbara,083,2023,4,GRAV,Culex quinquefasciatus,5,5,17,14,4
+California,06,Santa Barbara,083,2023,4,GRAV,Culex tarsalis,5,5,17,4,2
 California,06,Santa Clara,085,2003,4,NJLT,Culex pipiens,17,51,348,3,3
 California,06,Santa Clara,085,2003,4,NJLT,Culex stigmatosoma,17,51,348,3,3
 California,06,Santa Clara,085,2003,4,NJLT,Culex tarsalis,17,51,348,42,16
@@ -15956,10 +16090,19 @@ California,06,Santa Clara,085,2023,3,BGS,No Detection,12,15,30,0,0
 California,06,Santa Clara,085,2023,3,CO2,Culex pipiens,116,139,139,7,6
 California,06,Santa Clara,085,2023,3,CO2,Culex tarsalis,116,139,139,13,7
 California,06,Santa Clara,085,2023,3,GRAV,No Detection,6,6,6,0,0
-California,06,Santa Clara,085,2023,4,CO2,Culex pipiens,133,134,140,10,9
-California,06,Santa Clara,085,2023,4,CO2,Culex tarsalis,133,134,140,17,12
-California,06,Santa Clara,085,2023,4,GRAV,Culex pipiens,118,119,119,19,13
-California,06,Santa Clara,085,2023,4,GRAV,Culex tarsalis,118,119,119,3,3
+California,06,Santa Clara,085,2023,4,BGS,Culex tarsalis,14,20,38,2,2
+California,06,Santa Clara,085,2023,4,CO2,Culex pipiens,207,308,314,77,33
+California,06,Santa Clara,085,2023,4,CO2,Culex stigmatosoma,207,308,314,4,2
+California,06,Santa Clara,085,2023,4,CO2,Culex tarsalis,207,308,314,264,60
+California,06,Santa Clara,085,2023,4,GRAV,Culex pipiens,187,264,264,118,61
+California,06,Santa Clara,085,2023,4,GRAV,Culex stigmatosoma,187,264,264,4,3
+California,06,Santa Clara,085,2023,4,GRAV,Culex tarsalis,187,264,264,40,26
+California,06,Santa Clara,085,2023,4,OTHER,Culex tarsalis,1,22,78,3,1
+California,06,Santa Clara,085,2023,5,CO2,Culex pipiens,120,139,139,68,19
+California,06,Santa Clara,085,2023,5,CO2,Culex tarsalis,120,139,139,905,50
+California,06,Santa Clara,085,2023,5,GRAV,Culex pipiens,101,113,113,48,24
+California,06,Santa Clara,085,2023,5,GRAV,Culex tarsalis,101,113,113,11,10
+California,06,Santa Clara,085,2023,5,OTHER,Culex tarsalis,1,12,39,4,2
 California,06,Shasta,089,2003,3,NJLT,Culex tarsalis,17,17,93,2,2
 California,06,Shasta,089,2003,4,NJLT,Culex pipiens,20,76,473,73,33
 California,06,Shasta,089,2003,4,NJLT,Culex stigmatosoma,20,76,473,8,6
@@ -17012,8 +17155,10 @@ California,06,Shasta,089,2023,2,CO2,Culex pipiens,19,38,38,8,4
 California,06,Shasta,089,2023,2,CO2,Culex tarsalis,19,38,38,36,16
 California,06,Shasta,089,2023,3,CO2,Culex pipiens,27,63,63,18,11
 California,06,Shasta,089,2023,3,CO2,Culex tarsalis,27,63,63,92,31
-California,06,Shasta,089,2023,4,CO2,Culex pipiens,35,42,42,15,8
-California,06,Shasta,089,2023,4,CO2,Culex tarsalis,35,42,42,67,22
+California,06,Shasta,089,2023,4,CO2,Culex pipiens,45,105,105,27,15
+California,06,Shasta,089,2023,4,CO2,Culex tarsalis,45,105,105,110,39
+California,06,Shasta,089,2023,5,CO2,Culex pipiens,48,83,83,86,21
+California,06,Shasta,089,2023,5,CO2,Culex tarsalis,48,83,83,76,28
 California,06,Sonoma,097,2006,5,CO2,Culex pipiens,7,22,22,307,15
 California,06,Sonoma,097,2006,5,CO2,Culex stigmatosoma,7,22,22,5,2
 California,06,Sonoma,097,2006,5,CO2,Culex tarsalis,7,22,22,41,11
@@ -17961,7 +18106,12 @@ California,06,Sonoma,097,2022,10,CO2,Culex stigmatosoma,27,109,109,1,1
 California,06,Sonoma,097,2022,10,CO2,Culex tarsalis,27,109,109,21,14
 California,06,Sonoma,097,2022,10,GRAV,Culex pipiens,6,24,24,6,5
 California,06,Sonoma,097,2022,10,GRAV,Culex stigmatosoma,6,24,24,15,5
-California,06,Sonoma,097,2023,4,CO2,Culex tarsalis,18,39,39,14,4
+California,06,Sonoma,097,2023,4,CO2,Culex stigmatosoma,23,90,91,1,1
+California,06,Sonoma,097,2023,4,CO2,Culex tarsalis,23,90,91,508,29
+California,06,Sonoma,097,2023,5,CO2,Culex pipiens,24,50,50,2,2
+California,06,Sonoma,097,2023,5,CO2,Culex stigmatosoma,24,50,50,1,1
+California,06,Sonoma,097,2023,5,CO2,Culex tarsalis,24,50,50,102,24
+California,06,Sonoma,097,2023,5,GRAV,Culex stigmatosoma,6,12,12,2,2
 California,06,Stanislaus,099,2003,3,NJLT,Culex pipiens,21,77,535,96,33
 California,06,Stanislaus,099,2003,3,NJLT,Culex stigmatosoma,21,77,535,1,1
 California,06,Stanislaus,099,2003,3,NJLT,Culex tarsalis,21,77,535,54,28
@@ -18215,9 +18365,9 @@ California,06,Stanislaus,099,2008,6,CO2,Culex tarsalis,82,157,157,4653,131
 California,06,Stanislaus,099,2008,6,NJLT,Culex pipiens,34,129,903,465,90
 California,06,Stanislaus,099,2008,6,NJLT,Culex stigmatosoma,34,129,903,8,6
 California,06,Stanislaus,099,2008,6,NJLT,Culex tarsalis,34,129,903,1695,92
-California,06,Stanislaus,099,2008,7,CO2,Culex pipiens,104,249,249,6573,210
-California,06,Stanislaus,099,2008,7,CO2,Culex stigmatosoma,104,249,249,2,2
-California,06,Stanislaus,099,2008,7,CO2,Culex tarsalis,104,249,249,9192,192
+California,06,Stanislaus,099,2008,7,CO2,Culex pipiens,103,248,248,6504,209
+California,06,Stanislaus,099,2008,7,CO2,Culex stigmatosoma,103,248,248,2,2
+California,06,Stanislaus,099,2008,7,CO2,Culex tarsalis,103,248,248,9190,191
 California,06,Stanislaus,099,2008,7,NJLT,Culex pipiens,34,167,1169,1239,106
 California,06,Stanislaus,099,2008,7,NJLT,Culex tarsalis,34,167,1169,2466,108
 California,06,Stanislaus,099,2008,8,CO2,Culex pipiens,99,181,181,9046,170
@@ -18346,9 +18496,9 @@ California,06,Stanislaus,099,2011,8,CO2,Culex tarsalis,96,216,216,1939,147
 California,06,Stanislaus,099,2011,8,NJLT,Culex pipiens,32,157,1097,1359,126
 California,06,Stanislaus,099,2011,8,NJLT,Culex stigmatosoma,32,157,1097,1,1
 California,06,Stanislaus,099,2011,8,NJLT,Culex tarsalis,32,157,1097,724,105
-California,06,Stanislaus,099,2011,9,CO2,Culex pipiens,94,155,155,10038,151
-California,06,Stanislaus,099,2011,9,CO2,Culex stigmatosoma,94,155,155,80,19
-California,06,Stanislaus,099,2011,9,CO2,Culex tarsalis,94,155,155,2985,131
+California,06,Stanislaus,099,2011,9,CO2,Culex pipiens,93,154,154,10012,150
+California,06,Stanislaus,099,2011,9,CO2,Culex stigmatosoma,93,154,154,80,19
+California,06,Stanislaus,099,2011,9,CO2,Culex tarsalis,93,154,154,2977,130
 California,06,Stanislaus,099,2011,9,NJLT,Culex pipiens,32,115,805,1876,93
 California,06,Stanislaus,099,2011,9,NJLT,Culex tarsalis,32,115,805,462,83
 California,06,Stanislaus,099,2011,10,CO2,Culex pipiens,58,84,84,4973,82
@@ -18458,9 +18608,9 @@ California,06,Stanislaus,099,2014,8,NJLT,Culex tarsalis,12,35,245,266,26
 California,06,Stanislaus,099,2014,8,OTHER,Culex pipiens,20,77,539,10,10
 California,06,Stanislaus,099,2014,9,BGS,Culex pipiens,3,14,32,105,14
 California,06,Stanislaus,099,2014,9,BGS,Culex tarsalis,3,14,32,22,7
-California,06,Stanislaus,099,2014,9,CO2,Culex pipiens,144,339,477,21758,295
-California,06,Stanislaus,099,2014,9,CO2,Culex stigmatosoma,144,339,477,5,1
-California,06,Stanislaus,099,2014,9,CO2,Culex tarsalis,144,339,477,4786,252
+California,06,Stanislaus,099,2014,9,CO2,Culex pipiens,142,337,475,21342,293
+California,06,Stanislaus,099,2014,9,CO2,Culex stigmatosoma,142,337,475,5,1
+California,06,Stanislaus,099,2014,9,CO2,Culex tarsalis,142,337,475,4764,250
 California,06,Stanislaus,099,2014,9,NJLT,Culex pipiens,13,46,294,1206,39
 California,06,Stanislaus,099,2014,9,NJLT,Culex tarsalis,13,46,294,252,31
 California,06,Stanislaus,099,2014,9,OTHER,Culex pipiens,19,77,539,25,8
@@ -18478,9 +18628,9 @@ California,06,Stanislaus,099,2015,5,NJLT,Culex pipiens,13,50,351,316,26
 California,06,Stanislaus,099,2015,5,NJLT,Culex tarsalis,13,50,351,79,26
 California,06,Stanislaus,099,2015,5,OTHER,Culex pipiens,20,57,361,20,12
 California,06,Stanislaus,099,2015,6,BGS,Culex pipiens,3,12,12,43,10
-California,06,Stanislaus,099,2015,6,CO2,Culex pipiens,122,345,345,6172,253
-California,06,Stanislaus,099,2015,6,CO2,Culex stigmatosoma,122,345,345,1,1
-California,06,Stanislaus,099,2015,6,CO2,Culex tarsalis,122,345,345,3614,191
+California,06,Stanislaus,099,2015,6,CO2,Culex pipiens,121,344,344,6085,252
+California,06,Stanislaus,099,2015,6,CO2,Culex stigmatosoma,121,344,344,1,1
+California,06,Stanislaus,099,2015,6,CO2,Culex tarsalis,121,344,344,3597,190
 California,06,Stanislaus,099,2015,6,NJLT,Culex pipiens,13,53,373,670,38
 California,06,Stanislaus,099,2015,6,NJLT,Culex stigmatosoma,13,53,373,2,1
 California,06,Stanislaus,099,2015,6,NJLT,Culex tarsalis,13,53,373,418,34
@@ -18492,9 +18642,9 @@ California,06,Stanislaus,099,2015,7,CO2,Culex stigmatosoma,129,350,404,3,3
 California,06,Stanislaus,099,2015,7,CO2,Culex tarsalis,129,350,404,2948,236
 California,06,Stanislaus,099,2015,7,NJLT,Culex pipiens,13,63,441,463,38
 California,06,Stanislaus,099,2015,7,NJLT,Culex tarsalis,13,63,441,425,31
-California,06,Stanislaus,099,2015,8,CO2,Culex pipiens,104,274,274,12987,210
-California,06,Stanislaus,099,2015,8,CO2,Culex stigmatosoma,104,274,274,4,3
-California,06,Stanislaus,099,2015,8,CO2,Culex tarsalis,104,274,274,3249,186
+California,06,Stanislaus,099,2015,8,CO2,Culex pipiens,103,273,273,12812,209
+California,06,Stanislaus,099,2015,8,CO2,Culex stigmatosoma,103,273,273,4,3
+California,06,Stanislaus,099,2015,8,CO2,Culex tarsalis,103,273,273,3248,185
 California,06,Stanislaus,099,2015,8,NJLT,Culex pipiens,13,52,364,491,32
 California,06,Stanislaus,099,2015,8,NJLT,Culex tarsalis,13,52,364,225,28
 California,06,Stanislaus,099,2015,8,OTHER,Culex pipiens,19,57,418,19,11
@@ -18606,9 +18756,9 @@ California,06,Stanislaus,099,2019,7,OTHER,Culex pipiens,42,97,749,100,41
 California,06,Stanislaus,099,2019,7,OTHER,Culex tarsalis,42,97,749,1,1
 California,06,Stanislaus,099,2019,8,BGS,Culex pipiens,36,53,53,71,29
 California,06,Stanislaus,099,2019,8,BGS,Culex tarsalis,36,53,53,178,31
-California,06,Stanislaus,099,2019,8,CO2,Culex pipiens,108,288,288,10643,183
-California,06,Stanislaus,099,2019,8,CO2,Culex stigmatosoma,108,288,288,285,60
-California,06,Stanislaus,099,2019,8,CO2,Culex tarsalis,108,288,288,4564,220
+California,06,Stanislaus,099,2019,8,CO2,Culex pipiens,107,287,287,10471,182
+California,06,Stanislaus,099,2019,8,CO2,Culex stigmatosoma,107,287,287,285,60
+California,06,Stanislaus,099,2019,8,CO2,Culex tarsalis,107,287,287,4538,219
 California,06,Stanislaus,099,2019,8,GRAV,Culex pipiens,7,30,30,169,25
 California,06,Stanislaus,099,2019,8,GRAV,Culex stigmatosoma,7,30,30,3,2
 California,06,Stanislaus,099,2019,8,GRAV,Culex tarsalis,7,30,30,8,5
@@ -18807,8 +18957,23 @@ California,06,Stanislaus,099,2022,10,CO2,Culex tarsalis,65,87,87,1028,51
 California,06,Stanislaus,099,2022,10,GRAV,Culex pipiens,9,22,22,331,16
 California,06,Stanislaus,099,2022,10,GRAV,Culex stigmatosoma,9,22,22,2,1
 California,06,Stanislaus,099,2022,10,GRAV,Culex tarsalis,9,22,22,6,3
-California,06,Stanislaus,099,2023,4,CO2,Culex pipiens,3,3,3,4,1
-California,06,Stanislaus,099,2023,4,CO2,Culex tarsalis,3,3,3,6,2
+California,06,Stanislaus,099,2023,4,BGS,Culex pipiens,8,14,14,26,4
+California,06,Stanislaus,099,2023,4,BGS,Culex stigmatosoma,8,14,14,2,2
+California,06,Stanislaus,099,2023,4,BGS,Culex tarsalis,8,14,14,5,3
+California,06,Stanislaus,099,2023,4,CO2,Culex pipiens,45,66,66,141,30
+California,06,Stanislaus,099,2023,4,CO2,Culex stigmatosoma,45,66,66,5,2
+California,06,Stanislaus,099,2023,4,CO2,Culex tarsalis,45,66,66,1017,35
+California,06,Stanislaus,099,2023,4,GRAV,Culex pipiens,9,18,18,141,9
+California,06,Stanislaus,099,2023,4,GRAV,Culex stigmatosoma,9,18,18,2,2
+California,06,Stanislaus,099,2023,5,BGS,Culex pipiens,19,25,25,29,12
+California,06,Stanislaus,099,2023,5,BGS,Culex stigmatosoma,19,25,25,2,1
+California,06,Stanislaus,099,2023,5,BGS,Culex tarsalis,19,25,25,1,1
+California,06,Stanislaus,099,2023,5,CO2,Culex pipiens,85,109,109,370,59
+California,06,Stanislaus,099,2023,5,CO2,Culex stigmatosoma,85,109,109,5,4
+California,06,Stanislaus,099,2023,5,CO2,Culex tarsalis,85,109,109,760,55
+California,06,Stanislaus,099,2023,5,GRAV,Culex pipiens,9,18,18,297,17
+California,06,Stanislaus,099,2023,5,GRAV,Culex stigmatosoma,9,18,18,2,2
+California,06,Stanislaus,099,2023,5,GRAV,Culex tarsalis,9,18,18,3,2
 California,06,Sutter,101,2003,4,NJLT,Culex pipiens,24,113,797,41,20
 California,06,Sutter,101,2003,4,NJLT,Culex stigmatosoma,24,113,797,5,4
 California,06,Sutter,101,2003,4,NJLT,Culex tarsalis,24,113,797,86,45
@@ -19298,6 +19463,10 @@ California,06,Sutter,101,2022,10,NJLT,Culex pipiens,13,42,294,13,9
 California,06,Sutter,101,2022,10,NJLT,Culex stigmatosoma,13,42,294,1,1
 California,06,Sutter,101,2022,10,NJLT,Culex tarsalis,13,42,294,497,27
 California,06,Sutter,101,2022,11,NJLT,Culex tarsalis,2,2,14,5,1
+California,06,Sutter,101,2023,4,NJLT,Culex pipiens,10,27,189,5,5
+California,06,Sutter,101,2023,4,NJLT,Culex tarsalis,10,27,189,5,4
+California,06,Sutter,101,2023,5,NJLT,Culex pipiens,12,23,161,10,6
+California,06,Sutter,101,2023,5,NJLT,Culex tarsalis,12,23,161,8,6
 California,06,Tulare,107,2006,4,NJLT,Culex quinquefasciatus,14,46,322,97,21
 California,06,Tulare,107,2006,4,NJLT,Culex stigmatosoma,14,46,322,3,3
 California,06,Tulare,107,2006,4,NJLT,Culex tarsalis,14,46,322,42,10
@@ -20258,16 +20427,24 @@ California,06,Tulare,107,2022,10,CO2,Culex tarsalis,56,61,61,69,21
 California,06,Tulare,107,2022,10,GRAV,Culex quinquefasciatus,105,175,175,112,51
 California,06,Tulare,107,2022,10,GRAV,Culex stigmatosoma,105,175,175,12,7
 California,06,Tulare,107,2022,10,GRAV,Culex tarsalis,105,175,175,5,2
-California,06,Tulare,107,2023,4,BGS,Culex quinquefasciatus,92,156,156,541,90
-California,06,Tulare,107,2023,4,BGS,Culex stigmatosoma,92,156,156,22,16
-California,06,Tulare,107,2023,4,BGS,Culex tarsalis,92,156,156,265,49
-California,06,Tulare,107,2023,4,CO2,Culex pipiens/quinquefasciatus,43,46,46,2,2
-California,06,Tulare,107,2023,4,CO2,Culex quinquefasciatus,43,46,46,124,17
-California,06,Tulare,107,2023,4,CO2,Culex stigmatosoma,43,46,46,2,2
-California,06,Tulare,107,2023,4,CO2,Culex tarsalis,43,46,46,78,18
-California,06,Tulare,107,2023,4,GRAV,Culex quinquefasciatus,103,171,171,57,34
-California,06,Tulare,107,2023,4,GRAV,Culex stigmatosoma,103,171,171,2,2
-California,06,Tulare,107,2023,4,GRAV,Culex tarsalis,103,171,171,2,2
+California,06,Tulare,107,2023,4,BGS,Culex quinquefasciatus,121,451,451,3704,304
+California,06,Tulare,107,2023,4,BGS,Culex stigmatosoma,121,451,451,135,77
+California,06,Tulare,107,2023,4,BGS,Culex tarsalis,121,451,451,991,179
+California,06,Tulare,107,2023,4,CO2,Culex quinquefasciatus,73,120,120,928,59
+California,06,Tulare,107,2023,4,CO2,Culex stigmatosoma,73,120,120,30,14
+California,06,Tulare,107,2023,4,CO2,Culex tarsalis,73,120,120,252,51
+California,06,Tulare,107,2023,4,GRAV,Culex quinquefasciatus,104,512,512,809,167
+California,06,Tulare,107,2023,4,GRAV,Culex stigmatosoma,104,512,512,36,24
+California,06,Tulare,107,2023,4,GRAV,Culex tarsalis,104,512,512,13,11
+California,06,Tulare,107,2023,5,BGS,Culex quinquefasciatus,120,302,302,1963,235
+California,06,Tulare,107,2023,5,BGS,Culex stigmatosoma,120,302,302,113,53
+California,06,Tulare,107,2023,5,BGS,Culex tarsalis,120,302,302,587,136
+California,06,Tulare,107,2023,5,CO2,Culex quinquefasciatus,71,77,77,1193,59
+California,06,Tulare,107,2023,5,CO2,Culex stigmatosoma,71,77,77,79,20
+California,06,Tulare,107,2023,5,CO2,Culex tarsalis,71,77,77,504,50
+California,06,Tulare,107,2023,5,GRAV,Culex quinquefasciatus,105,350,350,1601,221
+California,06,Tulare,107,2023,5,GRAV,Culex stigmatosoma,105,350,350,53,32
+California,06,Tulare,107,2023,5,GRAV,Culex tarsalis,105,350,350,31,21
 California,06,Ventura,111,2007,4,NJLT,Culex pipiens,18,67,469,3,2
 California,06,Ventura,111,2007,4,NJLT,Culex tarsalis,18,67,469,26,12
 California,06,Ventura,111,2007,5,NJLT,Culex pipiens,18,90,628,16,11
@@ -20826,7 +21003,11 @@ California,06,Ventura,111,2022,12,OTHER,No Detection,1,1,8,0,0
 California,06,Ventura,111,2023,2,OTHER,No Detection,3,5,35,0,0
 California,06,Ventura,111,2023,3,NJLT,Culex quinquefasciatus,12,31,231,2,1
 California,06,Ventura,111,2023,4,NJLT,Culex tarsalis,12,23,175,8,2
-California,06,Ventura,111,2023,4,OTHER,No Detection,3,6,63,0,0
+California,06,Ventura,111,2023,4,OTHER,Culex quinquefasciatus,15,35,266,4,3
+California,06,Ventura,111,2023,4,OTHER,Culex tarsalis,15,35,266,5,2
+California,06,Ventura,111,2023,5,NJLT,Culex quinquefasciatus,12,24,182,1,1
+California,06,Ventura,111,2023,5,NJLT,Culex tarsalis,12,24,182,4,2
+California,06,Ventura,111,2023,5,OTHER,Culex quinquefasciatus,3,5,35,1,1
 California,06,Yolo,113,2003,1,NJLT,Culex pipiens,16,63,441,21,14
 California,06,Yolo,113,2003,1,NJLT,Culex tarsalis,16,63,441,80,38
 California,06,Yolo,113,2003,1,OTHER,Culex pipiens,8,29,203,10,4
@@ -22863,9 +23044,15 @@ California,06,Yolo,113,2023,3,GRAV,Culex stigmatosoma,7,34,224,1,1
 California,06,Yolo,113,2023,3,GRAV,Culex tarsalis,7,34,224,2,2
 California,06,Yolo,113,2023,3,OTHER,Culex pipiens,6,26,168,9,7
 California,06,Yolo,113,2023,3,OTHER,Culex tarsalis,6,26,168,3,3
-California,06,Yolo,113,2023,4,GRAV,Culex pipiens,7,14,98,8,5
-California,06,Yolo,113,2023,4,OTHER,Culex pipiens,7,14,98,9,4
-California,06,Yolo,113,2023,4,OTHER,Culex tarsalis,7,14,98,2,2
+California,06,Yolo,113,2023,4,BGS,Culex pipiens,6,6,6,17,4
+California,06,Yolo,113,2023,4,GRAV,Culex pipiens,7,28,202,36,10
+California,06,Yolo,113,2023,4,OTHER,Culex pipiens,7,28,201,33,8
+California,06,Yolo,113,2023,4,OTHER,Culex tarsalis,7,28,201,11,6
+California,06,Yolo,113,2023,5,BGS,Culex pipiens,5,5,5,40,3
+California,06,Yolo,113,2023,5,GRAV,Culex pipiens,7,13,90,104,6
+California,06,Yolo,113,2023,5,GRAV,Culex tarsalis,7,13,90,10,4
+California,06,Yolo,113,2023,5,OTHER,Culex pipiens,7,14,95,52,6
+California,06,Yolo,113,2023,5,OTHER,Culex tarsalis,7,14,95,30,7
 California,06,Yuba,115,2003,4,NJLT,Culex pipiens,12,62,432,30,17
 California,06,Yuba,115,2003,4,NJLT,Culex tarsalis,12,62,432,123,43
 California,06,Yuba,115,2003,5,NJLT,Culex pipiens,13,56,392,108,28
@@ -23367,6 +23554,10 @@ California,06,Yuba,115,2022,9,NJLT,Culex tarsalis,7,32,224,71,21
 California,06,Yuba,115,2022,10,NJLT,Culex pipiens,7,25,175,17,6
 California,06,Yuba,115,2022,10,NJLT,Culex stigmatosoma,7,25,175,2,2
 California,06,Yuba,115,2022,10,NJLT,Culex tarsalis,7,25,175,22,12
+California,06,Yuba,115,2023,4,NJLT,Culex pipiens,7,23,161,9,4
+California,06,Yuba,115,2023,4,NJLT,Culex tarsalis,7,23,161,9,7
+California,06,Yuba,115,2023,5,NJLT,Culex pipiens,7,16,112,21,8
+California,06,Yuba,115,2023,5,NJLT,Culex tarsalis,7,16,112,2,2
 Idaho,16,Gem,045,2021,6,CO2,Culex pipiens,30,82,82,1099,61
 Idaho,16,Gem,045,2021,6,CO2,Culex tarsalis,30,82,82,2575,79
 Idaho,16,Gem,045,2021,7,CO2,Culex pipiens,28,88,88,6412,84
@@ -23378,11 +23569,31 @@ Idaho,16,Gem,045,2021,8,CO2,Culex tarsalis,18,67,67,991,64
 Idaho,16,Gem,045,2021,9,CO2,Culex pipiens,17,37,37,934,33
 Idaho,16,Gem,045,2021,9,CO2,Culex tarsalis,17,37,37,35,17
 Louisiana,22,Calcasieu,019,2023,3,GRAV,Culex quinquefasciatus,20,79,79,9082,77
-Louisiana,22,Calcasieu,019,2023,3,NJLT,Culex salinarius,37,257,263,4300,216
-Louisiana,22,Calcasieu,019,2023,4,GRAV,Culex quinquefasciatus,16,37,37,7624,36
-Louisiana,22,Iberia,045,2023,4,CO2,Culex salinarius,5,5,5,1105,5
-Louisiana,22,Iberia,045,2023,4,GRAV,Culex quinquefasciatus,24,24,24,826,24
-Louisiana,22,Iberia,045,2023,4,GRAV,Culex salinarius,24,24,24,1,1
+Louisiana,22,Calcasieu,019,2023,3,NJLT,Culex salinarius,37,293,305,4663,245
+Louisiana,22,Calcasieu,019,2023,4,GRAV,Culex quinquefasciatus,20,65,65,11347,64
+Louisiana,22,Calcasieu,019,2023,4,NJLT,Culex salinarius,37,205,205,2389,172
+Louisiana,22,Calcasieu,019,2023,5,GRAV,Culex quinquefasciatus,24,53,53,15768,52
+Louisiana,22,Iberia,045,2023,4,CO2,Culex quinquefasciatus,5,50,50,3276,6
+Louisiana,22,Iberia,045,2023,4,CO2,Culex salinarius,5,50,50,9519,47
+Louisiana,22,Iberia,045,2023,4,GRAV,Culex quinquefasciatus,24,260,260,14628,259
+Louisiana,22,Iberia,045,2023,4,GRAV,Culex salinarius,24,260,260,40,21
+Louisiana,22,Iberia,045,2023,5,CO2,Culex quinquefasciatus,5,20,20,28,5
+Louisiana,22,Iberia,045,2023,5,CO2,Culex salinarius,5,20,20,1419,20
+Louisiana,22,Iberia,045,2023,5,GRAV,Culex quinquefasciatus,24,96,96,7392,96
+Louisiana,22,Iberia,045,2023,5,GRAV,Culex salinarius,24,96,96,12,6
+Louisiana,22,Tangipahoa,105,2023,3,CO2,Culex nigripalpus,15,117,117,2571,113
+Louisiana,22,Tangipahoa,105,2023,3,CO2,Culex salinarius,15,117,117,356,26
+Louisiana,22,Tangipahoa,105,2023,3,CO2,Culex tarsalis,15,117,117,3,1
+Louisiana,22,Tangipahoa,105,2023,3,GRAV,Culex quinquefasciatus,16,108,108,10693,108
+Louisiana,22,Tangipahoa,105,2023,4,CO2,Culex nigripalpus,14,111,111,1728,110
+Louisiana,22,Tangipahoa,105,2023,4,CO2,Culex salinarius,14,111,111,113,15
+Louisiana,22,Tangipahoa,105,2023,4,CO2,Culex tarsalis,14,111,111,71,3
+Louisiana,22,Tangipahoa,105,2023,4,GRAV,Culex quinquefasciatus,16,135,135,20086,133
+Louisiana,22,Tangipahoa,105,2023,4,GRAV,Culex tarsalis,16,135,135,9,1
+Louisiana,22,Tangipahoa,105,2023,5,CO2,Culex nigripalpus,14,28,28,307,27
+Louisiana,22,Tangipahoa,105,2023,5,CO2,Culex salinarius,14,28,28,15,5
+Louisiana,22,Tangipahoa,105,2023,5,CO2,Culex tarsalis,14,28,28,128,1
+Louisiana,22,Tangipahoa,105,2023,5,GRAV,Culex quinquefasciatus,16,30,30,2357,30
 Nebraska,31,Box Butte,013,2017,6,CO2,Culex restuans,6,10,10,2,1
 Nebraska,31,Box Butte,013,2017,6,CO2,Culex tarsalis,6,10,10,30,2
 Nebraska,31,Box Butte,013,2017,7,CO2,Culex pipiens,6,12,12,7,1
@@ -24521,6 +24732,10 @@ New Jersey,34,Atlantic,001,2022,10,GRAV,Culex restuans,17,17,17,2,1
 New Jersey,34,Atlantic,001,2022,10,GRAV,Culex salinarius,17,17,17,1,1
 New Jersey,34,Atlantic,001,2022,10,NJLT,Culex pipiens/restuans/salinarius,4,32,116,66,17
 New Jersey,34,Atlantic,001,2022,10,OTHER,Culex pipiens/restuans/salinarius,3,11,245,1,1
+New Jersey,34,Atlantic,001,2023,5,NJLT,Culex pipiens,4,16,56,4,3
+New Jersey,34,Atlantic,001,2023,5,NJLT,Culex pipiens/restuans/salinarius,4,16,56,22,4
+New Jersey,34,Atlantic,001,2023,5,NJLT,Culex restuans,4,16,56,20,7
+New Jersey,34,Atlantic,001,2023,5,NJLT,Culex salinarius,4,16,56,7,4
 New Jersey,34,Bergen,003,2003,5,NJLT,Culex pipiens,5,100,100,1,1
 New Jersey,34,Bergen,003,2003,5,NJLT,Culex restuans,5,100,100,145,22
 New Jersey,34,Bergen,003,2003,5,NJLT,Culex salinarius,5,100,100,4,2
@@ -24829,7 +25044,7 @@ New Jersey,34,Bergen,003,2021,10,OTHER,Culex pipiens/restuans/salinarius,2,14,21
 New Jersey,34,Bergen,003,2022,3,GRAV,Culex pipiens/restuans/salinarius,1,1,2,3,1
 New Jersey,34,Bergen,003,2022,5,NJLT,Culex pipiens/restuans/salinarius,6,35,93,88,19
 New Jersey,34,Bergen,003,2022,6,BGS,Culex pipiens/restuans/salinarius,1,3,3,3,1
-New Jersey,34,Bergen,003,2022,6,CO2,Culex pipiens/restuans/salinarius,7,9,10,214,2
+New Jersey,34,Bergen,003,2022,6,CO2,Culex pipiens/restuans/salinarius,6,9,10,214,2
 New Jersey,34,Bergen,003,2022,6,GRAV,Culex pipiens/restuans/salinarius,26,31,31,11163,31
 New Jersey,34,Bergen,003,2022,6,NJLT,Culex pipiens/restuans/salinarius,7,57,143,188,40
 New Jersey,34,Bergen,003,2022,7,BGS,Culex pipiens/restuans/salinarius,4,4,6,33,3
@@ -25584,6 +25799,9 @@ New Jersey,34,Cumberland,011,2022,10,NJLT,Culex restuans,15,170,481,87,26
 New Jersey,34,Cumberland,011,2022,10,NJLT,Culex salinarius,15,170,481,926,60
 New Jersey,34,Cumberland,011,2022,11,NJLT,Culex pipiens,15,15,15,17,2
 New Jersey,34,Cumberland,011,2022,11,NJLT,Culex salinarius,15,15,15,32,4
+New Jersey,34,Cumberland,011,2023,5,NJLT,Culex pipiens,15,45,105,13,4
+New Jersey,34,Cumberland,011,2023,5,NJLT,Culex restuans,15,45,105,38,7
+New Jersey,34,Cumberland,011,2023,5,NJLT,Culex salinarius,15,45,105,418,24
 New Jersey,34,Essex,013,2003,5,NJLT,Culex pipiens/restuans/salinarius,3,93,93,146,20
 New Jersey,34,Essex,013,2003,6,NJLT,Culex pipiens/restuans/salinarius,3,90,90,227,22
 New Jersey,34,Essex,013,2003,7,NJLT,Culex pipiens/restuans/salinarius,3,93,93,292,18
@@ -25825,6 +26043,8 @@ New Jersey,34,Gloucester,015,2022,8,GRAV,Culex pipiens,39,41,41,1678,41
 New Jersey,34,Gloucester,015,2022,9,GRAV,Culex pipiens,27,28,28,329,27
 New Jersey,34,Gloucester,015,2022,10,CO2,Culex pipiens,4,4,4,23,3
 New Jersey,34,Gloucester,015,2022,10,GRAV,Culex pipiens,4,4,4,52,4
+New Jersey,34,Gloucester,015,2023,4,GRAV,Culex pipiens,24,26,26,109,8
+New Jersey,34,Gloucester,015,2023,5,GRAV,Culex pipiens,39,39,39,60,5
 New Jersey,34,Hudson,017,2003,5,NJLT,Culex pipiens,1,20,20,108,5
 New Jersey,34,Hudson,017,2003,5,NJLT,Culex restuans,1,20,20,2,1
 New Jersey,34,Hudson,017,2003,5,NJLT,Culex salinarius,1,20,20,5,2
@@ -26643,6 +26863,7 @@ New Jersey,34,Mercer,021,2022,9,NJLT,Culex pipiens/restuans/salinarius,15,62,265
 New Jersey,34,Mercer,021,2022,10,GRAV,Culex pipiens/restuans/salinarius,17,37,37,82,25
 New Jersey,34,Mercer,021,2022,10,NJLT,Culex pipiens/restuans/salinarius,15,54,261,12,7
 New Jersey,34,Mercer,021,2022,11,GRAV,Culex pipiens/restuans/salinarius,4,4,4,4,3
+New Jersey,34,Mercer,021,2023,5,GRAV,Culex pipiens/restuans/salinarius,4,7,9,92,7
 New Jersey,34,Middlesex,023,2003,5,NJLT,Culex pipiens/restuans/salinarius,3,51,51,16,12
 New Jersey,34,Middlesex,023,2003,6,NJLT,Culex pipiens/restuans/salinarius,3,90,90,382,54
 New Jersey,34,Middlesex,023,2003,7,NJLT,Culex pipiens/restuans/salinarius,3,93,93,413,58
@@ -27982,6 +28203,8 @@ New Jersey,34,Salem,033,2022,10,CO2,Culex pipiens/restuans/salinarius,7,12,13,17
 New Jersey,34,Salem,033,2022,10,GRAV,Culex pipiens/restuans/salinarius,8,15,15,16,5
 New Jersey,34,Salem,033,2022,10,NJLT,Culex pipiens/restuans/salinarius,18,157,539,660,61
 New Jersey,34,Salem,033,2022,10,OTHER,Culex pipiens/restuans/salinarius,1,3,51,82,2
+New Jersey,34,Salem,033,2023,5,GRAV,Culex pipiens/restuans/salinarius,3,6,6,4,2
+New Jersey,34,Salem,033,2023,5,NJLT,Culex pipiens/restuans/salinarius,16,47,157,410,42
 New Jersey,34,Somerset,035,2003,5,NJLT,Culex pipiens,4,80,80,10,7
 New Jersey,34,Somerset,035,2003,5,NJLT,Culex pipiens/restuans/salinarius,4,80,80,55,7
 New Jersey,34,Somerset,035,2003,5,NJLT,Culex restuans,4,80,80,53,20
@@ -28381,6 +28604,11 @@ New Jersey,34,Sussex,037,2022,10,GRAV,Culex pipiens,19,43,160,224,17
 New Jersey,34,Sussex,037,2022,10,GRAV,Culex pipiens/restuans/salinarius,19,43,160,230,19
 New Jersey,34,Sussex,037,2022,10,NJLT,Culex pipiens/restuans/salinarius,3,24,84,6,5
 New Jersey,34,Sussex,037,2022,10,NJLT,Culex restuans,3,24,84,3,3
+New Jersey,34,Sussex,037,2023,5,CO2,Culex pipiens/restuans/salinarius,16,20,20,3,2
+New Jersey,34,Sussex,037,2023,5,CO2,Culex restuans,16,20,20,3,3
+New Jersey,34,Sussex,037,2023,5,CO2,Culex salinarius,16,20,20,10,4
+New Jersey,34,Sussex,037,2023,5,GRAV,Culex pipiens,5,7,27,24,5
+New Jersey,34,Sussex,037,2023,5,GRAV,Culex restuans,5,7,27,221,7
 North Carolina,37,Brunswick,019,2021,1,NJLT,Culex nigripalpus,2,8,56,2,1
 North Carolina,37,Brunswick,019,2021,1,NJLT,Culex restuans,2,8,56,16,3
 North Carolina,37,Brunswick,019,2021,2,CO2,Culex pipiens,1,4,28,5,1
@@ -28450,8 +28678,9 @@ North Carolina,37,Brunswick,019,2023,1,NJLT,Culex restuans,2,10,70,13,7
 North Carolina,37,Brunswick,019,2023,1,NJLT,Culex salinarius,2,10,70,22,6
 North Carolina,37,Brunswick,019,2023,2,NJLT,Culex restuans,2,9,63,53,8
 North Carolina,37,Brunswick,019,2023,2,NJLT,Culex salinarius,2,9,63,49,7
-North Carolina,37,Brunswick,019,2023,3,NJLT,Culex restuans,2,3,21,17,3
-North Carolina,37,Brunswick,019,2023,3,NJLT,Culex salinarius,2,3,21,16,3
+North Carolina,37,Brunswick,019,2023,3,NJLT,Culex restuans,2,7,49,22,4
+North Carolina,37,Brunswick,019,2023,3,NJLT,Culex salinarius,2,7,49,27,6
+North Carolina,37,Brunswick,019,2023,4,NJLT,Culex salinarius,2,4,28,11,3
 North Carolina,37,Forsyth,067,2017,4,CO2,Culex restuans,6,6,6,57,4
 North Carolina,37,Forsyth,067,2017,4,CO2,Culex salinarius,6,6,6,70,3
 North Carolina,37,Forsyth,067,2017,5,BGS,Culex pipiens/quinquefasciatus,1,1,1,1,1
@@ -28988,12 +29217,17 @@ North Carolina,37,New Hanover,129,2023,3,CO2,Culex nigripalpus,9,35,35,2,2
 North Carolina,37,New Hanover,129,2023,3,CO2,Culex pipiens,9,35,35,5,3
 North Carolina,37,New Hanover,129,2023,3,CO2,Culex restuans,9,35,35,10,5
 North Carolina,37,New Hanover,129,2023,3,CO2,Culex salinarius,9,35,35,776,28
-North Carolina,37,New Hanover,129,2023,4,BGS,Culex pipiens,4,8,56,4,2
-North Carolina,37,New Hanover,129,2023,4,BGS,Culex restuans,4,8,56,4,3
-North Carolina,37,New Hanover,129,2023,4,BGS,Culex salinarius,4,8,56,4,3
-North Carolina,37,New Hanover,129,2023,4,CO2,Culex nigripalpus,9,18,18,2,2
-North Carolina,37,New Hanover,129,2023,4,CO2,Culex restuans,9,18,18,10,4
-North Carolina,37,New Hanover,129,2023,4,CO2,Culex salinarius,9,18,18,1136,18
+North Carolina,37,New Hanover,129,2023,4,BGS,Culex pipiens,4,16,112,8,4
+North Carolina,37,New Hanover,129,2023,4,BGS,Culex restuans,4,16,112,5,4
+North Carolina,37,New Hanover,129,2023,4,BGS,Culex salinarius,4,16,112,24,8
+North Carolina,37,New Hanover,129,2023,4,CO2,Culex nigripalpus,9,36,36,2,2
+North Carolina,37,New Hanover,129,2023,4,CO2,Culex pipiens,9,36,36,1,1
+North Carolina,37,New Hanover,129,2023,4,CO2,Culex restuans,9,36,36,22,12
+North Carolina,37,New Hanover,129,2023,4,CO2,Culex salinarius,9,36,36,2186,36
+North Carolina,37,New Hanover,129,2023,5,BGS,Culex pipiens,4,4,28,1,1
+North Carolina,37,New Hanover,129,2023,5,BGS,Culex salinarius,4,4,28,7,1
+North Carolina,37,New Hanover,129,2023,5,CO2,Culex restuans,9,9,9,2,1
+North Carolina,37,New Hanover,129,2023,5,CO2,Culex salinarius,9,9,9,727,9
 North Carolina,37,Onslow,133,2018,4,CO2,Culex pipiens/quinquefasciatus,4,18,18,15,2
 North Carolina,37,Onslow,133,2018,4,CO2,Culex salinarius,4,18,18,233,11
 North Carolina,37,Onslow,133,2018,4,OTHER,Culex pipiens/quinquefasciatus,2,6,6,2,2
@@ -29139,9 +29373,10 @@ North Carolina,37,Transylvania,175,2020,9,BGS,Culex pipiens,3,5,5,1,1
 North Carolina,37,Transylvania,175,2021,6,CO2,No Detection,1,1,1,0,0
 North Carolina,37,Transylvania,175,2021,9,GRAV,Culex pipiens/quinquefasciatus,1,1,1,12,1
 North Carolina,37,Transylvania,175,2021,9,GRAV,Culex restuans,1,1,1,29,1
+North Carolina,37,Transylvania,175,2022,6,CO2,Culex pipiens/quinquefasciatus,1,1,1,1,1
 North Carolina,37,Transylvania,175,2022,7,GRAV,Culex pipiens/quinquefasciatus,1,2,2,4,1
 North Carolina,37,Transylvania,175,2022,7,GRAV,Culex restuans,1,2,2,3,2
-North Carolina,37,Transylvania,175,2022,8,CO2,Culex restuans,1,1,1,1,1
+North Carolina,37,Transylvania,175,2022,8,CO2,Culex restuans,2,2,2,1,1
 North Carolina,37,Transylvania,175,2022,8,GRAV,Culex pipiens/quinquefasciatus,1,1,1,1,1
 North Dakota,38,Williams,105,2005,7,CO2,Culex tarsalis,1,7,7,390,5
 North Dakota,38,Williams,105,2005,8,CO2,Culex salinarius,1,7,7,8,1
@@ -29269,6 +29504,7 @@ South Dakota,46,Codington,029,2022,7,CO2,Culex tarsalis,10,41,177,1591,41
 South Dakota,46,Codington,029,2022,8,CO2,Culex pipiens,11,57,253,211,5
 South Dakota,46,Codington,029,2022,8,CO2,Culex tarsalis,11,57,253,4381,57
 South Dakota,46,Codington,029,2022,9,CO2,Culex tarsalis,10,21,142,749,20
+South Dakota,46,Codington,029,2023,5,CO2,No Detection,2,2,14,0,0
 South Dakota,46,Custer,033,2021,6,CO2,Culex tarsalis,2,7,7,12,7
 South Dakota,46,Custer,033,2022,7,CO2,Culex tarsalis,1,3,3,8,3
 South Dakota,46,Davison,035,2021,6,CO2,Culex pipiens,1,5,5,16,3
@@ -29355,6 +29591,9 @@ South Dakota,46,Lincoln,083,2022,9,BGS,Culex tarsalis,1,7,7,30,4
 South Dakota,46,Lincoln,083,2022,9,CO2,Culex pipiens,6,57,57,291,41
 South Dakota,46,Lincoln,083,2022,9,CO2,Culex restuans,6,57,57,16,5
 South Dakota,46,Lincoln,083,2022,9,CO2,Culex tarsalis,6,57,57,258,40
+South Dakota,46,Lincoln,083,2023,5,BGS,Culex pipiens,1,4,4,7,2
+South Dakota,46,Lincoln,083,2023,5,CO2,Culex pipiens,4,7,7,3,3
+South Dakota,46,Lincoln,083,2023,5,CO2,Culex tarsalis,4,7,7,2,2
 South Dakota,46,Minnehaha,099,2021,5,CO2,Culex pipiens,20,118,118,69,36
 South Dakota,46,Minnehaha,099,2021,5,CO2,Culex tarsalis,20,118,118,25,18
 South Dakota,46,Minnehaha,099,2021,6,BGS,Culex pipiens,5,12,12,7,3
@@ -29412,6 +29651,10 @@ South Dakota,46,Minnehaha,099,2022,9,BGS,Culex tarsalis,4,59,59,602,32
 South Dakota,46,Minnehaha,099,2022,9,CO2,Culex pipiens,22,308,308,1189,234
 South Dakota,46,Minnehaha,099,2022,9,CO2,Culex restuans,22,308,308,81,24
 South Dakota,46,Minnehaha,099,2022,9,CO2,Culex tarsalis,22,308,308,1120,180
+South Dakota,46,Minnehaha,099,2023,5,BGS,Culex pipiens,4,13,13,3,3
+South Dakota,46,Minnehaha,099,2023,5,BGS,Culex tarsalis,4,13,13,2,2
+South Dakota,46,Minnehaha,099,2023,5,CO2,Culex pipiens,21,94,94,11,9
+South Dakota,46,Minnehaha,099,2023,5,CO2,Culex tarsalis,21,94,94,6,6
 South Dakota,46,Yankton,135,2021,6,CO2,Culex tarsalis,1,2,2,42,2
 Utah,49,Cache,005,2018,6,CO2,Culex pipiens,4,6,6,57,2
 Utah,49,Cache,005,2018,6,CO2,Culex tarsalis,4,6,6,388,6
@@ -29609,8 +29852,13 @@ Utah,49,Davis,011,2022,9,CO2,Culex pipiens,33,280,393,44873,273
 Utah,49,Davis,011,2022,9,CO2,Culex tarsalis,33,280,393,260210,273
 Utah,49,Davis,011,2022,10,CO2,Culex pipiens,21,42,42,202,33
 Utah,49,Davis,011,2022,10,CO2,Culex tarsalis,21,42,42,152,27
-Utah,49,Davis,011,2023,4,CO2,Culex pipiens,10,10,10,33,6
-Utah,49,Davis,011,2023,4,CO2,Culex tarsalis,10,10,10,318,10
+Utah,49,Davis,011,2023,4,CO2,Culex pipiens,22,45,45,60,14
+Utah,49,Davis,011,2023,4,CO2,Culex tarsalis,22,45,45,471,32
+Utah,49,Davis,011,2023,5,BGS,Culex pipiens,1,2,2,11,2
+Utah,49,Davis,011,2023,5,BGS,Culex tarsalis,1,2,2,5,2
+Utah,49,Davis,011,2023,5,CO2,Culex pipiens,40,161,203,264,67
+Utah,49,Davis,011,2023,5,CO2,Culex tarsalis,40,161,203,1473,105
+Utah,49,Davis,011,2023,5,GRAV,Culex pipiens,3,3,3,1,1
 Utah,49,Salt Lake,035,2005,5,CO2,Culex pipiens,28,28,28,5,4
 Utah,49,Salt Lake,035,2005,5,CO2,Culex tarsalis,28,28,28,47,10
 Utah,49,Salt Lake,035,2005,6,CO2,Culex pipiens,30,99,99,274,53
@@ -30044,6 +30292,12 @@ Utah,49,Salt Lake,035,2022,10,CO2,Culex tarsalis,23,81,81,989,31
 Utah,49,Salt Lake,035,2022,10,GRAV,Culex pipiens,22,44,44,184,37
 Utah,49,Salt Lake,035,2022,10,GRAV,Culex tarsalis,22,44,44,40,19
 Utah,49,Salt Lake,035,2022,11,CO2,Culex pipiens,1,1,1,1,1
+Utah,49,Salt Lake,035,2023,5,BGS,Culex pipiens,6,10,10,3,2
+Utah,49,Salt Lake,035,2023,5,BGS,Culex tarsalis,6,10,10,8,2
+Utah,49,Salt Lake,035,2023,5,CO2,Culex pipiens,33,65,65,54,24
+Utah,49,Salt Lake,035,2023,5,CO2,Culex tarsalis,33,65,65,165,34
+Utah,49,Salt Lake,035,2023,5,GRAV,Culex pipiens,16,32,32,6,4
+Utah,49,Salt Lake,035,2023,5,GRAV,Culex tarsalis,16,32,32,1,1
 Washington,53,Benton,005,2021,3,CO2,No Detection,3,3,3,0,0
 Washington,53,Benton,005,2021,4,CO2,Culex pipiens,35,48,48,19,12
 Washington,53,Benton,005,2021,4,CO2,Culex tarsalis,35,48,48,86,18
@@ -30095,6 +30349,10 @@ Washington,53,Grant,025,2022,8,CO2,Culex pipiens,73,309,309,9433,290
 Washington,53,Grant,025,2022,8,CO2,Culex tarsalis,73,309,309,9603,288
 Washington,53,Grant,025,2022,9,CO2,Culex pipiens,65,168,168,3255,144
 Washington,53,Grant,025,2022,9,CO2,Culex tarsalis,65,168,168,1342,114
+Washington,53,Grant,025,2023,4,CO2,Culex pipiens,34,40,40,2,2
+Washington,53,Grant,025,2023,4,CO2,Culex tarsalis,34,40,40,33,13
+Washington,53,Grant,025,2023,5,CO2,Culex pipiens,63,111,111,47,23
+Washington,53,Grant,025,2023,5,CO2,Culex tarsalis,63,111,111,395,50
 Washington,53,Klickitat,039,2021,6,CO2,Culex tarsalis,3,4,4,13,2
 Washington,53,Klickitat,039,2021,7,CO2,Culex pipiens,3,4,4,1,1
 Washington,53,Klickitat,039,2021,7,CO2,Culex tarsalis,3,4,4,66,2

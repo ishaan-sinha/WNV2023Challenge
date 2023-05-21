@@ -47,9 +47,9 @@ from darts.utils.likelihood_models import QuantileRegression
 wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
 def getData(state):
-    state_data = pd.read_csv('../statesNormal/'+state+'/NOAA_data.csv')
+    state_data = pd.read_csv('../statesMaySubmission/'+state+'/NOAA_data.csv')
     state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
-    temporalData = pd.read_csv('../statesNormal/' + state + '/temporalData.csv', index_col=[0])
+    temporalData = pd.read_csv('../statesMaySubmission/' + state + '/temporalData.csv', index_col=[0])
     temporalData.index = pd.to_datetime(temporalData.index)
     state_data['count'] = temporalData['count']
     state_data['month_cos'] = np.cos(state_data.index.month * 2 * np.pi / 12)

@@ -52,7 +52,7 @@ pd.options.display.float_format = '{:,.2f}'.format
 #wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
 def getData(state):
-    #state_data = pd.read_csv('../statesNormal/'+state+'/wnv_data.csv', index_col=[0])
+    #state_data = pd.read_csv('../statesMaySubmission/'+state+'/wnv_data.csv', index_col=[0])
     state_data = pd.read_csv('wnv_data.csv', index_col=[0])
     state_data.index = pd.to_datetime(state_data.index)
     state_data['month_cos'] = np.cos(state_data.index.month * 2 * np.pi / 12)
@@ -69,7 +69,8 @@ def getData(state):
 #for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 for state in ['DC']:
     state_data = getData(state)
-    state_data = state_data.dropna()
+
+    state_data = state_data[3:]
     #We will make 12 forecasts, as we have 9 months ahead for the rest of the data
     ts = TimeSeries.from_series(state_data['9monthsAhead'])
     state_data.drop(['9monthsAhead'], axis=1, inplace=True)
@@ -79,8 +80,6 @@ for state in ['DC']:
 
     transformer = Scaler()
     ts_ttrain = transformer.fit_transform(ts_train)
-    ts_ttest = transformer.transform(ts_test)
-    ts_t = transformer.transform(ts)
 
     #Now we deal with covariates
 
@@ -121,30 +120,7 @@ for state in ['DC']:
     dfY = pd.DataFrame()
 
 
-    def plot_predict(ts_actual, ts_test, ts_pred):
-        ## plot time series, limited to forecast horizon
-        plt.figure(figsize=FIGSIZE)
-
-        ts_actual.plot(label="actual")  # plot actual
-
-        ts_pred.plot(low_quantile=qL1, high_quantile=qU1, label=label_q1)  # plot U1 quantile band
-        # ts_pred.plot(low_quantile=qL2, high_quantile=qU2, label=label_q2)   # plot U2 quantile band
-        ts_pred.plot(low_quantile=qL3, high_quantile=qU3, label=label_q3)  # plot U3 quantile band
-        ts_pred.plot(central_quantile="mean", label="expected")  # plot "mean" or median=0.5
-
-        plt.title("TFT: test set (MAE: {:.2f})".format(mae(ts_test, ts_pred)))
-        plt.legend();
-    plt.clf()
-    plot_predict(ts, ts_test, ts_pred)
-    plt.show()
-    plt.savefig('../statesNormal/'+state+'/train+testsecondPred.png')
-    plt.clf()
-    ts_pred = transformer.inverse_transform(ts_tpred)
-    ts_actual = ts[ts_tpred.start_time(): ts_tpred.end_time()]  # actual values in forecast horizon
-    plot_predict(ts_actual, ts_test, ts_pred)
-    plt.show()
-    plt.savefig('../statesNormal/'+state+'/testsecondPred.png')
-        # helper method: calculate percentiles of predictions
+    # helper method: calculate percentiles of predictions
     def predQ(ts_tpred, q):
         ts = ts_pred.quantile_timeseries(q)  # percentile of predictions
         s = TimeSeries.pd_series(ts)
@@ -157,7 +133,7 @@ for state in ['DC']:
     _ = [predQ(ts_tpred, q) for q in quantiles]
 
     dfY.index = dfY.index+pd.DateOffset(months=9)
-    #dfY.to_csv('../statesNormal/'+state+'/secondPred.csv')
+    dfY.to_csv('secondPred.csv')
     print(state)
 
 

@@ -5,5 +5,5 @@ wnv_data = pd.read_csv('WNVData/WNV_forecasting_challenge_state-month_cases.csv'
 
 
 for i in set(wnv_data['state']):
-    os.mkdir('statesNormal/'+i)
+    os.mkdir('statesJuneSubmission/'+i)
 

@@ -16,4 +16,4 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     state_data['12m'] = state_data['count'].shift(12)
     state_data['month_cos'] = np.cos(2 * np.pi * state_data.index.month / 12)
     state_data['month_sin'] = np.sin(2 * np.pi * state_data.index.month / 12)
-    state_data.to_csv('statesNormal/'+ state +'/temporalData.csv')
+    state_data.to_csv('statesMaySubmission/'+ state +'/temporalData.csv')

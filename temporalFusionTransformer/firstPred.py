@@ -54,9 +54,9 @@ wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.c
 
 df_results_mae = pandas.DataFrame(columns=['state', 'firstPred'])
 def getData(state):
-    state_data = pd.read_csv('../statesNormal/'+state+'/NOAA_data.csv')
+    state_data = pd.read_csv('../statesMaySubmission/'+state+'/NOAA_data.csv')
     state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
-    temporalData = pd.read_csv('../statesNormal/' + state + '/temporalData.csv', index_col=[0])
+    temporalData = pd.read_csv('../statesMaySubmission/' + state + '/temporalData.csv', index_col=[0])
     temporalData.index = pd.to_datetime(temporalData.index)
     state_data['count'] = temporalData['count']
     state_data['month_cos'] = np.cos(state_data.index.month * 2 * np.pi / 12)
@@ -141,13 +141,13 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     plot_predict(ts, ts_test, ts_pred)
     df_results_mae = df_results_mae.append({'state': state, 'firstPred': mae(ts_test, ts_pred)}, ignore_index=True)
     #plt.show()
-    plt.savefig('../statesNormal/'+state+'/train+testfirstPred.png')
+    plt.savefig('../statesMaySubmission/'+state+'/train+testfirstPred.png')
     plt.clf()
     ts_pred = transformer.inverse_transform(ts_tpred)
     ts_actual = ts[ts_tpred.start_time(): ts_tpred.end_time()]  # actual values in forecast horizon
     plot_predict(ts_actual, ts_test, ts_pred)
     #plt.show()
-    plt.savefig('../statesNormal/'+state+'/testfirstPred.png')
+    plt.savefig('../statesMaySubmission/'+state+'/testfirstPred.png')
         # helper method: calculate percentiles of predictions
     def predQ(ts_tpred, q):
         ts = ts_pred.quantile_timeseries(q)  # percentile of predictions
@@ -161,7 +161,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     _ = [predQ(ts_tpred, q) for q in quantiles]
 
     dfY.index = dfY.index+pd.DateOffset(months=9)
-    #dfY.to_csv('../statesNormal/'+state+'/secondPred.csv')
+    #dfY.to_csv('../statesMaySubmission/'+state+'/secondPred.csv')
     dfY = dfY[-8:]
     print(state)
 
