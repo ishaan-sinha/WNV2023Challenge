@@ -24,6 +24,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/MosquitoData/MonthlyMosquitoData.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/MosquitoData/abundance.csv">
           <value>
             <Attribute>
@@ -136,6 +143,34 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/June/baselineFirstPredTest.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/modelResults/June/baselineSecondPredTest.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/modelResults/June/baselineThirdPredTest.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/modelResults/June/withArbovirusTest.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/modelResults/firstPred.csv">
           <value>
             <Attribute>
@@ -151,6 +186,41 @@
           </value>
         </entry>
         <entry key="/modelResults/thirdPred.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/AL/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/CA/NOAA_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/CA/thirdPred.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/CA/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/FL/wnv_data.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

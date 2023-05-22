@@ -67,8 +67,8 @@ abbrev_to_us_state = dict(map(reversed, us_state_to_abbrev.items()))
 wnv_data = pd.read_csv('WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
 finalSubmission = pd.DataFrame(columns=['location', 'forecast_date', 'target_end_date', 'target', 'type', 'quantile', 'value'])
-first_mae = pd.read_csv('modelResults/firstPred.csv', index_col=[1])
-second_mae = pd.read_csv('modelResults/secondPred.csv', index_col=[1])
+first_mae = pd.read_csv('modelResults/May/firstPred.csv', index_col=[1])
+second_mae = pd.read_csv('modelResults/May/secondPred.csv', index_col=[1])
 
 for state in [i for i in wnv_data['state'].unique() if i != 'DC']:
     first_pred = pd.read_csv('statesMaySubmission/'+ state + '/firstPred.csv', index_col=[0])
