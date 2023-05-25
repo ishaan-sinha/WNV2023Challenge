@@ -115,14 +115,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="$USER_HOME$/Downloads/abundance.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Downloads/infection.csv">
+        <entry key="$USER_HOME$/Downloads/29926a7c8132a0a25e3b12a24abdff86-d627bc780f6fcb82a22c2934f67c6fe831c07640/states.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -171,21 +164,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/modelResults/firstPred.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/modelResults/secondPred.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/modelResults/thirdPred.csv">
+        <entry key="/statesJuneSubmission/AL/thirdPred.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -228,118 +207,6 @@
           </value>
         </entry>
         <entry key="/statesMaySubmission/AL/noaa+temporal.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/AL/NOAA_data.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/AL/firstPred.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/AL/noaa+temporal.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/AL/temporalData.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/AZ/noaa+temporal.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/CA/firstPred.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/CA/noaa+temporal.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/DC/secondPred.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/DC/wnv_data.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/GA/NOAA_data.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/ME/NOAA_data.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/ND/noaa+temporal.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/TN/secondPred.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/TX/noaa+temporal.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/WA/firstPred.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesNormal/WY/secondPred.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
