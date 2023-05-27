@@ -115,13 +115,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="$USER_HOME$/Downloads/29926a7c8132a0a25e3b12a24abdff86-d627bc780f6fcb82a22c2934f67c6fe831c07640/states.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="/WNVData/WNV_forecasting_challenge_state-month_cases.csv">
           <value>
             <Attribute>
@@ -157,7 +150,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/June/withArbovirusLocalizedTest.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/modelResults/June/withArbovirusLocalizedTestMinMax.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/modelResults/June/withArbovirusTest.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/AL/MonthlyMosquitoData500miles.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -178,6 +192,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesJuneSubmission/CA/MonthlyMosquitoData500miles.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesJuneSubmission/CA/NOAA_data.csv">
           <value>
             <Attribute>
@@ -192,7 +213,63 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesJuneSubmission/CA/withArbovirus.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/CA/withArbovirusLocalized.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/CA/withArbovirusLocalizedMinMax.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesJuneSubmission/CA/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/DE/MonthlyMosquitoData500miles.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/FL/MonthlyMosquitoData500miles.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/FL/NOAA_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/FL/thirdPred.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/FL/withArbovirusLocalized.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
