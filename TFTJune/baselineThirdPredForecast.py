@@ -1,8 +1,4 @@
 import pandas
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import pickle
 
 EPOCHS = 300
 INLEN = 32
@@ -38,10 +34,10 @@ warnings.filterwarnings("ignore")
 import logging
 logging.disable(logging.CRITICAL)
 
-from darts import TimeSeries, concatenate
+from darts import TimeSeries
 from darts.dataprocessing.transformers import Scaler
 from darts.models import TFTModel
-from darts.metrics import mape, mae
+from darts.metrics import mae
 
 from darts.utils.likelihood_models import QuantileRegression
 
@@ -74,7 +70,7 @@ def getData(state):
 #for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 #for state in ['DC']:
 #for state in ['CA']:
-for state in [i for i in wnv_data['state']]:
+for state in [i for i in wnv_data['state'].unique()]:
     state_data = getData(state)
     state_data = state_data[4:]
 
@@ -108,7 +104,11 @@ for state in [i for i in wnv_data['state']]:
                      likelihood=QuantileRegression(quantiles=QUANTILES),
                      # loss_fn=MSELoss(),
                      random_state=RAND,
-                     force_reset=True)
+                     force_reset=True,
+                     pl_trainer_kwargs={
+                      "accelerator": "gpu",
+                      "devices": [0]}
+    )
 
 
     model.fit(ts_ttrain,
@@ -122,7 +122,6 @@ for state in [i for i in wnv_data['state']]:
 
     ts_pred = transformer.inverse_transform(ts_tpred)
     ts_pred = ts_pred[-8:]
-    print(ts_pred)
 
 
     dfY = pd.DataFrame()
@@ -168,7 +167,7 @@ for state in [i for i in wnv_data['state']]:
 
     dfY = dfY[-8:]
     dfY.to_csv('../statesJuneSubmission/'+state+'/FORECASTthirdPred.csv')
-    print(dfY)
+
     print(state)
 
 
