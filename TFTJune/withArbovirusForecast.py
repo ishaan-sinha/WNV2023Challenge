@@ -105,7 +105,11 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                      likelihood=QuantileRegression(quantiles=QUANTILES),
                      # loss_fn=MSELoss(),
                      random_state=RAND,
-                     force_reset=True)
+                     force_reset=True,
+                     pl_trainer_kwargs={
+                      "accelerator": "gpu",
+                      "devices": [0]}
+                    )
 
     model.fit(ts_ttrain,
               future_covariates=tcov,
