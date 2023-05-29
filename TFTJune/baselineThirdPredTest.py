@@ -71,8 +71,8 @@ def getData(state):
     return state_data
 
 
-for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-#for state in ['CA']:
+#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+for state in ['DC']:
     state_data = getData(state)
 
     state_data = state_data.dropna()
@@ -139,7 +139,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
         ts_pred.plot(central_quantile="mean", label="expected")  # plot "mean" or median=0.5
 
         plt.title("TFT: test set (MAE: {:.2f})".format(mae(ts_test, ts_pred)))
-        plt.legend();
+        plt.legend()
     plt.clf()
     plot_predict(ts, ts_test, ts_pred)
     df_results_mae = df_results_mae.append({'state': state, 'baselineThirdPredTest': mae(ts_test, ts_pred)}, ignore_index=True)
@@ -168,6 +168,6 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     dfY = dfY[-8:]
     print(state)
 
-df_results_mae.to_csv('../modelResults/June/baselineThirdPredTest.csv')
+#df_results_mae.to_csv('../modelResults/June/baselineThirdPredTest.csv')
 
 

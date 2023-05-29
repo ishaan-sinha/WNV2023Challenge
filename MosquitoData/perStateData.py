@@ -89,7 +89,8 @@ state_coordinates['state'] = state_coordinates['state'].apply(lambda x: us_state
 state_coordinates.set_index('state', inplace=True)
 
 
-for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+for state in ['ND']:
     combinedData = pd.concat([abundanceData, infectionData], axis=1)
     combinedData.reset_index(inplace=True)
     combinedData['state_names'] = combinedData['statefp'].apply(lambda x: inv_map[str(x)])
@@ -103,6 +104,9 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
             acceptable_states.append(check)
 
     state_data = combinedData[combinedData['state_names'].isin(acceptable_states)]
+    #print(state_data.head(100))
+    print(state_data['state_names'].value_counts())
+    break
     state_data.drop(['statefp', 'countyfp', 'state_names'], axis=1, inplace=True)
 
     mean = state_data.groupby(['year','month']).mean()
@@ -113,5 +117,5 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     state_data.interpolate(method='linear', inplace=True)
     state_data.fillna(0, inplace=True)
 
-    state_data.to_csv('../statesJuneSubmission/' + state + '/MonthlyMosquitoData500miles.csv')
+    #state_data.to_csv('../statesJuneSubmission/' + state + '/MonthlyMosquitoData500miles.csv')
 

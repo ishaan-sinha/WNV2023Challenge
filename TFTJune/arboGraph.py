@@ -35,8 +35,7 @@ for i in set([i for i in wnv_data['state'] if i != 'DC']):
     total.arboLocalMinMaxPred.plot()
     plt.legend()
     plt.title(f'May: ' + str(mae_1.at[i, 'baselineThirdPredTest']) + '    Arbovirus: ' + str(mae_2.at[i, 'withArbovirus'])+'   LocArbo: ' + str(mae_3.at[i, 'withArbovirusLocalized']) + '   LocArboMinMax: ' + str(mae_4.at[i, 'withArbovirusLocalizedMinMax']))
-    #plt.savefig('../statesJuneSubmission/' + i + '/arboGraphLocalized.png')
+    plt.savefig('../statesJuneSubmission/' + i + '/arboGraphLocalizedMinMax.png')
     plt.show()
     plt.clf()
     print(i)
-    break

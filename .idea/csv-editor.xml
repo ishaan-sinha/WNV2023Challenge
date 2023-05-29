@@ -87,6 +87,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/MosquitoData/stateCoordinates.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/NJTemperature.csv">
           <value>
             <Attribute>
@@ -171,6 +178,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/May/thirdPred.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesJuneSubmission/AL/MonthlyMosquitoData500miles.csv">
           <value>
             <Attribute>
@@ -241,6 +255,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesJuneSubmission/DC/NOAA_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/DC/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesJuneSubmission/DE/MonthlyMosquitoData500miles.csv">
           <value>
             <Attribute>
@@ -277,6 +305,20 @@
           </value>
         </entry>
         <entry key="/statesJuneSubmission/FL/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/MA/withArbovirusLocalizedMinMax.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/ND/MonthlyMosquitoData500miles.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
