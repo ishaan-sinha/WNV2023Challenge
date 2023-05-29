@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pickle
 
-EPOCHS = 3
+EPOCHS = 300
 INLEN = 32
 HIDDEN = 64
 LSTMLAYERS = 2
