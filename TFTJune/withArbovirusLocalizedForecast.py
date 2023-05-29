@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pickle
 
-EPOCHS = 3
+EPOCHS = 300
 INLEN = 32
 HIDDEN = 64
 LSTMLAYERS = 2
@@ -52,7 +52,6 @@ pd.options.display.float_format = '{:,.2f}'.format
 
 wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
-df_results_mae = pandas.DataFrame(columns=['state', 'withArbovirusLocalized'])
 def getData(state):
     state_data = pd.read_csv('../statesJuneSubmission/'+state+'/NOAA_data.csv')
     state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
@@ -76,8 +75,17 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     state_data = getData(state)
     state_data = state_data[4:]
 
+    mosquitoData = pd.read_csv('../statesJuneSubmission/'+ state +'/MonthlyMosquitoData500miles.csv')
+    mosquitoData.set_index(pd.to_datetime([f'{y}-{m}-01' for y, m in zip(mosquitoData.year, mosquitoData.month)]), inplace=True)
+    state_data = pd.concat([state_data, mosquitoData], axis=1)
+    state_data.drop(['year', 'month'], axis=1, inplace=True)
+    state_data = state_data.fillna(-1)
+
+    rando_data = state_data[state_data['8monthsAhead'] != -1]
+
+
     # We will make 12 forecasts, as we have 8 months ahead only for the last 12 months
-    ts = TimeSeries.from_series(state_data['8monthsAhead'].dropna())
+    ts = TimeSeries.from_series(rando_data['8monthsAhead'].dropna())
 
     state_data.drop(['8monthsAhead'], axis=1, inplace=True)
 
@@ -112,7 +120,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
               verbose=True)
 
     # testing: generate predictions
-    ts_tpred = model.predict(n=len(ts_test),
+    ts_tpred = model.predict(n=12,
                              num_samples=N_SAMPLES,
                              n_jobs=N_JOBS)
     ts_pred = transformer.inverse_transform(ts_tpred)
@@ -120,32 +128,6 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 
     dfY = pd.DataFrame()
 
-
-    def plot_predict(ts_actual, ts_test, ts_pred):
-        ## plot time series, limited to forecast horizon
-        plt.figure(figsize=FIGSIZE)
-
-        ts_actual.plot(label="actual")  # plot actual
-
-        ts_pred.plot(low_quantile=qL1, high_quantile=qU1, label=label_q1)  # plot U1 quantile band
-        # ts_pred.plot(low_quantile=qL2, high_quantile=qU2, label=label_q2)   # plot U2 quantile band
-        ts_pred.plot(low_quantile=qL3, high_quantile=qU3, label=label_q3)  # plot U3 quantile band
-        ts_pred.plot(central_quantile="mean", label="expected")  # plot "mean" or median=0.5
-
-        plt.title("TFT: test set (MAE: {:.2f})".format(mae(ts_test, ts_pred)))
-        plt.legend();
-    plt.clf()
-    plot_predict(ts, ts_test, ts_pred)
-    df_results_mae = df_results_mae.append({'state': state, 'withArbovirusLocalized': mae(ts_test, ts_pred)}, ignore_index=True)
-    #plt.show()
-    plt.savefig('../statesJuneSubmission/'+state+'/train+testwithArbovirusLocalized.png')
-    plt.clf()
-    ts_pred = transformer.inverse_transform(ts_tpred)
-    ts_actual = ts[ts_tpred.start_time(): ts_tpred.end_time()]  # actual values in forecast horizon
-    plot_predict(ts_actual, ts_test, ts_pred)
-    #plt.show()
-    plt.savefig('../statesJuneSubmission/'+state+'/testwithArbovirusLocalized.png')
-        # helper method: calculate percentiles of predictions
     def predQ(ts_tpred, q):
         ts = ts_pred.quantile_timeseries(q)  # percentile of predictions
         s = TimeSeries.pd_series(ts)
@@ -158,9 +140,11 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     _ = [predQ(ts_tpred, q) for q in quantiles]
 
     dfY.index = dfY.index+pd.DateOffset(months=8)
+
     dfY = dfY[-8:]
-    #dfY.to_csv('../statesJuneSubmission/'+state+'/withArbovirusLocalized.csv')
-    break
+    dfY.to_csv('../statesJuneSubmission/'+state+'/FORECASTwithArbovirusLocalized.csv')
+
+    print(state)
 
 
 
