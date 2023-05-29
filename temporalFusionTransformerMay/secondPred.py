@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pickle
 
-EPOCHS = 300
+EPOCHS = 3
 INLEN = 32
 HIDDEN = 64
 LSTMLAYERS = 2
@@ -67,8 +67,8 @@ def getData(state):
     return state_data
 
 
-for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-#for state in ['CA']:
+#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+for state in ['CA']:
     state_data = getData(state)
     state_data = state_data[3:]
     #We will make 12 forecasts, as we have 9 months ahead for the rest of the data
@@ -106,6 +106,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                      random_state=RAND,
                      force_reset=True)
 
+
     model.fit(ts_ttrain,
               future_covariates=tcov,
               verbose=True)
@@ -133,7 +134,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     _ = [predQ(ts_tpred, q) for q in quantiles]
 
     dfY.index = dfY.index+pd.DateOffset(months=9)
-    dfY.to_csv('../statesMaySubmission/'+state+'/secondPred.csv')
+    #dfY.to_csv('../statesMaySubmission/'+state+'/secondPred.csv')
     print(state)
 
 

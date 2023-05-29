@@ -178,6 +178,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/May/firstPred.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/modelResults/May/thirdPred.csv">
           <value>
             <Attribute>
@@ -200,6 +207,13 @@
           </value>
         </entry>
         <entry key="/statesJuneSubmission/AL/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/CA/FORECASTthirdPred.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -255,7 +269,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesJuneSubmission/DC/FORECASTthirdPred.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesJuneSubmission/DC/NOAA_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/DC/thirdPred.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -347,6 +375,13 @@
           </value>
         </entry>
         <entry key="/submissions/finalSubmissionCombined2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/submissions/finalSubmissionMayCombined4.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
