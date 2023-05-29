@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pickle
 
-EPOCHS = 3
+EPOCHS = 300
 INLEN = 32
 HIDDEN = 64
 LSTMLAYERS = 2
@@ -111,13 +111,11 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                      # loss_fn=MSELoss(),
                      random_state=RAND,
                      force_reset=True,
-
-                    )
-    '''
-    pl_trainer_kwargs={
+                        pl_trainer_kwargs={
                       "accelerator": "gpu",
                       "devices": [1]}
-    '''
+                    )
+
 
     model.fit(ts_ttrain,
               future_covariates=tcov,
@@ -146,10 +144,10 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 
     dfY.index = dfY.index+pd.DateOffset(months=8)
     dfY = dfY[-8:]
-    print(dfY)
-    #dfY.to_csv('../statesJuneSubmission/' + state + '/FORECASTwithArbovirus.csv')
+
+    dfY.to_csv('../statesJuneSubmission/' + state + '/FORECASTwithArbovirus.csv')
     print(state)
-    break
+
 
 
 
