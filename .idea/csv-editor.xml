@@ -192,6 +192,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesJulySubmission/AL/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJuneSubmission/AL/FORECASTthirdPred.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesJuneSubmission/AL/MonthlyMosquitoData500miles.csv">
           <value>
             <Attribute>
@@ -382,6 +396,13 @@
           </value>
         </entry>
         <entry key="/submissions/finalSubmissionMayCombined4.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/submissions/finalSubmissionMayCombinedNEW.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

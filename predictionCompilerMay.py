@@ -74,10 +74,10 @@ withArbovirusLocalizedMinMax_mae = pd.read_csv('modelResults/June/withArbovirusL
 
 for state in [i for i in wnv_data['state'].unique() if i != 'DC']:
 #for state in ['AL']:
-    third_pred = pd.read_csv('statesJuneSubmission/'+ state + '/thirdPred.csv', index_col=[0])
-    withArbovirus = pd.read_csv('statesJuneSubmission/'+ state + '/withArbovirus.csv', index_col=[0])
-    withArbovirusLocalized = pd.read_csv('statesJuneSubmission/'+ state + '/withArbovirusLocalized.csv', index_col=[0])
-    withArbovirusLocalizedMinMax = pd.read_csv('statesJuneSubmission/'+ state + '/withArbovirusLocalizedMinMax.csv', index_col=[0])
+    third_pred = pd.read_csv('statesJuneSubmission/'+ state + '/FORECASTthirdPred.csv', index_col=[0])[1:]
+    withArbovirus = pd.read_csv('statesJuneSubmission/'+ state + '/FORECASTwithArbovirus.csv', index_col=[0])[1:]
+    withArbovirusLocalized = pd.read_csv('statesJuneSubmission/'+ state + '/FORECASTwithArbovirusLocalized.csv', index_col=[0])[1:]
+    withArbovirusLocalizedMinMax = pd.read_csv('statesJuneSubmission/'+ state + '/FORECASTwithArbovirusLocalizedMinMax.csv', index_col=[0])[1:]
 
     third_pred.index = pd.to_datetime(third_pred.index)
     withArbovirus.index = pd.to_datetime(withArbovirus.index)
@@ -108,7 +108,7 @@ for state in [i for i in wnv_data['state'].unique() if i != 'DC']:
             toConcat = pd.DataFrame({'location': abbrev_to_us_state.get(state), 'forecast_date': '2023-05-31', 'target_end_date': str(ind.year) + '-' + f"{ind.month:02}" + '-' + str(calendar.monthrange(ind.year, ind.month)[1]), 'target': calendar.month_name[ind.month] + " WNV neuroinvasive disease cases" , 'type': 'quantile', 'quantile': int(col)/1000, 'value': value}, index=[0])
             finalSubmission = pd.concat([finalSubmission, toConcat], ignore_index=True)
 for state in ['DC']:
-    third_pred = pd.read_csv('statesJuneSubmission/'+ state + '/thirdPred.csv', index_col=[0])
+    third_pred = pd.read_csv('statesJuneSubmission/'+ state + '/FORECASTthirdPred.csv', index_col=[0])[1:]
     third_pred.index = pd.to_datetime(third_pred.index)
     for ind in third_pred.index:
         for col in third_pred.columns:
@@ -118,4 +118,4 @@ for state in ['DC']:
             toConcat = pd.DataFrame({'location': abbrev_to_us_state.get(state), 'forecast_date': '2023-05-31', 'target_end_date': str(correctDate.year) + '-' + f"{correctDate.month:02}" + '-' + str(calendar.monthrange(correctDate.year, correctDate.month)[1]), 'target': calendar.month_name[correctDate.month] + " WNV neuroinvasive disease cases" , 'type': 'quantile', 'quantile': int(col)/1000, 'value': value}, index=[0])
             finalSubmission = pd.concat([finalSubmission, toConcat], ignore_index=True)
 
-finalSubmission.to_csv('submissions/finalSubmissionMayCombined4.csv')
+finalSubmission.to_csv('submissions/finalSubmissionMayCombinedNEW.csv')
