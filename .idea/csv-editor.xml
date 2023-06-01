@@ -101,6 +101,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/NegativeBinomialModelJune/test.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/QuarterlyXGBoostWeatherMAE.csv">
           <value>
             <Attribute>
