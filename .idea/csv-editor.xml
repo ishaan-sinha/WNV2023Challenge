@@ -101,13 +101,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/NegativeBinomialModelJune/test.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="/QuarterlyXGBoostWeatherMAE.csv">
           <value>
             <Attribute>
@@ -200,6 +193,13 @@
           </value>
         </entry>
         <entry key="/statesJulySubmission/AL/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJulySubmission/IL/wnv_data.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -375,6 +375,13 @@
           </value>
         </entry>
         <entry key="/statesMaySubmission/AL/noaa+temporal.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statsModelsJune/negativeBinomial+zeroInflatedPoisson_mae.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
