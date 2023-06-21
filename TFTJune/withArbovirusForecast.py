@@ -74,7 +74,7 @@ def getData(state):
 for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 #for state in ['CA']:
     state_data = getData(state)
-    mosquitoData = pd.read_csv('../MosquitoData/MonthlyMosquitoData.csv')
+    mosquitoData = pd.read_csv('../MosquitoDataMay/MonthlyMosquitoData.csv')
     mosquitoData.set_index(pd.to_datetime([f'{y}-{m}-01' for y, m in zip(mosquitoData.year, mosquitoData.month)]), inplace=True)
     state_data = pd.concat([state_data, mosquitoData], axis=1)
     state_data = state_data[state_data['rate/trap_night.2'].first_valid_index():]
