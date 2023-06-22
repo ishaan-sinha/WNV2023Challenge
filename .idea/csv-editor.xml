@@ -101,6 +101,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/July/statsmodels.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/modelResults/July/withArbovirusLocalizedTest.csv">
           <value>
             <Attribute>
@@ -192,7 +199,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesJulySubmission/AL/negative_binomial.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJulySubmission/AL/withArbovirusLocalizedMinMax.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesJulySubmission/AL/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJulySubmission/AL/zero_inflated_poisson.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
