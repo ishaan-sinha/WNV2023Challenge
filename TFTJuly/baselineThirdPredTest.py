@@ -17,7 +17,7 @@ from darts.metrics import mape, mae
 
 from darts.utils.likelihood_models import QuantileRegression
 
-EPOCHS = 3
+EPOCHS = 300
 INLEN = 32
 HIDDEN = 64
 LSTMLAYERS = 2
@@ -72,8 +72,8 @@ def getData(state):
 
 
 
-#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-for state in ['CA']:
+for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+#for state in ['CA']:
     state_data = getData(state)
 
     state_data = state_data.dropna().astype('float32')
