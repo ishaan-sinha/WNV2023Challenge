@@ -74,8 +74,8 @@ def getData(state):
     return state_data
 
 
-for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-#for state in ['CA']:
+#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+for state in ['CA']:
     state_data = getData(state)
 
     mosquitoData = pd.read_csv('../statesJulySubmission/'+ state +'/MonthlyMosquitoData500miles.csv')
@@ -113,6 +113,8 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     tcov = scaler.transform(cov)
 
     #now we train the model
+
+    ts_ttrain = ts_ttrain.astype('float32')
 
     model = TFTModel(input_chunk_length=INLEN,
                      output_chunk_length=N_FC,
