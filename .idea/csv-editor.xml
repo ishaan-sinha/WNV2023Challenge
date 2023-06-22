@@ -108,6 +108,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/July/withArbovirusLocalizedTestMinMax.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/modelResults/July/withArbovirusTest.csv">
           <value>
             <Attribute>
@@ -200,6 +207,13 @@
           </value>
         </entry>
         <entry key="/statesJulySubmission/CA/thirdPred.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJulySubmission/CA/withArbovirusLocalizedMinMax.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
