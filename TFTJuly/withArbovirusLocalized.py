@@ -90,6 +90,8 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     ts = TimeSeries.from_series(state_data['7monthsAhead'])
     state_data.drop(['7monthsAhead'], axis=1, inplace=True)
 
+    state_data = state_data.astype('float32')
+
 
     testStateData = state_data[-N_FC:]
     ts_train = ts[:-N_FC]
@@ -126,7 +128,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                      pl_trainer_kwargs={
                          "accelerator": "gpu",
                          "devices": [0],
-                         # "precision": '32-true'
+                         "precision": '32-true'
                      },
                      force_reset=True)
 
