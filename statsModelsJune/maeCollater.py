@@ -55,7 +55,7 @@ def get_negative_binomial(train):
     model = cm.NegativeBinomialP(endog=train.total_cases, exog=train.drop('total_cases', axis=1), p=1)
     # distribution = model.get_distribution()
 
-    fitted_model = model.fit()
+    fitted_model = model.fit_regularized()
     return fitted_model
 
 
@@ -74,7 +74,7 @@ def get_poisson(train):
     return fitted_model
     '''
     model = cm.Poisson(endog=train.total_cases, exog=train.drop('total_cases', axis=1))
-    fitted_model = model.fit()
+    fitted_model = model.fit_regularized()
     return fitted_model
 
 
@@ -86,7 +86,7 @@ def get_zero_inflated_negative_binomial(train):
 
 def get_zero_inflated_poisson(train):
     model = cm.ZeroInflatedPoisson(endog=train.total_cases, exog=train.drop('total_cases', axis=1))
-    fitted_model = model.fit()
+    fitted_model = model.fit_regularized()
     return fitted_model
 
 
@@ -111,7 +111,7 @@ def getData(state):
 
 
 for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-    # for state in ['CA']:
+#for state in ['CA']:
     state_data = getData(state)
     state_data = state_data.dropna()
     state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
@@ -126,71 +126,31 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 
     results = [state]
 
-    '''
+
     negative_binom_model = get_negative_binomial(wnv_train)
-    temp = negative_binom_model.predict(exog = wnv_test.drop('total_cases', axis=1), which='model', y_values=quantiles)
-    print(temp)
-
-
     poisson_model = get_poisson(wnv_train)
-    temp = poisson_model.predict(exog = wnv_test.drop('total_cases', axis=1), which='model', y_values=quantiles)
-    print(temp)
-    '''
-    '''
-    print(wnv_train.isnull().sum())
-    print(np.isinf(wnv_test).sum())
-
     zero_inflated_negative_binomial = get_zero_inflated_negative_binomial(wnv_train)
-    temp = zero_inflated_negative_binomial.predict(exog = wnv_test.drop('total_cases', axis=1), which='prob', y_values=quantiles)
-    temp2 = zero_inflated_negative_binomial.predict(exog = wnv_test.drop('total_cases', axis=1), which='mean', y_values=quantiles)
-    print(temp)
-    print(temp2)
-
-
     zero_inflated_poisson = get_zero_inflated_poisson(wnv_train)
-    temp = zero_inflated_poisson.predict(exog = wnv_test.drop('total_cases', axis=1), which='prob', y_values=quantiles)
-    print(temp)
-    '''
 
-    '''
+
     state_data['negative_binomial'] = negative_binom_model.predict(state_data.drop('total_cases', axis=1))
-    state_data.negative_binomial.plot(label="Negative Binomial")
-    results.append(eval_measures.meanabs(state_data.negative_binomial[-x:], state_data.total_cases[-x:]))
+    results.append(eval_measures.meanabs(state_data.negative_binomial[-x:], wnv_test.total_cases[-x:]))
     state_data.drop('negative_binomial', axis=1, inplace=True)
 
 
-
-    poisson_model = get_poisson(wnv_train)
     state_data['poisson_model'] = poisson_model.predict(state_data.drop('total_cases', axis=1)).astype(int)
-    state_data.poisson_model.plot(label = "Poisson")
-    results.append(eval_measures.meanabs(state_data.poisson_model[-x:], state_data.total_cases[-x:]))
+    results.append(eval_measures.meanabs(state_data.poisson_model[-x:], wnv_test.total_cases[-x:]))
     state_data.drop('poisson_model', axis=1, inplace=True)
 
+    state_data['zero_inflated_negative_binomial'] = zero_inflated_negative_binomial.predict(state_data.drop('total_cases', axis=1))
+    results.append(eval_measures.meanabs(state_data.zero_inflated_negative_binomial[-x:], wnv_test.total_cases[-x:]))
+    state_data.drop('zero_inflated_negative_binomial', axis=1, inplace=True)
 
-    try:
-        zero_inflated_negative_binomial = get_zero_inflated_negative_binomial(wnv_train)
-        state_data['zero_inflated_negative_binomial'] = zero_inflated_negative_binomial.predict(state_data.drop('total_cases', axis=1)).astype(int)
-        state_data.zero_inflated_negative_binomial.plot(label="Zero Inflated Negative Binomial")
-        state_data.drop('zero_inflated_negative_binomial', axis=1, inplace=True)
-    except:
-        pass
-
-
-    zero_inflated_poisson = get_zero_inflated_poisson(wnv_train)
-    state_data['zero_inflated_poisson'] = zero_inflated_poisson.predict(state_data.drop('total_cases', axis = 1))
-    state_data.zero_inflated_poisson.plot(label ="Zero Inflated Poisson")
-    results.append(eval_measures.meanabs(state_data.zero_inflated_poisson[-x:], state_data.total_cases[-x:]))
+    state_data['zero_inflated_poisson'] = zero_inflated_poisson.predict(state_data.drop('total_cases', axis=1)).astype(int)
+    results.append(eval_measures.meanabs(state_data.zero_inflated_poisson[-x:], wnv_test.total_cases[-x:]))
     state_data.drop('zero_inflated_poisson', axis=1, inplace=True)
 
-    state_data.total_cases.plot(label ="Actual")
-    plt.axvline(x = state_data.index[-x])
-    plt.suptitle("WNV Predicted vs Actual")
-    plt.legend()
-    #plt.savefig('../statesJulySubmission/'+state+'/poisson+negative_binomial_train+test.png')
-    #statsmodels_mae.loc[len(statsmodels_mae)] = results
-    plt.show()
-    plt.clf()
-    '''
+    statsmodels_mae.loc[len(statsmodels_mae)] = results
 
-# statsmodels_mae.to_csv('negativeBinomial+zeroInflatedPoisson_mae.csv')
+statsmodels_mae.to_csv('../modelResults/July/statsmodels_mae.csv')
 

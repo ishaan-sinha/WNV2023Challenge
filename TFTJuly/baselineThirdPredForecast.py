@@ -2,7 +2,7 @@ import pandas
 
 import os
 
-#os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
+os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 
 EPOCHS = 300
 INLEN = 32
@@ -71,8 +71,8 @@ def getData(state):
     return state_data
 
 
-for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-#for state in ['DC']:
+#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+for state in ['DC']:
 #for state in ['CA']:
 #for state in [i for i in wnv_data['state'].unique()]:
     state_data = getData(state)
