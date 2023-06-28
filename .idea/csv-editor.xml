@@ -248,6 +248,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesJulySubmission/CA/FORECASTwithArbovirusLocalizedMinMax.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesJulySubmission/CA/thirdPred.csv">
           <value>
             <Attribute>
