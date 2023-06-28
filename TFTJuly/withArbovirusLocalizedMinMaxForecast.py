@@ -123,8 +123,8 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                      force_reset=True,
                      pl_trainer_kwargs={
                          "accelerator": "gpu",
-                         #"devices": [1],
-                          "precision": '32-true'
+                         "devices": [2],
+                        #"precision": '32-true'
                      }
                      )
 
