@@ -40,7 +40,7 @@ def get_zero_inflated_negative_binomial(train):
 
 def get_zero_inflated_poisson(train):
     model = cm.ZeroInflatedPoisson(endog=train.total_cases, exog=train.drop('total_cases', axis=1))
-    fitted_model = model.fit()
+    fitted_model = model.fit_regularized()
     return fitted_model
 
 
@@ -95,21 +95,24 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     temp.index = temp.index + pd.DateOffset(months=7)
     temp.to_csv('../statesJulySubmission/' + state + '/FORECASTpoisson.csv')
 
+    try:
+        zero_inflated_negative_binomial = get_zero_inflated_negative_binomial(wnv_train)
+        temp = zero_inflated_negative_binomial.predict(exog = wnv_test, which='prob', y_values=quantiles)
+        temp.set_axis([int(i * 1000) for i in quantiles], axis=1, inplace=True)
+        temp = temp[-7:]
+        temp.index = temp.index + pd.DateOffset(months=7)
+        temp.to_csv('../statesJulySubmission/' + state + '/FORECASTzero_inflated_negative_binomial.csv')
 
-    zero_inflated_negative_binomial = get_zero_inflated_negative_binomial(wnv_train)
-    temp = zero_inflated_negative_binomial.predict(exog = wnv_test, which='prob', y_values=quantiles)
-    temp.set_axis([int(i * 1000) for i in quantiles], axis=1, inplace=True)
-    temp = temp[-7:]
-    temp.index = temp.index + pd.DateOffset(months=7)
-    temp.to_csv('../statesJulySubmission/' + state + '/FORECASTzero_inflated_negative_binomial.csv')
 
-
-    zero_inflated_poisson = get_zero_inflated_poisson(wnv_train)
-    temp = zero_inflated_poisson.predict(exog = wnv_test, which='prob', y_values=quantiles)
-    temp.set_axis([int(i * 1000) for i in quantiles], axis=1, inplace=True)
-    temp = temp[-7:]
-    temp.index = temp.index + pd.DateOffset(months=7)
-    temp.to_csv('../statesJulySubmission/' + state + '/FORECASTzero_inflated_poisson.csv')
+        zero_inflated_poisson = get_zero_inflated_poisson(wnv_train)
+        temp = zero_inflated_poisson.predict(exog = wnv_test, which='prob', y_values=quantiles)
+        temp.set_axis([int(i * 1000) for i in quantiles], axis=1, inplace=True)
+        temp = temp[-7:]
+        temp.index = temp.index + pd.DateOffset(months=7)
+        temp.to_csv('../statesJulySubmission/' + state + '/FORECASTzero_inflated_poisson.csv')
+    except:
+        pass
+    print(state)
 
 
 
