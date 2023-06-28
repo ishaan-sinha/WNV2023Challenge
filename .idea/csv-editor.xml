@@ -234,6 +234,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesJulySubmission/CA/FORECASTnegative_binomial.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJulySubmission/CA/FORECASTpoisson.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesJulySubmission/CA/FORECASTthirdPred.csv">
           <value>
             <Attribute>
@@ -249,6 +263,20 @@
           </value>
         </entry>
         <entry key="/statesJulySubmission/CA/FORECASTwithArbovirusLocalizedMinMax.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJulySubmission/CA/FORECASTzero_inflated_negative_binomial.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJulySubmission/CA/FORECASTzero_inflated_poisson.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

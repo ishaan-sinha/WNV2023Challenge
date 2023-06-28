@@ -12,7 +12,7 @@ wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.c
 
 statsmodels_mae = pd.DataFrame(columns=['state', 'negative_binomial', 'zero_inflated_poisson'])
 
-x = 8
+x = 12
 quantiles = [0.010, 0.025, 0.050, 0.100, 0.150, 0.200, 0.250, 0.300, 0.350, 0.400, 0.450, 0.500, 0.550, 0.600,
              0.650, 0.700, 0.750, 0.800, 0.850, 0.900, 0.950, 0.975, 0.990]
 
@@ -90,20 +90,20 @@ def get_zero_inflated_poisson(train):
 
 
 def getData(state):
-    state_data = pd.read_csv('../statesJuneSubmission/'+state+'/NOAA_data.csv')
+    state_data = pd.read_csv('../statesJulySubmission/'+state+'/NOAA_data.csv')
     state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
-    wnvData = pd.read_csv('../statesJuneSubmission/' + state + '/wnv_data.csv', index_col=[0])
+    wnvData = pd.read_csv('../statesJulySubmission/' + state + '/wnv_data.csv', index_col=[0])
     wnvData.index = pd.to_datetime(wnvData.index)
     state_data['count'] = wnvData['count']
 
     state_data['month_cos'] = np.cos(state_data.index.month * 2 * np.pi / 12)
     state_data['month_sin'] = np.sin(state_data.index.month * 2 * np.pi / 12)
     
-    state_data['real_month_cos'] = np.cos((state_data.index + np.timedelta64(8, 'M')).month * 2 * np.pi / 12)
-    state_data['real_month_sin'] = np.sin((state_data.index + np.timedelta64(8, 'M')).month * 2 * np.pi / 12)
+    state_data['real_month_cos'] = np.cos((state_data.index + np.timedelta64(7, 'M')).month * 2 * np.pi / 12)
+    state_data['real_month_sin'] = np.sin((state_data.index + np.timedelta64(7, 'M')).month * 2 * np.pi / 12)
 
-    state_data['8monthsAhead'] = state_data['count'].shift(-8)
-    state_data['yearbeforePred'] = state_data['count'].shift(4)
+    state_data['7monthsAhead'] = state_data['count'].shift(-7)
+    state_data['yearbeforePred'] = state_data['count'].shift(5)
     state_data.drop(['count'], axis=1, inplace=True)
 
     return state_data
@@ -116,8 +116,8 @@ for state in ['CA']:
     state_data.drop(['year', 'month'], axis = 1, inplace=True)
 
 
-    state_data['total_cases'] = state_data['8monthsAhead']
-    state_data.drop('8monthsAhead', axis=1, inplace=True)
+    state_data['total_cases'] = state_data['7monthsAhead']
+    state_data.drop('7monthsAhead', axis=1, inplace=True)
 
     wnv_train = state_data[:-x]
     wnv_test = state_data[-x:]
