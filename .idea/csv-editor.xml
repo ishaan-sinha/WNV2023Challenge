@@ -234,6 +234,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesJulySubmission/CA/FORECASTthirdPred.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesJulySubmission/CA/thirdPred.csv">
           <value>
             <Attribute>

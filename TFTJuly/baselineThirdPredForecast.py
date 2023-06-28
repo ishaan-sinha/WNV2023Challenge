@@ -2,7 +2,7 @@ import pandas
 
 import os
 
-os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
+#os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 
 EPOCHS = 300
 INLEN = 32
@@ -112,8 +112,8 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                      force_reset=True,
                      pl_trainer_kwargs={
                          "accelerator": "gpu",
-                         #"devices": [3],
-                         "precision": '32-true'
+                         "devices": [0],
+                         #"precision": '32-true'
                      }
     )
 
