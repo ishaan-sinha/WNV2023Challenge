@@ -80,6 +80,62 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="$USER_HOME$/Downloads/wikishark-chart Avian influenza[en].csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/wikishark-chart Centers for Disease Control and Prevention[en].csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/wikishark-chart Common cold[en].csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/wikishark-chart Fever[en].csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/wikishark-chart Influenza[en].csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/wikishark-chart Main Page[en].csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/wikishark-chart Pandemic[en].csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/wikishark-chart West Nile virus[en].csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/WNVData/WNV_forecasting_challenge_state-month_cases.csv">
           <value>
             <Attribute>
@@ -312,6 +368,13 @@
           </value>
         </entry>
         <entry key="/statesJulySubmission/IL/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesJulySubmission/ME/thirdPred.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
