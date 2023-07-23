@@ -84,5 +84,5 @@ for i in range(1, 49):
     noaa_data['month'] = (noaa_data.index % 100).astype(int)
     noaa_data.set_index(['year', 'month'], inplace=True)
 
-    noaa_data.to_csv('statesJulySubmission/' + state + '/NOAA_data.csv')
+    noaa_data.to_csv('statesAugustSubmission/' + state + '/NOAA_data.csv')
     print(state)

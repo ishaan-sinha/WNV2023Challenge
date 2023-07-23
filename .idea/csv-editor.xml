@@ -24,6 +24,34 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/MosquitoDataAugust/MonthlyMosquitoData.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/MosquitoDataAugust/abundanceData.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/MosquitoDataAugust/combinedAbundanceData.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/MosquitoDataAugust/stateCoordinates.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/MosquitoDataJune/MonthlyMosquitoData.csv">
           <value>
             <Attribute>
@@ -46,6 +74,13 @@
           </value>
         </entry>
         <entry key="/MosquitoDataJune/combinedInfectionData.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/MosquitoDataJune/infection.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -80,6 +115,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="$USER_HOME$/Downloads/abundance.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/infection.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/Downloads/wikishark-chart Avian influenza[en].csv">
           <value>
             <Attribute>
@@ -87,56 +136,21 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="$USER_HOME$/Downloads/wikishark-chart Centers for Disease Control and Prevention[en].csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Downloads/wikishark-chart Common cold[en].csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Downloads/wikishark-chart Fever[en].csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Downloads/wikishark-chart Influenza[en].csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Downloads/wikishark-chart Main Page[en].csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Downloads/wikishark-chart Pandemic[en].csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Downloads/wikishark-chart West Nile virus[en].csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="/WNVData/WNV_forecasting_challenge_state-month_cases.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/WikipediaData/Monthlywikishark-chart Avian influenza[en].csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/WikipediaData/Monthlywikishark-chart Centers for Disease Control and Prevention[en].csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -235,6 +249,27 @@
           </value>
         </entry>
         <entry key="/modelResults/May/thirdPred.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesAugustSubmission/AL/MonthlyMosquitoData500miles.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesAugustSubmission/AL/NOAA_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesAugustSubmission/AL/wnv_data.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
