@@ -143,6 +143,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/WNVData/national_count.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/WikipediaData/Monthlywikishark-chart Avian influenza[en].csv">
           <value>
             <Attribute>
@@ -158,6 +165,13 @@
           </value>
         </entry>
         <entry key="/currentResultsMAE.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/modelResults/August/withArbovirusTest.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -270,6 +284,13 @@
           </value>
         </entry>
         <entry key="/statesAugustSubmission/AL/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesAugustSubmission/CA/withArbovirus.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
