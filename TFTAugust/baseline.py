@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pickle
 import os
 
-os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
+#os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 
 EPOCHS = 3
 INLEN = 32
@@ -123,7 +123,7 @@ for state in ['CA']:
                      pl_trainer_kwargs={
                          "accelerator": "gpu",
                          "devices": [0],
-                         "precision": '32-true'
+                         #"precision": '32-true'
                      },
                      force_reset=True)
 
