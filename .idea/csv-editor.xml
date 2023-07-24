@@ -164,6 +164,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/WikipediaData/wiki_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/currentResultsMAE.csv">
           <value>
             <Attribute>

@@ -25,6 +25,7 @@ wiki_data = pd.DataFrame(columns = [i for i in files])
 for i in files:
     wiki_data[i] = pd.read_csv('Monthly'+i, index_col=[0]).iloc[:,0]
 
+
 wiki_data.index = [x[:-2]+'01' for x in wiki_data.index]
 wiki_data.rename(
     {'wikishark-chart Avian influenza[en].csv': 'Avian influenza',
@@ -36,6 +37,9 @@ wiki_data.rename(
     'wikishark-chart Pandemic[en].csv': 'Pandemic',
     'wikishark-chart West Nile virus[en].csv': 'West Nile virus'
      }, axis=1, inplace=True)
+
+wiki_data[:-1].to_csv('wiki_data.csv')
+'''
 for i in wiki_data.columns:
     wiki_data[i+'/mainpage'] = wiki_data[i]/wiki_data['Main Page']
 
@@ -47,3 +51,4 @@ sns.heatmap(corr_matrix[30:], annot=False)
 
 plt.show()
 #plt.savefig('correlationMatrix.png')
+'''

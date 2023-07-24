@@ -182,7 +182,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     quantiles = QUANTILES
     _ = [predQ(ts_tpred, q) for q in quantiles]
 
-    dfY.index = dfY.index+pd.DateOffset(months=7)
+    dfY.index = dfY.index+pd.DateOffset(months=6)
     dfY.to_csv('../statesAugustSubmission/'+state+'/withArbovirusWithNational.csv')
     dfY = dfY[-7:]
 
