@@ -81,8 +81,8 @@ def getData(state):
     state_data = pd.concat([state_data, wiki_data], axis=1)
     return state_data
 
-#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-for state in ['CA']:
+for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+#for state in ['CA']:
     state_data = getData(state)
 
     mosquitoData = pd.read_csv('../MosquitoDataJuly/MonthlyMosquitoData.csv')
