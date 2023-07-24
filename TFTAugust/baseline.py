@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 import pickle
 import os
 
-#os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
+os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 
-EPOCHS = 3
+EPOCHS = 300
 INLEN = 32
 HIDDEN = 64
 LSTMLAYERS = 2
@@ -55,7 +55,7 @@ pd.options.display.float_format = '{:,.2f}'.format
 
 wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
-df_results_mae = pandas.DataFrame(columns=['state', 'withArbovirus'])
+df_results_mae = pandas.DataFrame()
 def getData(state):
     state_data = pd.read_csv('../statesAugustSubmission/'+state+'/NOAA_data.csv')
     state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
@@ -74,8 +74,8 @@ def getData(state):
     return state_data
 
 
-#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-for state in ['CA']:
+for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+#for state in ['CA']:
     state_data = getData(state)
 
     mosquitoData = pd.read_csv('../MosquitoDataJuly/MonthlyMosquitoData.csv')
@@ -156,15 +156,15 @@ for state in ['CA']:
         plt.legend();
 
     plot_predict(ts, ts_test, ts_pred)
-    df_results_mae = df_results_mae.append({'state': state, 'withArbovirus': mae(ts_test, ts_pred)}, ignore_index=True)
+    df_results_mae = df_results_mae.append({'state': state, 'baseline': mae(ts_test, ts_pred)}, ignore_index=True)
     #plt.show()
-    plt.savefig('../statesAugustSubmission/'+state+'/train+testwithArbovirus.png')
+    plt.savefig('../statesAugustSubmission/'+state+'/train+testBaseline.png')
     plt.clf()
     ts_pred = transformer.inverse_transform(ts_tpred)
     ts_actual = ts[ts_tpred.start_time(): ts_tpred.end_time()]  # actual values in forecast horizon
     plot_predict(ts_actual, ts_test, ts_pred)
     #plt.show()
-    plt.savefig('../statesAugustSubmission/'+state+'/testwithArbovirus.png')
+    plt.savefig('../statesAugustSubmission/'+state+'/testBaseline.png')
     plt.clf()
         # helper method: calculate percentiles of predictions
     def predQ(ts_tpred, q):
@@ -179,10 +179,10 @@ for state in ['CA']:
     _ = [predQ(ts_tpred, q) for q in quantiles]
 
     dfY.index = dfY.index+pd.DateOffset(months=7)
-    dfY.to_csv('../statesAugustSubmission/'+state+'/withArbovirus.csv')
+    dfY.to_csv('../statesAugustSubmission/'+state+'/baseline.csv')
     dfY = dfY[-7:]
 
 
-df_results_mae.to_csv('../modelResults/August/withArbovirusTest.csv')
+df_results_mae.to_csv('../modelResults/August/baseline.csv')
 
 

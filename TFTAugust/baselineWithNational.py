@@ -7,7 +7,7 @@ import os
 
 os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 
-EPOCHS = 300
+EPOCHS = 1
 INLEN = 32
 HIDDEN = 64
 LSTMLAYERS = 2
@@ -72,17 +72,12 @@ def getData(state):
     state_data.drop(['count'], axis=1, inplace=True)
 
     national_count = pd.read_csv('../WNVData/national_count.csv', index_col=[0]).iloc[:,0]
-    national_count.rename('national_count', inplace=True)
-
+    national_count.index = pd.to_datetime(national_count.index)
     state_data['yearago_national_count'] = national_count
-    print(state_data['yearago_national_count'])
+    state_data['yearago_national_count'] = state_data['yearago_national_count'].shift(6)
 
     return state_data
 
-getData('CA')
-#print(getData('CA'))
-
-'''
 #for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 for state in ['CA']:
     state_data = getData(state)
@@ -188,10 +183,10 @@ for state in ['CA']:
     _ = [predQ(ts_tpred, q) for q in quantiles]
 
     dfY.index = dfY.index+pd.DateOffset(months=7)
-    dfY.to_csv('../statesAugustSubmission/'+state+'/withArbovirus.csv')
+    dfY.to_csv('../statesAugustSubmission/'+state+'/withArbovirusWithNational.csv')
     dfY = dfY[-7:]
 
 
-df_results_mae.to_csv('../modelResults/August/withArbovirusTest.csv')
-'''
+df_results_mae.to_csv('../modelResults/August/withArbovirusWithNationalTest.csv')
+
 

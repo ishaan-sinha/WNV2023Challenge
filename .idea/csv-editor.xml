@@ -171,6 +171,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/August/baseline.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/modelResults/August/withArbovirusTest.csv">
           <value>
             <Attribute>
