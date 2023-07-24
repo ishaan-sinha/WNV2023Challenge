@@ -79,7 +79,6 @@ def getData(state):
     wiki_data = pd.read_csv('../WikipediaData/wiki_data.csv', index_col=[0])
     wiki_data.index = pd.to_datetime(wiki_data.index)
     state_data = pd.concat([state_data, wiki_data], axis=1)
-    print(state_data.tail(200))
     return state_data
 
 #for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
