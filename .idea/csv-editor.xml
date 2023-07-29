@@ -178,6 +178,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/August/baselineWithNationalwithWikiTest.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/modelResults/August/statsmodels_mae.csv">
           <value>
             <Attribute>
@@ -318,7 +325,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesAugustSubmission/CA/FORECASTbaselineWithNational.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesAugustSubmission/CA/FORECASTbaselineWithNationalWithWiki.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesAugustSubmission/CA/FORECASTnegative_binomial.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesAugustSubmission/CA/FORECASTzero_inflated_negative_binomial.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

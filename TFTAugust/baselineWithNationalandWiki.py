@@ -190,5 +190,5 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     dfY = dfY[-6:]
 
 
-df_results_mae.to_csv('../modelResults/August/withArbovirusWithNationalwithWikiTest.csv')
+df_results_mae.to_csv('../modelResults/August/baselineWithNationalwithWikiTest.csv')
 
