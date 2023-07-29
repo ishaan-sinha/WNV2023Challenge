@@ -12,7 +12,7 @@ wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.c
 
 statsmodels_mae = pd.DataFrame(columns=['state', 'negative_binomial', 'poisson', 'zero_inflated_negative_binomial','zero_inflated_poisson'])
 
-x = 7
+x = 6
 quantiles = [0.010, 0.025, 0.050, 0.100, 0.150, 0.200, 0.250, 0.300, 0.350, 0.400, 0.450, 0.500, 0.550, 0.600,
              0.650, 0.700, 0.750, 0.800, 0.850, 0.900, 0.950, 0.975, 0.990]
 
@@ -90,9 +90,9 @@ def get_zero_inflated_poisson(train):
 
 
 def getData(state):
-    state_data = pd.read_csv('../statesJulySubmission/'+state+'/NOAA_data.csv')
+    state_data = pd.read_csv('../statesAugustSubmission/'+state+'/NOAA_data.csv')
     state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
-    wnvData = pd.read_csv('../statesJulySubmission/' + state + '/wnv_data.csv', index_col=[0])
+    wnvData = pd.read_csv('../statesAugustSubmission/' + state + '/wnv_data.csv', index_col=[0])
     wnvData.index = pd.to_datetime(wnvData.index)
     state_data['count'] = wnvData['count']
 
@@ -102,8 +102,8 @@ def getData(state):
     state_data['real_month_cos'] = np.cos((state_data.index + np.timedelta64(7, 'M')).month * 2 * np.pi / 12)
     state_data['real_month_sin'] = np.sin((state_data.index + np.timedelta64(7, 'M')).month * 2 * np.pi / 12)
 
-    state_data['7monthsAhead'] = state_data['count'].shift(-7)
-    state_data['yearbeforePred'] = state_data['count'].shift(5)
+    state_data['6monthsAhead'] = state_data['count'].shift(-6)
+    state_data['yearbeforePred'] = state_data['count'].shift(6)
     state_data.drop(['count'], axis=1, inplace=True)
 
     return state_data
@@ -116,8 +116,8 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     state_data.drop(['year', 'month'], axis = 1, inplace=True)
 
 
-    state_data['total_cases'] = state_data['7monthsAhead']
-    state_data.drop('7monthsAhead', axis=1, inplace=True)
+    state_data['total_cases'] = state_data['6monthsAhead']
+    state_data.drop('6monthsAhead', axis=1, inplace=True)
 
     wnv_train = state_data[:-x]
     wnv_test = state_data[-x:]
@@ -125,11 +125,11 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 
     results = [state]
 
-    '''
+
     negative_binom_model = get_negative_binomial(wnv_train)
     temp = negative_binom_model.predict(exog = wnv_test.drop('total_cases', axis=1), which='model', y_values=quantiles)
     print(temp)
-    
+
     
     poisson_model = get_poisson(wnv_train)
     temp = poisson_model.predict(exog = wnv_test.drop('total_cases', axis=1), which='model', y_values=quantiles)
@@ -149,13 +149,8 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     zero_inflated_poisson = get_zero_inflated_poisson(wnv_train)
     temp = zero_inflated_poisson.predict(exog = wnv_test.drop('total_cases', axis=1), which='prob', y_values=quantiles)
     print(temp)
-    '''
 
 
-
-
-
-    '''
     state_data['negative_binomial'] = negative_binom_model.predict(state_data.drop('total_cases', axis=1))
     state_data.negative_binomial.plot(label="Negative Binomial")
     results.append(eval_measures.meanabs(state_data.negative_binomial[-x:], state_data.total_cases[-x:]))
@@ -189,11 +184,11 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     plt.axvline(x = state_data.index[-x])
     plt.suptitle("WNV Predicted vs Actual")
     plt.legend()
-    #plt.savefig('../statesJulySubmission/'+state+'/poisson+negative_binomial_train+test.png')
+    plt.savefig('../statesAugustSubmission/'+state+'/poisson+negative_binomial_train+test.png')
     #statsmodels_mae.loc[len(statsmodels_mae)] = results
     plt.show()
     plt.clf()
-    '''
+
 
 #statsmodels_mae.to_csv('negativeBinomial+zeroInflatedPoisson_mae.csv')
 
