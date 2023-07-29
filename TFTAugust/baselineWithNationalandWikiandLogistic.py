@@ -80,9 +80,13 @@ def getData(state):
     wiki_data.index = pd.to_datetime(wiki_data.index)
     state_data = pd.concat([state_data, wiki_data], axis=1)
 
-    logistic_values = getLogisticPrediction(state)
+    try:
+        logistic_values = getLogisticPrediction(state)
+        state_data['logistic_prediction'] = logistic_values[6:]
+    except:
+        print('Logistic prediction failed for state: ', state)
+        pass
 
-    state_data['logistic_prediction'] = logistic_values[6:]
 
     return state_data
 
