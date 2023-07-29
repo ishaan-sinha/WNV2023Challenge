@@ -59,5 +59,3 @@ def getLogisticPrediction(state):
         for j in summed:
             total_result.append(j)
     return total_result
-
-print(getLogisticPrediction('CA'))
