@@ -94,11 +94,14 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     state_data = pd.concat([state_data, mosquitoData], axis=1)
     state_data = state_data[state_data['rate/trap_night.2'].first_valid_index():].astype(np.float32)
 
-    # We will make 12 forecasts, as we have 7 months ahead only for the last 12 months
+    # We will make 12 forecasts, as we have 6 months ahead only for the last 12 months
+    state_data = state_data.dropna()
+
     ts = TimeSeries.from_series(state_data['6monthsAhead'].dropna())
 
     state_data.drop(['6monthsAhead', 'year', 'month'], axis=1, inplace=True)
-    state_data = state_data.dropna()
+
+    state_data.to_csv('test.csv')
 
     transformer = Scaler()
     ts_ttrain = transformer.fit_transform(ts)
@@ -130,7 +133,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                      force_reset=True,
                      pl_trainer_kwargs={
                          "accelerator": "gpu",
-                         "devices": [1],
+                         "devices": [0],
                           #"precision": '32-true'
                      }
                     )

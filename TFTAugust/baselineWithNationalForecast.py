@@ -96,6 +96,9 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     state_data.drop(['6monthsAhead', 'year', 'month'], axis=1, inplace=True)
     state_data = state_data.dropna()
 
+    state_data.to_csv('test2.csv')
+    exit()
+
     transformer = Scaler()
     ts_ttrain = transformer.fit_transform(ts)
 
