@@ -24,6 +24,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/MosquitoDataJuly/MonthlyMosquitoData.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/MosquitoDataJune/MonthlyMosquitoData.csv">
           <value>
             <Attribute>
@@ -67,6 +74,13 @@
           </value>
         </entry>
         <entry key="/QuarterlyXGBoostWeatherMAE.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/TFTAugust/test.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -290,6 +304,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesAugustSubmission/CA/FORECASTbaseline.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesAugustSubmission/CA/FORECASTnegative_binomial.csv">
           <value>
             <Attribute>
@@ -298,6 +319,13 @@
           </value>
         </entry>
         <entry key="/statesAugustSubmission/CA/FORECASTzero_inflated_poisson.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesAugustSubmission/CA/baseline.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

@@ -7,10 +7,10 @@ import pickle
 
 import os
 
-os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
+#os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 
 
-EPOCHS = 2
+EPOCHS = 300
 INLEN = 32
 HIDDEN = 64
 LSTMLAYERS = 2
@@ -77,8 +77,8 @@ def getData(state):
     return state_data
 
 
-#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-for state in ['CA']:
+for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+#for state in ['CA']:
     state_data = getData(state)
     mosquitoData = pd.read_csv('../MosquitoDataJuly/MonthlyMosquitoData.csv')
     mosquitoData.set_index(pd.to_datetime([f'{y}-{m}-01' for y, m in zip(mosquitoData.year, mosquitoData.month)]), inplace=True)
@@ -122,7 +122,7 @@ for state in ['CA']:
                      pl_trainer_kwargs={
                          "accelerator": "gpu",
                          "devices": [0],
-                          "precision": '32-true'
+                          #"precision": '32-true'
                      }
                     )
 
@@ -136,8 +136,6 @@ for state in ['CA']:
                              num_samples=N_SAMPLES,
                              n_jobs=N_JOBS)
     ts_pred = transformer.inverse_transform(ts_tpred)
-
-    print(ts_pred)
 
     ts_pred = ts_pred[-6:]
 
