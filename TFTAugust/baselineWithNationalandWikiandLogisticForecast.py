@@ -97,7 +97,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     mosquitoData = pd.read_csv('../MosquitoDataJuly/MonthlyMosquitoData.csv')
     mosquitoData.set_index(pd.to_datetime([f'{y}-{m}-01' for y, m in zip(mosquitoData.year, mosquitoData.month)]), inplace=True)
     state_data = pd.concat([state_data, mosquitoData], axis=1)
-    state_data = state_data[state_data['rate/trap_night.2'].first_valid_index():].astype(np.float32)
+    state_data = state_data[state_data['Pandemic'].first_valid_index():].astype(np.float32)
 
     # We will make 12 forecasts, as we have 6 months ahead only for the last 12 months
     state_data = state_data.dropna()
@@ -105,8 +105,6 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     ts = TimeSeries.from_series(state_data['6monthsAhead'].dropna())
 
     state_data.drop(['6monthsAhead', 'year', 'month'], axis=1, inplace=True)
-
-    state_data.to_csv('test.csv')
 
     transformer = Scaler()
     ts_ttrain = transformer.fit_transform(ts)

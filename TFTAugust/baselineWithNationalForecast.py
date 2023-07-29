@@ -7,10 +7,10 @@ import pickle
 
 import os
 
-#os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
+os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 
 
-EPOCHS = 300
+EPOCHS = 2
 INLEN = 32
 HIDDEN = 64
 LSTMLAYERS = 2
@@ -82,9 +82,10 @@ def getData(state):
     return state_data
 
 
-for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-#for state in ['CA']:
+#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+for state in ['CA']:
     state_data = getData(state)
+
     mosquitoData = pd.read_csv('../MosquitoDataJuly/MonthlyMosquitoData.csv')
     mosquitoData.set_index(pd.to_datetime([f'{y}-{m}-01' for y, m in zip(mosquitoData.year, mosquitoData.month)]), inplace=True)
     state_data = pd.concat([state_data, mosquitoData], axis=1)
@@ -95,9 +96,6 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 
     state_data.drop(['6monthsAhead', 'year', 'month'], axis=1, inplace=True)
     state_data = state_data.dropna()
-
-    state_data.to_csv('test2.csv')
-    exit()
 
     transformer = Scaler()
     ts_ttrain = transformer.fit_transform(ts)
@@ -130,7 +128,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                      pl_trainer_kwargs={
                          "accelerator": "gpu",
                          "devices": [0],
-                          #"precision": '32-true'
+                          "precision": '32-true'
                      }
                     )
 

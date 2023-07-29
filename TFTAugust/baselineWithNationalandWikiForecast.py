@@ -89,19 +89,17 @@ def getData(state):
 for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 #for state in ['CA']:
     state_data = getData(state)
+
     mosquitoData = pd.read_csv('../MosquitoDataJuly/MonthlyMosquitoData.csv')
     mosquitoData.set_index(pd.to_datetime([f'{y}-{m}-01' for y, m in zip(mosquitoData.year, mosquitoData.month)]), inplace=True)
     state_data = pd.concat([state_data, mosquitoData], axis=1)
-    state_data = state_data[state_data['rate/trap_night.2'].first_valid_index():].astype(np.float32)
+    state_data = state_data[state_data['Pandemic'].first_valid_index():].astype(np.float32)
 
-    # We will make 12 forecasts, as we have 6 months ahead only for the last 12 months
-    state_data = state_data.dropna()
-
+    # We will make 12 forecasts, as we have 7 months ahead only for the last 12 months
     ts = TimeSeries.from_series(state_data['6monthsAhead'].dropna())
 
     state_data.drop(['6monthsAhead', 'year', 'month'], axis=1, inplace=True)
-
-    state_data.to_csv('test.csv')
+    state_data = state_data.dropna()
 
     transformer = Scaler()
     ts_ttrain = transformer.fit_transform(ts)
@@ -134,7 +132,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                      pl_trainer_kwargs={
                          "accelerator": "gpu",
                          "devices": [0],
-                          #"precision": '32-true'
+                        #"precision": '32-true'
                      }
                     )
 
@@ -168,7 +166,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     dfY.index = dfY.index+pd.DateOffset(months=6)
     dfY = dfY[-6:]
 
-    dfY.to_csv('../statesAugustSubmission/' + state + '/FORECASTbaselineWithNationalWithWiki.csv')
+    dfY.to_csv('../statesAugustSubmission/' + state + '/FORECASTbaselineWithNationalwithWiki.csv')
 
     print(state)
 
