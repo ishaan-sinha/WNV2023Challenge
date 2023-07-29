@@ -65,8 +65,8 @@ def getData(state):
     state_data['count'] = wnvData['count']
     state_data['month_cos'] = np.cos(state_data.index.month * 2 * np.pi / 12)
     state_data['month_sin'] = np.sin(state_data.index.month * 2 * np.pi / 12)
-    state_data['real_month_cos'] = np.cos((state_data.index + np.timedelta64(7, 'M')).month * 2 * np.pi / 12)
-    state_data['real_month_sin'] = np.sin((state_data.index + np.timedelta64(7, 'M')).month * 2 * np.pi / 12)
+    state_data['real_month_cos'] = np.cos((state_data.index + np.timedelta64(6, 'M')).month * 2 * np.pi / 12)
+    state_data['real_month_sin'] = np.sin((state_data.index + np.timedelta64(6, 'M')).month * 2 * np.pi / 12)
 
     state_data['6monthsAhead'] = state_data['count'].shift(-6)
     state_data['6monthsAgo/1yearbeforePred'] = state_data['count'].shift(6)

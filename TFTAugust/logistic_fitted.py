@@ -22,9 +22,12 @@ def getLogisticPrediction(state):
         x = pd.array([i + 1 for i in range(len(wnv_year_cumulative))])
         y = wnv_year_cumulative['count'].values
         try:
-            popt, pcov = curve_fit(logifunc, x, y)
+            popt, pcov = curve_fit(logifunc, x, y, maxfev=2000)
         except:
-            popt, pcov = curve_fit(logifunc, x, y, p0=optimal_params[-1])
+            try:
+                popt, pcov = curve_fit(logifunc, x, y, p0=optimal_params[-1], maxfev=2000)
+            except:
+                return 0
 
         y_pred = logifunc(x, *popt)
         y_pred[1:] -= y_pred[:-1]
@@ -57,4 +60,4 @@ def getLogisticPrediction(state):
             total_result.append(j)
     return total_result
 
-
+print(getLogisticPrediction('CA'))
