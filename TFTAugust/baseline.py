@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pickle
 import os
-from SIRModel.logistic_fitted import getLogisticPrediction
 
 os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 
