@@ -127,7 +127,7 @@ for state in ['CA']:
                      force_reset=True,
                      pl_trainer_kwargs={
                          "accelerator": "gpu",
-                         "devices": [0],
+                         "devices": [3],
                           "precision": '32-true'
                      }
                     )
