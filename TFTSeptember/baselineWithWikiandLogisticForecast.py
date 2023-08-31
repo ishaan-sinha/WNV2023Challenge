@@ -7,10 +7,10 @@ import pickle
 from logistic_fitted import getLogisticPrediction
 import os
 
-os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
+#os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 
 
-EPOCHS = 3
+EPOCHS = 300
 INLEN = 32
 HIDDEN = 64
 LSTMLAYERS = 2
@@ -90,8 +90,8 @@ def getData(state):
     return state_data
 
 
-#for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
-for state in ['CA']:
+for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
+#for state in ['CA']:
     state_data = getData(state)
 
     mosquitoData = pd.read_csv('../MosquitoDataAugust/MonthlyMosquitoData.csv')
@@ -134,8 +134,8 @@ for state in ['CA']:
                      force_reset=True,
                      pl_trainer_kwargs={
                          "accelerator": "gpu",
-                         "devices": [0],
-                          "precision": '32-true'
+                         "devices": [2],
+                          #"precision": '32-true'
                      }
                     )
 

@@ -759,6 +759,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesSeptemberSubmission/CA/FORECASTbaselineWithNationalWithWikiwithLogistic.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesSeptemberSubmission/CA/FORECASTbaselineWithNationalwithWiki.csv">
           <value>
             <Attribute>
