@@ -339,6 +339,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/September/baselineWithWikiandLogisticTest.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesAugustSubmission/AL/MonthlyMosquitoData500miles.csv">
           <value>
             <Attribute>
@@ -739,6 +746,13 @@
           </value>
         </entry>
         <entry key="/statesSeptemberSubmission/AL/NOAA_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/CA/FORECASTbaselineWithNational.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
