@@ -346,6 +346,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/September/statsmodels_mae.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesAugustSubmission/AL/MonthlyMosquitoData500miles.csv">
           <value>
             <Attribute>
@@ -773,6 +780,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesSeptemberSubmission/CA/FORECASTnegative_binomial.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesSeptemberSubmission/CA/baseline.csv">
           <value>
             <Attribute>
@@ -788,6 +802,69 @@
           </value>
         </entry>
         <entry key="/statesSeptemberSubmission/CA/withWikiandLogistic.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/CO/FORECASTbaselineWithNationalwithWiki.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/KY/FORECASTnegative_binomial.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/KY/FORECASTzero_inflated_negative_binomial.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/KY/FORECASTzero_inflated_poisson.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/LA/FORECASTnegative_binomial.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/LA/FORECASTpoisson.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/MA/FORECASTnegative_binomial.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/MA/FORECASTpoisson.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/MA/FORECASTzero_inflated_poisson.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
