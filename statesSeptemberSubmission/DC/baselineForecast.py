@@ -60,9 +60,9 @@ wnv_data = pd.read_csv('../../WNVData/WNV_forecasting_challenge_state-month_case
 
 df_results_mae = pandas.DataFrame(columns=['state', 'withArbovirus'])
 def getData(state):
-    state_data = pd.read_csv('../statesSeptemberSubmission/'+'MD'+'/NOAA_data.csv')
+    state_data = pd.read_csv('../../statesSeptemberSubmission/'+'MD'+'/NOAA_data.csv')
     state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
-    wnvData = pd.read_csv('../statesSeptemberSubmission/' + state + '/wnv_data.csv', index_col=[0])
+    wnvData = pd.read_csv('../../statesSeptemberSubmission/' + state + '/wnv_data.csv', index_col=[0])
     wnvData.index = pd.to_datetime(wnvData.index)
     state_data['count'] = wnvData['count']
     state_data['month_cos'] = np.cos(state_data.index.month * 2 * np.pi / 12)
@@ -85,7 +85,7 @@ def getData(state):
 for state in ['DC']:
     state_data = getData(state)
 
-    mosquitoData = pd.read_csv('../MosquitoDataAugust/MonthlyMosquitoData.csv')
+    mosquitoData = pd.read_csv('../../MosquitoDataAugust/MonthlyMosquitoData.csv')
     mosquitoData.set_index(pd.to_datetime([f'{y}-{m}-01' for y, m in zip(mosquitoData.year, mosquitoData.month)]), inplace=True)
     state_data = pd.concat([state_data, mosquitoData], axis=1)
     state_data = state_data[state_data['rate/trap_night.2'].first_valid_index():].astype(np.float32)
@@ -161,7 +161,7 @@ for state in ['DC']:
     dfY.index = dfY.index+pd.DateOffset(months=5)
     dfY = dfY[-5:]
 
-    dfY.to_csv('../statesSeptemberSubmission/' + state + '/FORECASTbaselineWithNational.csv')
+    dfY.to_csv('../../statesSeptemberSubmission/' + state + '/FORECASTbaselineWithNational.csv')
 
     print(state)
 
