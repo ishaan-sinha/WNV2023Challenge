@@ -76,7 +76,7 @@ def getData(state):
     state_data['yearago_national_count'] = national_count
     state_data['yearago_national_count'] = state_data['yearago_national_count'].shift(6)
 
-    wiki_data = pd.read_csv('../WikipediaData/wiki_data.csv', index_col=[0])
+    wiki_data = pd.read_csv('../WikipediaDataAugust/wiki_data.csv', index_col=[0])
     wiki_data.index = pd.to_datetime(wiki_data.index)
     state_data = pd.concat([state_data, wiki_data], axis=1)
 

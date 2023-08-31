@@ -115,6 +115,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="$USER_HOME$/Downloads/wikiDataSeptember.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="$USER_HOME$/Downloads/wikishark-chart Avian influenza[en].csv">
           <value>
             <Attribute>
@@ -165,6 +172,20 @@
           </value>
         </entry>
         <entry key="/WikipediaData/wiki_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/WikipediaDataSeptember/MonthlywikiDataSeptember.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/WikipediaDataSeptember/wiki_data.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -711,6 +732,13 @@
           </value>
         </entry>
         <entry key="/statesSeptemberSubmission/CA/baseline.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/CA/baselineWithWiki.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
