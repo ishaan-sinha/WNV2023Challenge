@@ -87,13 +87,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/TFTAugust/test2.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="/TXTemperature.csv">
           <value>
             <Attribute>
@@ -102,6 +95,20 @@
           </value>
         </entry>
         <entry key="$USER_HOME$/Downloads/1990-2022.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/abundance.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/infection.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -178,6 +185,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/August/baselineWithNationalTest.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/modelResults/August/baselineWithNationalwithWikiTest.csv">
           <value>
             <Attribute>
@@ -185,21 +199,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/modelResults/August/statsmodels_mae.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/modelResults/August/withArbovirusWithNationalTest.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/modelResults/August/withArbovirusWithNationalwithWikiTest.csv">
+        <entry key="/modelResults/August/withArbovirusWithNationalwithWikiwithLogisticTest.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -297,6 +297,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/September/baselineWithNationalTest.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesAugustSubmission/AL/MonthlyMosquitoData500miles.csv">
           <value>
             <Attribute>
@@ -339,21 +346,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/statesAugustSubmission/CA/FORECASTnegative_binomial.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesAugustSubmission/CA/FORECASTzero_inflated_negative_binomial.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/statesAugustSubmission/CA/FORECASTzero_inflated_poisson.csv">
+        <entry key="/statesAugustSubmission/CA/FORECASTbaselineWithNationalWithWikiwithLogistic.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -368,6 +361,13 @@
           </value>
         </entry>
         <entry key="/statesAugustSubmission/CA/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesAugustSubmission/DC/FORECASTbaseline.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -696,6 +696,27 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesSeptemberSubmission/AL/MonthlyMosquitoData500miles.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/AL/NOAA_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/CA/baseline.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/submissions/finalSubmission2.csv">
           <value>
             <Attribute>
@@ -711,6 +732,13 @@
           </value>
         </entry>
         <entry key="/submissions/finalSubmissionCombined2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/submissions/finalSubmissionJuly.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

@@ -47,20 +47,20 @@ def get_zero_inflated_poisson(train):
 
 
 def getData(state):
-    state_data = pd.read_csv('../statesJulySubmission/' + state + '/NOAA_data.csv')
+    state_data = pd.read_csv('../statesAugustSubmission/' + state + '/NOAA_data.csv')
     state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
-    wnvData = pd.read_csv('../statesJulySubmission/' + state + '/wnv_data.csv', index_col=[0])
+    wnvData = pd.read_csv('../statesAugustSubmission/' + state + '/wnv_data.csv', index_col=[0])
     wnvData.index = pd.to_datetime(wnvData.index)
     state_data['count'] = wnvData['count']
 
     state_data['month_cos'] = np.cos(state_data.index.month * 2 * np.pi / 12)
     state_data['month_sin'] = np.sin(state_data.index.month * 2 * np.pi / 12)
 
-    state_data['real_month_cos'] = np.cos((state_data.index + np.timedelta64(7, 'M')).month * 2 * np.pi / 12)
-    state_data['real_month_sin'] = np.sin((state_data.index + np.timedelta64(7, 'M')).month * 2 * np.pi / 12)
+    state_data['real_month_cos'] = np.cos((state_data.index + np.timedelta64(6, 'M')).month * 2 * np.pi / 12)
+    state_data['real_month_sin'] = np.sin((state_data.index + np.timedelta64(6, 'M')).month * 2 * np.pi / 12)
 
-    state_data['7monthsAhead'] = state_data['count'].shift(-7)
-    state_data['yearbeforePred'] = state_data['count'].shift(5)
+    state_data['6monthsAhead'] = state_data['count'].shift(-6)
+    state_data['yearbeforePred'] = state_data['count'].shift(6)
     state_data.drop(['count'], axis=1, inplace=True)
 
     return state_data
@@ -73,46 +73,48 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
     state_data.drop(['year', 'month'], axis=1, inplace=True)
 
-    state_data['total_cases'] = state_data['7monthsAhead']
-    state_data.drop('7monthsAhead', axis=1, inplace=True)
+    state_data['total_cases'] = state_data['6monthsAhead']
+    state_data.drop('6monthsAhead', axis=1, inplace=True)
 
     wnv_train = state_data[:-x].dropna()
     wnv_test = state_data[-x:].drop('total_cases', axis=1)
     figs, axes = plt.subplots(nrows=1, ncols=1)
 
     results = [state]
-    '''
+
     negative_binom_model = get_negative_binomial(wnv_train)
     temp = negative_binom_model.predict(exog = wnv_test, which='model', y_values=quantiles)
     temp.set_axis([int(i * 1000) for i in quantiles], axis=1, inplace=True)
-    temp = temp[-7:]
-    temp.index = temp.index + pd.DateOffset(months=7)
-    temp.to_csv('../statesJulySubmission/' + state + '/FORECASTnegative_binomial.csv')
+    temp = temp[-6:]
+    temp.index = temp.index + pd.DateOffset(months=6)
+    temp.to_csv('../statesAugustSubmission/' + state + '/FORECASTnegative_binomial.csv')
 
 
     poisson_model = get_poisson(wnv_train)
     temp = poisson_model.predict(exog = wnv_test, which='model', y_values=quantiles)
     temp.set_axis([int(i * 1000) for i in quantiles], axis=1, inplace=True)
-    temp = temp[-7:]
-    temp.index = temp.index + pd.DateOffset(months=7)
-    temp.to_csv('../statesJulySubmission/' + state + '/FORECASTpoisson.csv')
-    '''
+    temp = temp[-6:]
+    temp.index = temp.index + pd.DateOffset(months=6)
+    temp.to_csv('../statesAugustSubmission/' + state + '/FORECASTpoisson.csv')
 
-    zero_inflated_negative_binomial = get_zero_inflated_negative_binomial(wnv_train)
-    temp = zero_inflated_negative_binomial.predict(exog = wnv_test, which='prob', y_values=quantiles)
-    temp.set_axis([int(i * 1000) for i in quantiles], axis=1, inplace=True)
-    temp = temp[-7:]
-    temp.index = temp.index + pd.DateOffset(months=7)
-    temp.to_csv('../statesJulySubmission/' + state + '/FORECASTzero_inflated_negative_binomial.csv')
+    try:
+        zero_inflated_negative_binomial = get_zero_inflated_negative_binomial(wnv_train)
+        temp = zero_inflated_negative_binomial.predict(exog = wnv_test, which='prob', y_values=quantiles)
+        temp.set_axis([int(i * 1000) for i in quantiles], axis=1, inplace=True)
+        temp = temp[-6:]
+        temp.index = temp.index + pd.DateOffset(months=6)
+        temp.to_csv('../statesAugustSubmission/' + state + '/FORECASTzero_inflated_negative_binomial.csv')
+    except:
+        pass
 
-    '''
+
     zero_inflated_poisson = get_zero_inflated_poisson(wnv_train)
     temp = zero_inflated_poisson.predict(exog=wnv_test, which='prob', y_values=quantiles)
     temp.set_axis([int(i * 1000) for i in quantiles], axis=1, inplace=True)
-    temp = temp[-7:]
-    temp.index = temp.index + pd.DateOffset(months=7)
-    temp.to_csv('../statesJulySubmission/' + state + '/FORECASTzero_inflated_poisson.csv')
-    '''
+    temp = temp[-6:]
+    temp.index = temp.index + pd.DateOffset(months=6)
+    temp.to_csv('../statesAugustSubmission/' + state + '/FORECASTzero_inflated_poisson.csv')
+
     print(state)
 
 

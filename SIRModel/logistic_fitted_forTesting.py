@@ -16,6 +16,8 @@ def getLogisticPrediction(state):
 
     optimal_params = []
 
+    wnvData = wnvData[:-12]
+
     for year in wnvData['year'].unique():
         wnv_year = wnvData[wnvData.index.year == year]
         wnv_year_cumulative = wnv_year.cumsum()
