@@ -220,6 +220,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/August/baselineWithWikiandLogisticTest.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/modelResults/August/withArbovirusWithNationalwithWikiwithLogisticTest.csv">
           <value>
             <Attribute>
@@ -319,6 +326,13 @@
           </value>
         </entry>
         <entry key="/modelResults/September/baselineWithNationalTest.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/modelResults/September/baselineWithWikiTest.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -739,6 +753,13 @@
           </value>
         </entry>
         <entry key="/statesSeptemberSubmission/CA/baselineWithWiki.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/CA/withWikiandLogistic.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
