@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 import pickle
 import os
 
-#os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
+os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
 
-EPOCHS = 300
+EPOCHS = 3
 INLEN = 32
 HIDDEN = 64
 LSTMLAYERS = 2
@@ -55,7 +55,7 @@ pd.options.display.float_format = '{:,.2f}'.format
 
 wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
-df_results_mae = pandas.DataFrame(columns=['state', 'baseline'])
+df_results_mae = pandas.DataFrame()
 def getData(state):
     state_data = pd.read_csv('../statesSeptemberSubmission/'+state+'/NOAA_data.csv')
     state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
@@ -68,32 +68,36 @@ def getData(state):
     state_data['real_month_sin'] = np.sin((state_data.index + np.timedelta64(5, 'M')).month * 2 * np.pi / 12)
 
     state_data['5monthsAhead'] = state_data['count'].shift(-5)
-    state_data['6monthsAgo/1yearbeforePred'] = state_data['count'].shift(7)
+    state_data['7monthsAgo/1yearbeforePred'] = state_data['count'].shift(7)
     state_data.drop(['count'], axis=1, inplace=True)
 
     national_count = pd.read_csv('../WNVData/national_count.csv', index_col=[0]).iloc[:,0]
     national_count.index = pd.to_datetime(national_count.index)
     state_data['yearago_national_count'] = national_count
-    state_data['yearago_national_count'] = state_data['yearago_national_count'].shift(7)
+    state_data['yearago_national_count'] = state_data['yearago_national_count'].shift(5)
+
+    wiki_data = pd.read_csv('../WikipediaData/wiki_data.csv', index_col=[0])
+    wiki_data.index = pd.to_datetime(wiki_data.index)
+    state_data = pd.concat([state_data, wiki_data], axis=1)
     return state_data
 
 for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 #for state in ['CA']:
     state_data = getData(state)
 
-    mosquitoData = pd.read_csv('../MosquitoDataAugust/MonthlyMosquitoData.csv')
+    mosquitoData = pd.read_csv('../MosquitoDataJuly/MonthlyMosquitoData.csv')
     mosquitoData.set_index(pd.to_datetime([f'{y}-{m}-01' for y, m in zip(mosquitoData.year, mosquitoData.month)]), inplace=True)
     state_data = pd.concat([state_data, mosquitoData], axis=1)
 
     state_data = state_data.dropna().astype('float32')
 
-    ts = TimeSeries.from_series(state_data['5monthsAhead'])
-    state_data.drop(['5monthsAhead'], axis=1, inplace=True)
+    ts = TimeSeries.from_series(state_data['6monthsAhead'])
+    state_data.drop(['6monthsAhead'], axis=1, inplace=True)
 
 
-    testStateData = state_data[-5:]
-    ts_train = ts[:-5]
-    ts_test = ts[-5:]
+    testStateData = state_data[-6:]
+    ts_train = ts[:-6]
+    ts_test = ts[-6:]
 
     transformer = Scaler()
     ts_ttrain = transformer.fit_transform(ts_train)
@@ -103,8 +107,8 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     #Now we deal with covariates
 
     cov = TimeSeries.from_dataframe(state_data)
-    train_cov = cov[:-5]
-    test_cov = cov[-5:]
+    train_cov = cov[:-6]
+    test_cov = cov[-6:]
 
     scaler = Scaler()
     scaler.fit(train_cov)
@@ -125,7 +129,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                      random_state=RAND,
                      pl_trainer_kwargs={
                          "accelerator": "gpu",
-                         "devices": [0],
+                         "devices": [2],
                          #"precision": '32-true'
                      },
                      force_reset=True)
@@ -139,7 +143,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                              num_samples=N_SAMPLES,
                              n_jobs=N_JOBS)
     ts_pred = transformer.inverse_transform(ts_tpred)
-    ts_pred = ts_pred[-5:]
+    ts_pred = ts_pred[-6:]
 
     dfY = pd.DataFrame()
 
@@ -159,15 +163,15 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
         plt.legend();
 
     plot_predict(ts, ts_test, ts_pred)
-    df_results_mae = df_results_mae.append({'state': state, 'baseline': mae(ts_test, ts_pred)}, ignore_index=True)
+    df_results_mae = df_results_mae.append({'state': state, 'withNationalandWiki': mae(ts_test, ts_pred)}, ignore_index=True)
     #plt.show()
-    plt.savefig('../statesSeptemberSubmission/'+state+'/train+testBase.png')
+    plt.savefig('../statesAugustSubmission/'+state+'/train+testwithNationalandWiki.png')
     plt.clf()
     ts_pred = transformer.inverse_transform(ts_tpred)
     ts_actual = ts[ts_tpred.start_time(): ts_tpred.end_time()]  # actual values in forecast horizon
     plot_predict(ts_actual, ts_test, ts_pred)
     #plt.show()
-    plt.savefig('../statesSeptemberSubmission/'+state+'/testBase.png')
+    plt.savefig('../statesAugustSubmission/'+state+'/testwithNationalandWiki.png')
     plt.clf()
         # helper method: calculate percentiles of predictions
     def predQ(ts_tpred, q):
@@ -181,10 +185,10 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     quantiles = QUANTILES
     _ = [predQ(ts_tpred, q) for q in quantiles]
 
-    dfY.index = dfY.index+pd.DateOffset(months=5)
-    dfY.to_csv('../statesSeptemberSubmission/'+state+'/baseline.csv')
+    dfY.index = dfY.index+pd.DateOffset(months=6)
+    dfY.to_csv('../statesAugustSubmission/'+state+'/withArbovirusWithNationalandWiki.csv')
+    dfY = dfY[-6:]
 
 
-df_results_mae.to_csv('../modelResults/September/baselineWithNationalTest.csv')
-
+df_results_mae.to_csv('../modelResults/August/baselineWithNationalwithWikiTest.csv')
 
