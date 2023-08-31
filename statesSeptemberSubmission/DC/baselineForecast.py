@@ -56,7 +56,7 @@ pd.set_option("display.precision",2)
 np.set_printoptions(precision=2, suppress=True)
 pd.options.display.float_format = '{:,.2f}'.format
 
-wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
+wnv_data = pd.read_csv('../../WNVData/WNV_forecasting_challenge_state-month_cases.csv', index_col=['year', 'month'])
 
 df_results_mae = pandas.DataFrame(columns=['state', 'withArbovirus'])
 def getData(state):
