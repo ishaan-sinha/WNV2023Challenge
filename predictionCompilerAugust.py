@@ -69,44 +69,39 @@ wnv_data = pd.read_csv('WNVData/WNV_forecasting_challenge_state-month_cases.csv'
 finalSubmission = pd.DataFrame(columns=['location', 'forecast_date', 'target_end_date', 'target', 'type', 'quantile', 'value'])
 
 
-baseline_mae = pd.read_csv('modelResults/August/baseline.csv', index_col=[1])
-baselineWithNational_mae = pd.read_csv('modelResults/August/baselineWithNationalTest.csv', index_col=[1])
-baselineWithNationalwithWiki_mae = pd.read_csv('modelResults/August/baselineWithNationalwithWikiTest.csv', index_col=[1])
-baselineWithNationalwithWikiwithLogistic_mae = pd.read_csv('modelResults/August/withArbovirusWithNationalwithWikiwithLogisticTest.csv', index_col=[1])
+baseline_mae = pd.read_csv('modelResults/September/baselineWithNationalTest.csv', index_col=[1])
+baselineWithWiki_mae = pd.read_csv('modelResults/September/baselineWithWikiTest.csv', index_col=[1])
+baselineWithWikiandLogistic_mae = pd.read_csv('modelResults/September/baselineWithWikiandLogisticTest.csv', index_col=[1])
 
-negative_binomial_mae = pd.read_csv('modelResults/August/statsmodels_mae.csv', index_col=[1])['negative_binomial']
-poisson_mae = pd.read_csv('modelResults/August/statsmodels_mae.csv', index_col=[1])['poisson']
-zero_inflated_negative_binomial_mae = pd.read_csv('modelResults/August/statsmodels_mae.csv', index_col=[1])['zero_inflated_negative_binomial']
-zero_inflated_poisson_mae = pd.read_csv('modelResults/August/statsmodels_mae.csv', index_col=[1])['zero_inflated_poisson']
-
+negative_binomial_mae = pd.read_csv('modelResults/September/statsmodels_mae.csv', index_col=[1])['negative_binomial']
+poisson_mae = pd.read_csv('modelResults/September/statsmodels_mae.csv', index_col=[1])['poisson']
+zero_inflated_negative_binomial_mae = pd.read_csv('modelResults/September/statsmodels_mae.csv', index_col=[1])['zero_inflated_negative_binomial']
+zero_inflated_poisson_mae = pd.read_csv('modelResults/September/statsmodels_mae.csv', index_col=[1])['zero_inflated_poisson']
 
 
 for state in [i for i in wnv_data['state'].unique() if i != 'DC']:
 #for state in ['AL']:
 
-    baseline = pd.read_csv('statesAugustSubmission/'+ state + '/FORECASTbaseline.csv', index_col=[0])
-    baselineWithNational = pd.read_csv('statesAugustSubmission/'+ state + '/FORECASTbaselineWithNational.csv', index_col=[0])
-    baselineWithNationalwithWiki = pd.read_csv('statesAugustSubmission/'+ state + '/FORECASTbaselineWithNationalwithWiki.csv', index_col=[0])
-    baselineWithNationalwithWikiwithLogistic = pd.read_csv('statesAugustSubmission/'+ state + '/FORECASTbaselineWithNationalwithWikiwithLogistic.csv', index_col=[0])
+    baseline = pd.read_csv('statesSeptemberSubmission/'+ state + '/FORECASTbaselineWithNational.csv', index_col=[0])
+    baselineWithWiki = pd.read_csv('statesSeptemberSubmission/'+ state + '/FORECASTbaselineWithNationalwithWiki.csv', index_col=[0])
+    baselineWithWikiandLogistic = pd.read_csv('statesSeptemberSubmission/'+ state + '/FORECASTbaselineWithNationalWithWikiwithLogistic.csv', index_col=[0])
 
-    negative_binomial = pd.read_csv('statesAugustSubmission/'+ state + '/FORECASTnegative_binomial.csv', index_col=[0])
-    poisson = pd.read_csv('statesAugustSubmission/'+ state + '/FORECASTpoisson.csv', index_col=[0])
+    negative_binomial = pd.read_csv('statesSeptemberSubmission/'+ state + '/FORECASTnegative_binomial.csv', index_col=[0])
+    poisson = pd.read_csv('statesSeptemberSubmission/'+ state + '/FORECASTpoisson.csv', index_col=[0])
     try:
-        zero_inflated_negative_binomial = pd.read_csv('statesAugustSubmission/'+ state + '/FORECASTzero_inflated_negative_binomial.csv', index_col=[0])
+        zero_inflated_negative_binomial = pd.read_csv('statesSeptemberSubmission/'+ state + '/FORECASTzero_inflated_negative_binomial.csv', index_col=[0])
         zero_inflated_negative_binomial.index = pd.to_datetime(zero_inflated_negative_binomial.index)
     except:
         pass
-    zero_inflated_poisson = pd.read_csv('statesAugustSubmission/'+ state + '/FORECASTzero_inflated_poisson.csv', index_col=[0])
+    zero_inflated_poisson = pd.read_csv('statesSeptemberSubmission/'+ state + '/FORECASTzero_inflated_poisson.csv', index_col=[0])
 
     baseline.index = pd.to_datetime(baseline.index)
-    baselineWithNational.index = pd.to_datetime(baselineWithNational.index)
-    baselineWithNationalwithWiki.index = pd.to_datetime(baselineWithNationalwithWiki.index)
-    baselineWithNationalwithWikiwithLogistic.index = pd.to_datetime(baselineWithNationalwithWikiwithLogistic.index)
+    baselineWithWiki.index = pd.to_datetime(baselineWithWiki.index)
+    baselineWithWikiandLogistic.index = pd.to_datetime(baselineWithWikiandLogistic.index)
 
     negative_binomial.index = pd.to_datetime(negative_binomial.index)
     poisson.index = pd.to_datetime(poisson.index)
     zero_inflated_poisson.index = pd.to_datetime(zero_inflated_poisson.index)
-
 
     import calendar
     from datetime import datetime
@@ -114,25 +109,22 @@ for state in [i for i in wnv_data['state'].unique() if i != 'DC']:
         for col in baseline.columns:
 
             baselineMAE = baseline_mae.loc[state, 'baseline']
-            baselineWithNationalMAE = baselineWithNational_mae.loc[state, 'withNational']
-            baselineWithNationalwithWikiMAE = baselineWithNationalwithWiki_mae.loc[state, 'withNationalandWiki']
-            baselineWithNationalwithWikiwithLogisticMAE = baselineWithNationalwithWikiwithLogistic_mae.loc[state, 'withNationalandWikiandLogistic']
+            baselineWithWikiMAE = baselineWithWiki_mae.loc[state, 'withWiki']
+            baselineWithWikiandLogisticMAE = baselineWithWikiandLogistic_mae.loc[state, 'withWikiandLogistic']
 
             negative_binomialMAE = negative_binomial_mae.loc[state]
             poissonMAE = poisson_mae.loc[state]
             zero_inflated_negative_binomialMAE = zero_inflated_negative_binomial_mae.loc[state]
             zero_inflated_poissonMAE = zero_inflated_poisson_mae.loc[state]
 
-            smallest = min(baselineMAE, baselineWithNationalMAE, baselineWithNationalwithWikiMAE, baselineWithNationalwithWikiwithLogisticMAE, negative_binomialMAE, poissonMAE, zero_inflated_negative_binomialMAE, zero_inflated_poissonMAE)
+            smallest = min(baselineMAE, baselineWithWikiMAE, baselineWithWikiandLogisticMAE, negative_binomialMAE, poissonMAE, zero_inflated_negative_binomialMAE, zero_inflated_poissonMAE)
 
             if(smallest == baselineMAE):
                 value = baseline.loc[ind, col]
-            elif(smallest == baselineWithNationalMAE):
-                value = baselineWithNational.loc[ind, col]
-            elif(smallest == baselineWithNationalwithWikiMAE):
-                value = baselineWithNationalwithWiki.loc[ind, col]
-            elif(smallest == baselineWithNationalwithWikiwithLogisticMAE):
-                value = baselineWithNationalwithWikiwithLogistic.loc[ind, col]
+            elif(smallest == baselineWithWikiMAE):
+                value = baselineWithWiki.loc[ind, col]
+            elif(smallest == baselineWithWikiandLogisticMAE):
+                value = baselineWithWikiandLogistic.loc[ind, col]
             elif(smallest == negative_binomialMAE):
                 value = negative_binomial.loc[ind, col]
             elif(smallest == poissonMAE):
@@ -143,17 +135,17 @@ for state in [i for i in wnv_data['state'].unique() if i != 'DC']:
                 value = zero_inflated_poisson.loc[ind, col]
 
             value = max(0, value)
-            toConcat = pd.DataFrame({'location': abbrev_to_us_state.get(state), 'forecast_date': '2023-07-31', 'target_end_date': str(ind.year) + '-' + f"{ind.month:02}" + '-' + str(calendar.monthrange(ind.year, ind.month)[1]), 'target': calendar.month_name[ind.month] + " WNV neuroinvasive disease cases" , 'type': 'quantile', 'quantile': int(col)/1000, 'value': value}, index=[0])
+            toConcat = pd.DataFrame({'location': abbrev_to_us_state.get(state), 'forecast_date': '2023-08-31', 'target_end_date': str(ind.year) + '-' + f"{ind.month:02}" + '-' + str(calendar.monthrange(ind.year, ind.month)[1]), 'target': calendar.month_name[ind.month] + " WNV neuroinvasive disease cases" , 'type': 'quantile', 'quantile': int(col)/1000, 'value': value}, index=[0])
             finalSubmission = pd.concat([finalSubmission, toConcat], ignore_index=True)
 for state in ['DC']:
-    third_pred = pd.read_csv('statesAugustSubmission/'+ state + '/FORECASTbaseline.csv', index_col=[0])
+    third_pred = pd.read_csv('statesSeptemberSubmission/'+ state + '/FORECASTbaselineWithNational.csv', index_col=[0])
     third_pred.index = pd.to_datetime(third_pred.index)
     for ind in third_pred.index:
         for col in third_pred.columns:
             correctDate = ind + pd.DateOffset(months=0)
             value = third_pred.loc[ind, col]
             value = max(0, value)
-            toConcat = pd.DataFrame({'location': abbrev_to_us_state.get(state), 'forecast_date': '2023-07-31', 'target_end_date': str(correctDate.year) + '-' + f"{correctDate.month:02}" + '-' + str(calendar.monthrange(correctDate.year, correctDate.month)[1]), 'target': calendar.month_name[correctDate.month] + " WNV neuroinvasive disease cases" , 'type': 'quantile', 'quantile': int(col)/1000, 'value': value}, index=[0])
+            toConcat = pd.DataFrame({'location': abbrev_to_us_state.get(state), 'forecast_date': '2023-08-31', 'target_end_date': str(correctDate.year) + '-' + f"{correctDate.month:02}" + '-' + str(calendar.monthrange(correctDate.year, correctDate.month)[1]), 'target': calendar.month_name[correctDate.month] + " WNV neuroinvasive disease cases" , 'type': 'quantile', 'quantile': int(col)/1000, 'value': value}, index=[0])
             finalSubmission = pd.concat([finalSubmission, toConcat], ignore_index=True)
 
-finalSubmission.to_csv('submissions/finalSubmissionJuly.csv')
+finalSubmission.to_csv('submissions/finalSubmissionAugust.csv')

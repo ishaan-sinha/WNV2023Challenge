@@ -101,31 +101,17 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="$USER_HOME$/Downloads/abundance.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Downloads/infection.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Downloads/wikiDataSeptember.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="$USER_HOME$/Downloads/wikishark-chart Avian influenza[en].csv">
           <value>
             <Attribute>
               <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/VScode/WNVForecasting/4variables_CA.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
@@ -143,35 +129,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/WikipediaData/Monthlywikishark-chart Avian influenza[en].csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/WikipediaData/Monthlywikishark-chart Centers for Disease Control and Prevention[en].csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/WikipediaData/Monthlywikishark-chart Main Page[en].csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/WikipediaData/raw/wikishark-chart Main Page[en].csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/WikipediaData/wiki_data.csv">
+        <entry key="/WNVData/rawData.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -214,13 +172,6 @@
           </value>
         </entry>
         <entry key="/modelResults/August/baselineWithNationalwithWikiTest.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/modelResults/August/baselineWithWikiandLogisticTest.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -759,6 +710,34 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesSeptemberSubmission/AL/baseline.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/AL/baselineWithWiki.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/AL/withWikiandLogistic.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/statesSeptemberSubmission/AL/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesSeptemberSubmission/CA/FORECASTbaselineWithNational.csv">
           <value>
             <Attribute>
@@ -872,6 +851,13 @@
           </value>
         </entry>
         <entry key="/submissions/finalSubmission2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/submissions/finalSubmissionAugust.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
