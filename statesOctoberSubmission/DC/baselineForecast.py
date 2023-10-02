@@ -74,7 +74,7 @@ def getData(state):
     state_data['8monthsAgo/1yearbeforePred'] = state_data['count'].shift(8)
     state_data.drop(['count'], axis=1, inplace=True)
 
-    national_count = pd.read_csv('../WNVData/national_count.csv', index_col=[0]).iloc[:,0]
+    national_count = pd.read_csv('../../WNVData/national_count.csv', index_col=[0]).iloc[:,0]
     national_count.index = pd.to_datetime(national_count.index)
     state_data['yearago_national_count'] = national_count
     state_data['yearago_national_count'] = state_data['yearago_national_count'].shift(8)
