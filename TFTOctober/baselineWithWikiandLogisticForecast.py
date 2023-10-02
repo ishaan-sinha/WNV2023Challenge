@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pickle
 
-
+from logistic_fitted import getLogisticPrediction
 import os
 
 #os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
@@ -82,6 +82,11 @@ def getData(state):
     wiki_data = pd.read_csv('../WikipediaDataOctober/wiki_data.csv', index_col=[0])
     wiki_data.index = pd.to_datetime(wiki_data.index)
     state_data = pd.concat([state_data, wiki_data], axis=1)
+    logistic_values = getLogisticPrediction(state)
+
+    if logistic_values != 0:
+        state_data['logistic_prediction'] = logistic_values[5:]
+
     return state_data
 
 
@@ -89,15 +94,15 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 #for state in ['CA']:
     state_data = getData(state)
 
-    mosquitoData = pd.read_csv('../MosquitoDataSeptember/MonthlyMosquitoData.csv')
+    mosquitoData = pd.read_csv('../MosquitoDataAugust/MonthlyMosquitoData.csv')
     mosquitoData.set_index(pd.to_datetime([f'{y}-{m}-01' for y, m in zip(mosquitoData.year, mosquitoData.month)]), inplace=True)
     state_data = pd.concat([state_data, mosquitoData], axis=1)
     state_data = state_data[state_data['Fever[en]'].first_valid_index():].astype(np.float32)
 
     # We will make 12 forecasts, as we have 7 months ahead only for the last 12 months
-    ts = TimeSeries.from_series(state_data['4monthsAhead'].dropna())
+    ts = TimeSeries.from_series(state_data['5monthsAhead'].dropna())
 
-    state_data.drop(['4monthsAhead', 'year', 'month'], axis=1, inplace=True)
+    state_data.drop(['5monthsAhead', 'year', 'month'], axis=1, inplace=True)
     state_data = state_data.dropna()
 
     transformer = Scaler()
@@ -112,7 +117,6 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     tcov = scaler.transform(cov)
 
     ts_ttrain = ts_ttrain.astype(np.float32)
-
 
     #now we train the model
 
@@ -130,8 +134,8 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                      force_reset=True,
                      pl_trainer_kwargs={
                          "accelerator": "gpu",
-                         "devices": [1],
-                        #"precision": '32-true'
+                         "devices": [2],
+                          #"precision": '32-true'
                      }
                     )
 
@@ -146,7 +150,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                              n_jobs=N_JOBS)
     ts_pred = transformer.inverse_transform(ts_tpred)
 
-    ts_pred = ts_pred[-4:]
+    ts_pred = ts_pred[-5:]
 
     dfY = pd.DataFrame()
 
@@ -162,10 +166,10 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     quantiles = QUANTILES
     _ = [predQ(ts_tpred, q) for q in quantiles]
 
-    dfY.index = dfY.index+pd.DateOffset(months=4)
-    dfY = dfY[-4:]
+    dfY.index = dfY.index+pd.DateOffset(months=5)
+    dfY = dfY[-5:]
 
-    dfY.to_csv('../statesOctoberSubmission/' + state + '/FORECASTbaselineWithNationalwithWiki.csv')
+    dfY.to_csv('../statesSeptemberSubmission/' + state + '/FORECASTbaselineWithNationalWithWikiwithLogistic.csv')
 
     print(state)
 
