@@ -143,27 +143,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="$USER_HOME$/Downloads/abundance.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Downloads/infection.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="$USER_HOME$/Downloads/wikishark-chart Avian influenza[en] vs Centers for Disease Control and Prevention[en] vs Common cold[en] vs Fever[en] vs Influenza[en] vs Main Page[en] vs Pandemic[en] vs West Nile virus[en].csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="$USER_HOME$/Downloads/wikishark-chart Avian influenza[en].csv">
           <value>
             <Attribute>
@@ -200,13 +179,6 @@
           </value>
         </entry>
         <entry key="/WikipediaDataOctober/MonthlywikiDataOctober.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/WikipediaDataOctober/raw/wikiDataSeptember.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
