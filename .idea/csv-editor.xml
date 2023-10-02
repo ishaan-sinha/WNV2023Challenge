@@ -199,6 +199,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/WikipediaDataOctober/MonthlywikiDataOctober.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/WikipediaDataOctober/raw/wikiDataSeptember.csv">
           <value>
             <Attribute>
