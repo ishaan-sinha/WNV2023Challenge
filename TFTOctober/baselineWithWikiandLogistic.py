@@ -82,7 +82,7 @@ def getData(state):
     logistic_values = getLogisticPrediction(state)
 
     if logistic_values != 0:
-        state_data['logistic_prediction'] = logistic_values[4:]
+        state_data['logistic_prediction'] = logistic_values[3:]
 
     return state_data
 
@@ -192,7 +192,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 
     dfY.index = dfY.index+pd.DateOffset(months=4)
     dfY.to_csv('../statesOctoberSubmission/'+state+'/withWikiandLogistic.csv')
+    print(state)
 
 
 df_results_mae.to_csv('../modelResults/October/baselineWithWikiandLogisticTest.csv')
-

@@ -360,6 +360,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/modelResults/October/statsmodels_mae.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/modelResults/September/baselineWithNationalTest.csv">
           <value>
             <Attribute>

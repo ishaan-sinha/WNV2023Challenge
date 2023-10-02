@@ -85,7 +85,7 @@ def getData(state):
     logistic_values = getLogisticPrediction(state)
 
     if logistic_values != 0:
-        state_data['logistic_prediction'] = logistic_values[5:]
+        state_data['logistic_prediction'] = logistic_values[3:]
 
     return state_data
 
