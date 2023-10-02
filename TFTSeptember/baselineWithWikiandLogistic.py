@@ -192,6 +192,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 
     dfY.index = dfY.index+pd.DateOffset(months=5)
     dfY.to_csv('../statesSeptemberSubmission/'+state+'/withWikiandLogistic.csv')
+    print(state)
 
 
 df_results_mae.to_csv('../modelResults/September/baselineWithWikiandLogisticTest.csv')
