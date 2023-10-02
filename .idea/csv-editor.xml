@@ -759,6 +759,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/statesOctoberSubmission/AL/wnv_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/statesSeptemberSubmission/AL/MonthlyMosquitoData500miles.csv">
           <value>
             <Attribute>
