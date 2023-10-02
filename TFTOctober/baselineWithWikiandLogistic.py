@@ -57,32 +57,32 @@ wnv_data = pd.read_csv('../WNVData/WNV_forecasting_challenge_state-month_cases.c
 
 df_results_mae = pandas.DataFrame()
 def getData(state):
-    state_data = pd.read_csv('../statesSeptemberSubmission/'+state+'/NOAA_data.csv')
+    state_data = pd.read_csv('../statesOctoberSubmission/'+state+'/NOAA_data.csv')
     state_data.index = pd.to_datetime([f'{y}-{m}-01' for y, m in zip(state_data.year, state_data.month)])
-    wnvData = pd.read_csv('../statesSeptemberSubmission/' + state + '/wnv_data.csv', index_col=[0])
+    wnvData = pd.read_csv('../statesOctoberSubmission/' + state + '/wnv_data.csv', index_col=[0])
     wnvData.index = pd.to_datetime(wnvData.index)
     state_data['count'] = wnvData['count']
     state_data['month_cos'] = np.cos(state_data.index.month * 2 * np.pi / 12)
     state_data['month_sin'] = np.sin(state_data.index.month * 2 * np.pi / 12)
-    state_data['real_month_cos'] = np.cos((state_data.index + np.timedelta64(5, 'M')).month * 2 * np.pi / 12)
-    state_data['real_month_sin'] = np.sin((state_data.index + np.timedelta64(5, 'M')).month * 2 * np.pi / 12)
+    state_data['real_month_cos'] = np.cos((state_data.index + np.timedelta64(4, 'M')).month * 2 * np.pi / 12)
+    state_data['real_month_sin'] = np.sin((state_data.index + np.timedelta64(4, 'M')).month * 2 * np.pi / 12)
 
-    state_data['5monthsAhead'] = state_data['count'].shift(-5)
-    state_data['7monthsAgo/1yearbeforePred'] = state_data['count'].shift(7)
+    state_data['4monthsAhead'] = state_data['count'].shift(-4)
+    state_data['8monthsAgo/1yearbeforePred'] = state_data['count'].shift(8)
     state_data.drop(['count'], axis=1, inplace=True)
 
     national_count = pd.read_csv('../WNVData/national_count.csv', index_col=[0]).iloc[:,0]
     national_count.index = pd.to_datetime(national_count.index)
     state_data['yearago_national_count'] = national_count
-    state_data['yearago_national_count'] = state_data['yearago_national_count'].shift(7)
+    state_data['yearago_national_count'] = state_data['yearago_national_count'].shift(8)
 
-    wiki_data = pd.read_csv('../WikipediaDataSeptember/wiki_data.csv', index_col=[0])
+    wiki_data = pd.read_csv('../WikipediaDataOctober/wiki_data.csv', index_col=[0])
     wiki_data.index = pd.to_datetime(wiki_data.index)
     state_data = pd.concat([state_data, wiki_data], axis=1)
     logistic_values = getLogisticPrediction(state)
 
     if logistic_values != 0:
-        state_data['logistic_prediction'] = logistic_values[5:]
+        state_data['logistic_prediction'] = logistic_values[4:]
 
     return state_data
 
@@ -90,19 +90,19 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 #for state in ['CA']:
     state_data = getData(state)
 
-    mosquitoData = pd.read_csv('../MosquitoDataAugust/MonthlyMosquitoData.csv')
+    mosquitoData = pd.read_csv('../MosquitoDataSeptember/MonthlyMosquitoData.csv')
     mosquitoData.set_index(pd.to_datetime([f'{y}-{m}-01' for y, m in zip(mosquitoData.year, mosquitoData.month)]), inplace=True)
     state_data = pd.concat([state_data, mosquitoData], axis=1)
 
     state_data = state_data.dropna().astype('float32')
 
-    ts = TimeSeries.from_series(state_data['5monthsAhead'])
-    state_data.drop(['5monthsAhead'], axis=1, inplace=True)
+    ts = TimeSeries.from_series(state_data['4monthsAhead'])
+    state_data.drop(['4monthsAhead'], axis=1, inplace=True)
 
 
-    testStateData = state_data[-5:]
-    ts_train = ts[:-5]
-    ts_test = ts[-5:]
+    testStateData = state_data[-4:]
+    ts_train = ts[:-4]
+    ts_test = ts[-4:]
 
     transformer = Scaler()
     ts_ttrain = transformer.fit_transform(ts_train)
@@ -112,8 +112,8 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     #Now we deal with covariates
 
     cov = TimeSeries.from_dataframe(state_data)
-    train_cov = cov[:-5]
-    test_cov = cov[-5:]
+    train_cov = cov[:-4]
+    test_cov = cov[-4:]
 
     scaler = Scaler()
     scaler.fit(train_cov)
