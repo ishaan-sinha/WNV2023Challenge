@@ -94,15 +94,15 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
 #for state in ['CA']:
     state_data = getData(state)
 
-    mosquitoData = pd.read_csv('../MosquitoDataAugust/MonthlyMosquitoData.csv')
+    mosquitoData = pd.read_csv('../MosquitoDataSeptember/MonthlyMosquitoData.csv')
     mosquitoData.set_index(pd.to_datetime([f'{y}-{m}-01' for y, m in zip(mosquitoData.year, mosquitoData.month)]), inplace=True)
     state_data = pd.concat([state_data, mosquitoData], axis=1)
     state_data = state_data[state_data['Fever[en]'].first_valid_index():].astype(np.float32)
 
     # We will make 12 forecasts, as we have 7 months ahead only for the last 12 months
-    ts = TimeSeries.from_series(state_data['5monthsAhead'].dropna())
+    ts = TimeSeries.from_series(state_data['4monthsAhead'].dropna())
 
-    state_data.drop(['5monthsAhead', 'year', 'month'], axis=1, inplace=True)
+    state_data.drop(['4monthsAhead', 'year', 'month'], axis=1, inplace=True)
     state_data = state_data.dropna()
 
     transformer = Scaler()
@@ -150,7 +150,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                              n_jobs=N_JOBS)
     ts_pred = transformer.inverse_transform(ts_tpred)
 
-    ts_pred = ts_pred[-5:]
+    ts_pred = ts_pred[-4:]
 
     dfY = pd.DataFrame()
 
@@ -166,10 +166,10 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     quantiles = QUANTILES
     _ = [predQ(ts_tpred, q) for q in quantiles]
 
-    dfY.index = dfY.index+pd.DateOffset(months=5)
-    dfY = dfY[-5:]
+    dfY.index = dfY.index+pd.DateOffset(months=4)
+    dfY = dfY[-4:]
 
-    dfY.to_csv('../statesSeptemberSubmission/' + state + '/FORECASTbaselineWithNationalWithWikiwithLogistic.csv')
+    dfY.to_csv('../statesOctoberSubmission/' + state + '/FORECASTbaselineWithNationalWithWikiwithLogistic.csv')
 
     print(state)
 
