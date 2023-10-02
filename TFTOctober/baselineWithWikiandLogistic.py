@@ -148,7 +148,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                              num_samples=N_SAMPLES,
                              n_jobs=N_JOBS)
     ts_pred = transformer.inverse_transform(ts_tpred)
-    ts_pred = ts_pred[-5:]
+    ts_pred = ts_pred[-4:]
 
     dfY = pd.DataFrame()
 
@@ -170,13 +170,13 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     plot_predict(ts, ts_test, ts_pred)
     df_results_mae = df_results_mae.append({'state': state, 'withWikiandLogistic': mae(ts_test, ts_pred)}, ignore_index=True)
     #plt.show()
-    plt.savefig('../statesSeptemberSubmission/'+state+'/train+testwithWikiandLogistic.png')
+    plt.savefig('../statesOctoberSubmission/'+state+'/train+testwithWikiandLogistic.png')
     plt.clf()
     ts_pred = transformer.inverse_transform(ts_tpred)
     ts_actual = ts[ts_tpred.start_time(): ts_tpred.end_time()]  # actual values in forecast horizon
     plot_predict(ts_actual, ts_test, ts_pred)
     #plt.show()
-    plt.savefig('../statesAugustSubmission/'+state+'/testwithWikiandLogistic.png')
+    plt.savefig('../statesOctoberSubmission/'+state+'/testwithWikiandLogistic.png')
     plt.clf()
         # helper method: calculate percentiles of predictions
     def predQ(ts_tpred, q):
@@ -190,9 +190,9 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     quantiles = QUANTILES
     _ = [predQ(ts_tpred, q) for q in quantiles]
 
-    dfY.index = dfY.index+pd.DateOffset(months=5)
-    dfY.to_csv('../statesSeptemberSubmission/'+state+'/withWikiandLogistic.csv')
+    dfY.index = dfY.index+pd.DateOffset(months=4)
+    dfY.to_csv('../statesOctoberSubmission/'+state+'/withWikiandLogistic.csv')
 
 
-df_results_mae.to_csv('../modelResults/September/baselineWithWikiandLogisticTest.csv')
+df_results_mae.to_csv('../modelResults/October/baselineWithWikiandLogisticTest.csv')
 

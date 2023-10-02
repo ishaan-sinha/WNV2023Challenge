@@ -143,7 +143,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                              num_samples=N_SAMPLES,
                              n_jobs=N_JOBS)
     ts_pred = transformer.inverse_transform(ts_tpred)
-    ts_pred = ts_pred[-5:]
+    ts_pred = ts_pred[-4:]
 
     dfY = pd.DataFrame()
 

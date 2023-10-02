@@ -91,9 +91,9 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     state_data.drop(['4monthsAhead'], axis=1, inplace=True)
 
 
-    testStateData = state_data[-5:]
-    ts_train = ts[:-5]
-    ts_test = ts[-5:]
+    testStateData = state_data[-4:]
+    ts_train = ts[:-4]
+    ts_test = ts[-4:]
 
     transformer = Scaler()
     ts_ttrain = transformer.fit_transform(ts_train)
@@ -103,8 +103,8 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     #Now we deal with covariates
 
     cov = TimeSeries.from_dataframe(state_data)
-    train_cov = cov[:-5]
-    test_cov = cov[-5:]
+    train_cov = cov[:-4]
+    test_cov = cov[-4:]
 
     scaler = Scaler()
     scaler.fit(train_cov)
@@ -139,7 +139,7 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
                              num_samples=N_SAMPLES,
                              n_jobs=N_JOBS)
     ts_pred = transformer.inverse_transform(ts_tpred)
-    ts_pred = ts_pred[-5:]
+    ts_pred = ts_pred[-4:]
 
     dfY = pd.DataFrame()
 
