@@ -16,7 +16,7 @@ DROPOUT = 0.1
 BATCH = 32
 
 
-N_FC = 5 #number of forecasts
+N_FC = 4 #number of forecasts
 RAND = 42           # set random state
 N_SAMPLES = 100     # number of times a prediction is sampled from a probabilistic model
 N_JOBS = -1
@@ -95,9 +95,9 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     state_data.drop(['4monthsAhead'], axis=1, inplace=True)
 
 
-    testStateData = state_data[-5:]
-    ts_train = ts[:-5]
-    ts_test = ts[-5:]
+    testStateData = state_data[-4:]
+    ts_train = ts[:-4]
+    ts_test = ts[-4:]
 
     transformer = Scaler()
     ts_ttrain = transformer.fit_transform(ts_train)
@@ -107,8 +107,8 @@ for state in [i for i in wnv_data['state'].unique() if i not in ['DC']]:
     #Now we deal with covariates
 
     cov = TimeSeries.from_dataframe(state_data)
-    train_cov = cov[:-5]
-    test_cov = cov[-5:]
+    train_cov = cov[:-4]
+    test_cov = cov[-4:]
 
     scaler = Scaler()
     scaler.fit(train_cov)
